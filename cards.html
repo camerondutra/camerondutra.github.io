@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F4F6F9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1117" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Which Card">
+<title>Which Card — Cheat Sheet</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%92%B3</text></svg>">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0}
+  img,svg{max-width:100%}
+</style>
+</head>
+<body>
+<style>
+  :root, :root[data-theme="light"] {
+    --ground: #F4F6F9;
+    --surface: #FFFFFF;
+    --surface-2: #ECEFF4;
+    --ink: #131720;
+    --ink-soft: #596174;
+    --ink-faint: #878FA1;
+    --rule: #DFE3EB;
+    --pill-ink: #FFFFFF;
+    --focus: #1E5FA8;
+
+    --chase: #1E5FA8;
+    --citi: #C0342E;
+    --discover: #A9540F;
+    --apple: #4E5361;
+    --hd: #74572B;
+
+    --warn-bg: #FDF3E3;
+    --warn-rule: #E8C88A;
+    --warn-ink: #7A5410;
+
+    --live-bg: #FFF7EC;
+    --live-rule: #E9C089;
+
+    --shadow: 0 1px 2px rgba(19,23,32,.06), 0 4px 12px rgba(19,23,32,.04);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0E1117;
+      --surface: #171B24;
+      --surface-2: #1F2530;
+      --ink: #EDEFF3;
+      --ink-soft: #98A0B2;
+      --ink-faint: #6B7385;
+      --rule: #2A3140;
+      --pill-ink: #0E1117;
+      --focus: #6BA6E8;
+
+      --chase: #6BA6E8;
+      --citi: #F0736C;
+      --discover: #F0A055;
+      --apple: #A8AEBD;
+      --hd: #C9A063;
+
+      --warn-bg: #231D0F;
+      --warn-rule: #5C4620;
+      --warn-ink: #E8BE72;
+
+      --live-bg: #1E1810;
+      --live-rule: #503C1C;
+
+      --shadow: none;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #0E1117;
+    --surface: #171B24;
+    --surface-2: #1F2530;
+    --ink: #EDEFF3;
+    --ink-soft: #98A0B2;
+    --ink-faint: #6B7385;
+    --rule: #2A3140;
+    --pill-ink: #0E1117;
+    --focus: #6BA6E8;
+    --chase: #6BA6E8;
+    --citi: #F0736C;
+    --discover: #F0A055;
+    --apple: #A8AEBD;
+    --hd: #C9A063;
+    --warn-bg: #231D0F;
+    --warn-rule: #5C4620;
+    --warn-ink: #E8BE72;
+    --live-bg: #1E1810;
+    --live-rule: #503C1C;
+    --shadow: none;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 18px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  /* ---- header ---- */
+  header { display: flex; flex-direction: column; gap: 10px; }
+
+  .top { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(28px, 7vw, 38px);
+    line-height: 1.05;
+    letter-spacing: -.025em;
+    font-weight: 800;
+    text-wrap: balance;
+  }
+
+  .sub { margin: 0; color: var(--ink-soft); font-size: 15px; max-width: 60ch; }
+
+  #theme {
+    flex: none;
+    width: 38px; height: 38px;
+    border-radius: 9px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    color: var(--ink-soft);
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    box-shadow: var(--shadow);
+  }
+  #theme:hover { color: var(--ink); }
+  #theme:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  /* ---- search ---- */
+  .search {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    padding: 10px 0;
+    background: linear-gradient(var(--ground) 72%, transparent);
+  }
+  .search input {
+    width: 100%;
+    padding: 13px 15px;
+    font: inherit;
+    font-size: 16px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+  .search input::placeholder { color: var(--ink-faint); }
+  .search input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-color: transparent; }
+
+  /* ---- callouts ---- */
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ink-faint);
+    border-radius: 10px;
+    padding: 15px 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    box-shadow: var(--shadow);
+  }
+  .callout.citi-b { border-left-color: var(--citi); }
+  .callout.disc-b { border-left-color: var(--discover); }
+  .callout h2 { margin: 0; font-size: 15px; font-weight: 750; letter-spacing: -.01em; }
+  .callout p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+  .callout strong { color: var(--ink); font-weight: 650; }
+
+  /* ---- section ---- */
+  section { display: flex; flex-direction: column; gap: 12px; }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sec-head h2 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .sec-head .count { font-size: 12px; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+
+  /* ---- rows ---- */
+  .rows { display: flex; flex-direction: column; gap: 8px; }
+
+  .row {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 14px;
+    align-items: center;
+    box-shadow: var(--shadow);
+  }
+
+  .row .cat {
+    grid-column: 1;
+    font-size: 16px;
+    font-weight: 650;
+    letter-spacing: -.01em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .row .rate {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .row .pick {
+    grid-column: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .pill {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--pill-ink);
+    white-space: nowrap;
+  }
+  .pill.chase    { background: var(--chase); }
+  .pill.citi     { background: var(--citi); }
+  .pill.discover { background: var(--discover); }
+  .pill.apple    { background: var(--apple); }
+  .pill.hd       { background: var(--hd); }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    border: 1px solid var(--discover);
+    color: var(--discover);
+    white-space: nowrap;
+  }
+
+  .note { font-size: 13px; color: var(--ink-soft); }
+
+  .row.chase    .rate { color: var(--chase); }
+  .row.citi     .rate { color: var(--citi); }
+  .row.discover .rate { color: var(--discover); }
+  .row.apple    .rate { color: var(--apple); }
+  .row.hd       .rate { color: var(--hd); }
+
+  .row.live { background: var(--live-bg); border-color: var(--live-rule); }
+
+  .row[hidden] { display: none; }
+
+  .empty {
+    padding: 24px;
+    text-align: center;
+    color: var(--ink-faint);
+    font-size: 14px;
+    border: 1px dashed var(--rule);
+    border-radius: 10px;
+  }
+  .empty[hidden] { display: none; }
+
+  /* ---- card reference ---- */
+  details.card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  details.card + details.card { margin-top: 8px; }
+  details.card > summary {
+    padding: 13px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 650;
+    font-size: 15px;
+    list-style: none;
+  }
+  details.card > summary::-webkit-details-marker { display: none; }
+  details.card > summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--ink-faint);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+  }
+  details.card[open] > summary::after { content: "\2212"; }
+  details.card > summary:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+
+  .swatch { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+  .swatch.chase { background: var(--chase); }
+  .swatch.citi { background: var(--citi); }
+  .swatch.discover { background: var(--discover); }
+  .swatch.apple { background: var(--apple); }
+  .swatch.hd { background: var(--hd); }
+
+  .card-body {
+    padding: 13px 16px 15px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .card-body ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 5px; }
+  .card-body li { font-size: 14px; color: var(--ink-soft); }
+  .card-body li b { color: var(--ink); font-weight: 650; font-variant-numeric: tabular-nums; }
+  .card-body .cap {
+    font-size: 13px;
+    color: var(--ink-soft);
+    background: var(--surface-2);
+    border-radius: 7px;
+    padding: 9px 11px;
+  }
+
+  footer {
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 420px) {
+    .row { padding: 12px 13px; }
+    .row .rate { font-size: 19px; }
+    .row .cat { font-size: 15px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="top">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="eyebrow">Point maximizer · Q3 2026</div>
+        <h1>Which card do I pull out?</h1>
+      </div>
+      <button id="theme" type="button" aria-label="Switch between light and dark">◐</button>
+    </div>
+    <p class="sub">Find what you're paying for. The card and rate on the right is your answer.</p>
+  </header>
+
+  <div class="search">
+    <input id="q" type="search" placeholder="Search — gas, groceries, Home Depot…" aria-label="Search categories" autocomplete="off">
+  </div>
+
+  <div class="callout disc-b">
+    <h2>Do these two things today</h2>
+    <p><strong>1. Activate Discover's Q3 categories</strong> — gas, EV charging, transit, flights and drugstores pay 5% through September 30, but only if you activate. Unactivated, you earn 1% and the difference is gone.</p>
+    <p><strong>2. Know that your Discover becomes a Capital One card on July 27</strong> — that's eleven days out. Same account, same rotating 5%, same Cash Back Match; you'll just log in through the Capital One app instead.</p>
+  </div>
+
+  <div class="callout citi-b">
+    <h2>The one rule that matters</h2>
+    <p><strong>Citi Custom Cash only pays 5% on one category per billing cycle</strong> — whichever eligible category you spent the most in, capped at the first $500. It picks automatically, so splitting between gas and groceries silently halves the bonus. Pick one lane and stay in it. <strong>Groceries is the right lane this quarter</strong>, because Discover already covers gas and drugstores through September.</p>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <h2>By category</h2>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="rows" id="rows">
+
+      <div class="row discover live" data-k="gas fuel gasoline station pump">
+        <div class="cat">Gas <span class="tag">Q3 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span><span class="note">activate first · shared $1,500 cap</span></div>
+      </div>
+
+      <div class="row discover live" data-k="pharmacy drugstore drug store cvs walgreens rite aid prescription">
+        <div class="cat">Drugstores &amp; pharmacy <span class="tag">Q3 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span></div>
+      </div>
+
+      <div class="row discover live" data-k="transit public transportation bus train subway metro rideshare uber lyft taxi">
+        <div class="cat">Public transit &amp; transportation <span class="tag">Q3 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span></div>
+      </div>
+
+      <div class="row discover live" data-k="ev charging electric vehicle charger tesla supercharger">
+        <div class="cat">EV charging <span class="tag">Q3 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span></div>
+      </div>
+
+      <div class="row discover live" data-k="flights airfare airline booked direct plane tickets">
+        <div class="cat">Flights — booked direct <span class="tag">Q3 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span><span class="note">first time Discover has ever included airfare</span></div>
+      </div>
+
+      <div class="row chase" data-k="flights airfare travel chase portal booking hotels rental car">
+        <div class="cat">Travel — booked via Chase Travel</div>
+        <div class="rate">5x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">still beats Discover's 5% if you transfer points</span></div>
+      </div>
+
+      <div class="row citi" data-k="groceries grocery store supermarket food kroger publix safeway harris teeter bakery">
+        <div class="cat">Groceries</div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill citi">Citi Custom Cash</span><span class="note">your lane · first $500/cycle</span></div>
+      </div>
+
+      <div class="row apple" data-k="groceries over cap grocery after 500 limit">
+        <div class="cat">Groceries — after $500</div>
+        <div class="rate">2%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">must tap Apple Pay</span></div>
+      </div>
+
+      <div class="row chase" data-k="dining restaurant takeout delivery doordash ubereats food out bar">
+        <div class="cat">Dining &amp; restaurants</div>
+        <div class="rate">3x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">includes takeout &amp; delivery</span></div>
+      </div>
+
+      <div class="row citi" data-k="home improvement home depot lowes hardware lumber tools">
+        <div class="cat">Home Depot &amp; home improvement</div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill citi">Citi Custom Cash</span><span class="note">only in a cycle where you move your lane here</span></div>
+      </div>
+
+      <div class="row hd" data-k="home depot financing big purchase appliance 0% apr installment">
+        <div class="cat">Home Depot — big purchase</div>
+        <div class="rate">0%</div>
+        <div class="pick"><span class="pill hd">Home Depot Card</span><span class="note">earns nothing — use only for 0% financing over $299</span></div>
+      </div>
+
+      <div class="row chase" data-k="travel direct hotel rental car parking tolls booked direct">
+        <div class="cat">Travel — booked direct</div>
+        <div class="rate">2x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">hotels, rental cars, parking, tolls</span></div>
+      </div>
+
+      <div class="row chase" data-k="streaming netflix spotify hulu disney max subscriptions">
+        <div class="cat">Streaming services</div>
+        <div class="rate">3x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">select services only</span></div>
+      </div>
+
+      <div class="row chase" data-k="online groceries instacart amazon fresh grocery delivery">
+        <div class="cat">Online groceries</div>
+        <div class="rate">3x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">excludes Target, Walmart, wholesale clubs</span></div>
+      </div>
+
+      <div class="row apple" data-k="apple store itunes app store icloud iphone mac apple.com">
+        <div class="cat">Apple purchases</div>
+        <div class="rate">3%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">Apple Store, App Store, subscriptions</span></div>
+      </div>
+
+      <div class="row apple" data-k="uber nike t-mobile tmobile panera ace hardware exxon mobil partner merchants">
+        <div class="cat">Nike · T-Mobile · Panera · Ace Hardware</div>
+        <div class="rate">3%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">Apple Pay required</span></div>
+      </div>
+
+      <div class="row apple" data-k="everything else default general other misc anything unlisted catch all">
+        <div class="cat">Everything else</div>
+        <div class="rate">2%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">Apple Pay · beats Sapphire's 1x on raw cash back</span></div>
+      </div>
+
+      <div class="row chase" data-k="everything else points travel transfer partners ultimate rewards hyatt">
+        <div class="cat">Everything else — if saving for travel</div>
+        <div class="rate">1x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">~1.5–2¢/pt transferred — close call vs Apple's flat 2%</span></div>
+      </div>
+
+    </div>
+    <div class="empty" id="empty" hidden>No category matches that.</div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>The cards themselves</h2></div>
+
+    <details class="card">
+      <summary><span class="swatch discover"></span>Discover It — Q3 2026</summary>
+      <div class="card-body">
+        <ul>
+          <li><b>5%</b> gas stations, EV charging, public transportation, flights, drugstores</li>
+          <li><b>1%</b> everything else</li>
+        </ul>
+        <div class="cap">The $1,500 cap is <b>shared across all five categories combined</b>, not per category — spend it where the alternative card is weakest. Activation window runs through September 30. Becomes a Capital One card on July 27, 2026; rotating categories and Cash Back Match both survive the move, and you'll gain 5% on Capital One Travel and Entertainment bookings afterward.</div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="swatch citi"></span>Citi Custom Cash</summary>
+      <div class="card-body">
+        <ul>
+          <li><b>5%</b> on your single top eligible category each cycle, first $500</li>
+          <li><b>1%</b> everything else, and everything past the cap</li>
+        </ul>
+        <div class="cap">Eligible: restaurants, gas, groceries, drugstores, home improvement, select travel, transit, streaming, fitness clubs, live entertainment. You don't choose — it auto-picks your highest-spend category. $25/cycle max bonus. <b>Citi closed this card to new applications in May 2026, so if you ever cancel it you cannot get it back.</b></div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="swatch chase"></span>Chase Sapphire Preferred</summary>
+      <div class="card-body">
+        <ul>
+          <li><b>5x</b> travel booked through Chase Travel</li>
+          <li><b>3x</b> dining, select streaming, online groceries</li>
+          <li><b>2x</b> all other travel</li>
+          <li><b>1x</b> everything else</li>
+        </ul>
+        <div class="cap">$95 annual fee. Points transfer to airline and hotel partners at roughly 1.5–2¢ each, which is why 1x here can rival a flat 2% cash card — and why 5x through Chase Travel still outruns Discover's 5% on flights.</div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="swatch apple"></span>Apple Card</summary>
+      <div class="card-body">
+        <ul>
+          <li><b>3%</b> Apple, plus Nike, T-Mobile, Panera, Ace Hardware, Exxon/Mobil, Uber, Walgreens</li>
+          <li><b>2%</b> anything paid with Apple Pay</li>
+          <li><b>1%</b> the physical titanium card</li>
+        </ul>
+        <div class="cap">No annual fee. The gap between 2% and 1% is entirely about tapping instead of swiping. Chase takes over as issuer from Goldman Sachs over roughly 24 months starting January 2026 — rewards are unchanged for now, and the 3% list is worth re-checking once the migration lands.</div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="swatch hd"></span>Home Depot Card</summary>
+      <div class="card-body">
+        <ul>
+          <li><b>0%</b> — no rewards at all</li>
+        </ul>
+        <div class="cap">A financing tool, not a rewards card. Its only job is 0% promotional financing on purchases over $299. For everyday Home Depot runs, Citi Custom Cash at 5% beats it outright — provided home improvement is your lane that cycle.</div>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    <div>Verified against published terms, July 16 2026. Discover's categories reset October 1 — this sheet needs a refresh then.</div>
+    <div>Card lineup pulled from your Notion finance tracker. Sources: <a href="https://www.nerdwallet.com/credit-cards/news/discover-5-percent-bonus-categories-q3-2026">NerdWallet</a>, <a href="https://frequentmiler.com/discover-it-cards-moving-to-capital-one-7-27-26-more-bonus-spend-categories-capital-one-offers-access-more/">Frequent Miler</a>, <a href="https://www.apple.com/newsroom/2026/01/chase-to-become-new-issuer-of-apple-card/">Apple Newsroom</a>.</div>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    /* ---- theme toggle ---- */
+    var root = document.documentElement;
+    var btn = document.getElementById('theme');
+    var saved = null;
+    try { saved = localStorage.getItem('cc-theme'); } catch (e) {}
+    if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+
+    function current() {
+      var a = root.getAttribute('data-theme');
+      if (a) return a;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('cc-theme', next); } catch (e) {}
+    });
+
+    /* ---- search ---- */
+    var q = document.getElementById('q');
+    var rows = Array.prototype.slice.call(document.querySelectorAll('.row'));
+    var empty = document.getElementById('empty');
+    var count = document.getElementById('count');
+
+    function render(n) {
+      count.textContent = n + (n === 1 ? ' category' : ' categories');
+      empty.hidden = n !== 0;
+    }
+    function filter() {
+      var term = q.value.trim().toLowerCase();
+      var shown = 0;
+      rows.forEach(function (row) {
+        var hay = (row.dataset.k || '') + ' ' + row.textContent.toLowerCase();
+        var hit = !term || hay.indexOf(term) !== -1;
+        row.hidden = !hit;
+        if (hit) shown++;
+      });
+      render(shown);
+    }
+    q.addEventListener('input', filter);
+    render(rows.length);
+  })();
+</script>
+
+</body>
+</html>
