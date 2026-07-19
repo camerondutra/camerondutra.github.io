@@ -116,7 +116,7 @@
     padding: 24px 18px 64px;
     display: flex;
     flex-direction: column;
-    gap: 26px;
+    gap: 24px;
   }
 
   /* ---- header ---- */
@@ -192,6 +192,69 @@
   .search input::placeholder { color: var(--ink-faint); }
   .search input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-color: transparent; }
 
+  /* ---- smart answer ---- */
+  .answer {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 5px solid var(--apple);
+    border-radius: 12px;
+    padding: 14px 17px 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 14px;
+    box-shadow: var(--shadow);
+  }
+  .answer[hidden] { display: none; }
+  .answer.chase    { border-left-color: var(--chase); }
+  .answer.citi     { border-left-color: var(--citi); }
+  .answer.discover { border-left-color: var(--discover); }
+  .answer.apple    { border-left-color: var(--apple); }
+  .answer.hd       { border-left-color: var(--hd); }
+
+  .answer-eyebrow {
+    grid-column: 1 / -1;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 3px;
+  }
+  .answer-cat {
+    grid-column: 1;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .answer-rate {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    align-self: center;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .answer.chase .answer-rate    { color: var(--chase); }
+  .answer.citi .answer-rate     { color: var(--citi); }
+  .answer.discover .answer-rate { color: var(--discover); }
+  .answer.apple .answer-rate    { color: var(--apple); }
+  .answer.hd .answer-rate       { color: var(--hd); }
+  .answer-pick {
+    grid-column: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    margin-top: 2px;
+  }
+
   /* ---- callouts ---- */
   .callout {
     background: var(--surface);
@@ -210,8 +273,12 @@
   .callout p { margin: 0; font-size: 14px; color: var(--ink-soft); }
   .callout strong { color: var(--ink); font-weight: 650; }
 
+  .collapsible { display: flex; flex-direction: column; gap: 24px; }
+  .collapsible[hidden] { display: none; }
+
   /* ---- section ---- */
   section { display: flex; flex-direction: column; gap: 12px; }
+  section[hidden] { display: none; }
 
   .sec-head {
     display: flex;
@@ -299,10 +366,13 @@
     font-weight: 800;
     letter-spacing: .07em;
     text-transform: uppercase;
-    border: 1px solid var(--discover);
-    color: var(--discover);
+    border: 1px solid var(--ink-faint);
+    color: var(--ink-faint);
     white-space: nowrap;
   }
+  .tag.q3   { border-color: var(--discover); color: var(--discover); }
+  .tag.lane { border-color: var(--citi); color: var(--citi); }
+  .tag.heads{ border-color: var(--warn-ink); color: var(--warn-ink); }
 
   .note { font-size: 13px; color: var(--ink-soft); }
 
@@ -313,11 +383,13 @@
   .row.hd       .rate { color: var(--hd); }
 
   .row.live { background: var(--live-bg); border-color: var(--live-rule); }
+  .row.flag { background: var(--warn-bg); border-color: var(--warn-rule); }
+  .row.flag .note { color: var(--warn-ink); }
 
   .row[hidden] { display: none; }
 
   .empty {
-    padding: 24px;
+    padding: 22px;
     text-align: center;
     color: var(--ink-faint);
     font-size: 14px;
@@ -414,153 +486,273 @@
       </div>
       <button id="theme" type="button" aria-label="Switch between light and dark">◐</button>
     </div>
-    <p class="sub">Find what you're paying for. The card and rate on the right is your answer.</p>
+    <p class="sub">Type what you're buying — a store, a merchant, whatever's in your head. The top answer is your card.</p>
   </header>
 
   <div class="search">
-    <input id="q" type="search" placeholder="Search — gas, groceries, Home Depot…" aria-label="Search categories" autocomplete="off">
+    <input id="q" type="search" placeholder="Search — costco, chipotle, phone bill, haircut…" aria-label="Search what you're buying" autocomplete="off">
   </div>
 
-  <div class="callout disc-b">
-    <h2>One date to know</h2>
-    <p><strong>Your Discover becomes a Capital One card on July 27.</strong> Same account, same card number, same rotating 5%, same Cash Back Match — you'll just log in through the Capital One app from then on.</p>
+  <div class="answer" id="answer" hidden aria-live="polite">
+    <div class="answer-eyebrow" id="ans-eyebrow">Best card</div>
+    <div class="answer-cat" id="ans-cat"></div>
+    <div class="answer-rate" id="ans-rate"></div>
+    <div class="answer-pick" id="ans-pick"></div>
   </div>
 
-  <div class="callout citi-b">
-    <h2>The one rule that matters</h2>
-    <p><strong>Citi Custom Cash only pays 5% on one category per billing cycle</strong> — whichever eligible category you spent the most in, capped at the first $500. It picks automatically, so splitting between gas and groceries silently halves the bonus. Pick one lane and stay in it. <strong>Groceries is the right lane this quarter</strong>, because Discover already covers gas and drugstores through September.</p>
-  </div>
-
-  <section>
-    <div class="sec-head">
-      <h2>By category</h2>
-      <span class="count" id="count"></span>
+  <div class="collapsible" id="callouts">
+    <div class="callout disc-b">
+      <h2>One date to know</h2>
+      <p><strong>Your Discover becomes a Capital One card on July 27.</strong> Same account, same card number, same rotating 5%, same Cash Back Match — you'll just log in through the Capital One app from then on.</p>
     </div>
-    <div class="rows" id="rows">
 
-      <div class="row discover live" data-k="gas fuel gasoline station pump">
-        <div class="cat">Gas <span class="tag">Q3 only</span></div>
-        <div class="rate">5%</div>
-        <div class="pick"><span class="pill discover">Discover It</span><span class="note">activated · shared $1,500 cap</span></div>
-      </div>
+    <div class="callout citi-b">
+      <h2>The one rule that matters</h2>
+      <p><strong>Citi Custom Cash only pays 5% on one category per billing cycle</strong> — whichever eligible category you spent the most in, capped at the first $500. It picks automatically, so splitting between categories silently halves the bonus. Pick one lane and stay in it. <strong>Groceries is the right lane this quarter</strong>, because Discover already covers gas and drugstores through September. Gym and live entertainment are eligible too, but they compete with groceries for the single slot.</p>
+    </div>
+  </div>
 
-      <div class="row chase" data-k="gas ev charging after cap discover exhausted 1500 fuel">
-        <div class="cat">Gas &amp; EV charging — past Discover's cap</div>
-        <div class="rate">3x</div>
-        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">new June 2026 · year-round, no cap</span></div>
-      </div>
+  <div id="results">
 
-      <div class="row discover live" data-k="pharmacy drugstore drug store cvs walgreens rite aid prescription">
-        <div class="cat">Drugstores &amp; pharmacy <span class="tag">Q3 only</span></div>
-        <div class="rate">5%</div>
-        <div class="pick"><span class="pill discover">Discover It</span></div>
-      </div>
+  <section class="group" data-group>
+    <div class="sec-head"><h2>Food &amp; drink</h2></div>
+    <div class="rows">
 
-      <div class="row discover live" data-k="transit public transportation bus train subway metro rideshare uber lyft taxi">
-        <div class="cat">Public transit &amp; transportation <span class="tag">Q3 only</span></div>
-        <div class="rate">5%</div>
-        <div class="pick"><span class="pill discover">Discover It</span></div>
-      </div>
-
-      <div class="row discover live" data-k="ev charging electric vehicle charger tesla supercharger">
-        <div class="cat">EV charging <span class="tag">Q3 only</span></div>
-        <div class="rate">5%</div>
-        <div class="pick"><span class="pill discover">Discover It</span></div>
-      </div>
-
-      <div class="row discover live" data-k="flights airfare airline booked direct plane tickets">
-        <div class="cat">Flights — booked direct <span class="tag">Q3 only</span></div>
-        <div class="rate">5%</div>
-        <div class="pick"><span class="pill discover">Discover It</span><span class="note">first time Discover has ever included airfare</span></div>
-      </div>
-
-      <div class="row chase" data-k="flights airfare travel chase portal booking hotels rental car">
-        <div class="cat">Travel — booked via Chase Travel</div>
-        <div class="rate">5x</div>
-        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">still beats Discover's 5% if you transfer points</span></div>
-      </div>
-
-      <div class="row citi" data-k="groceries grocery store supermarket food kroger publix safeway harris teeter bakery">
+      <div class="row citi" data-id="groceries" data-k="groceries grocery supermarket food shopping bakery produce">
         <div class="cat">Groceries</div>
         <div class="rate">5%</div>
         <div class="pick"><span class="pill citi">Citi Custom Cash</span><span class="note">your lane · first $500/cycle</span></div>
       </div>
 
-      <div class="row apple" data-k="groceries over cap grocery after 500 limit">
-        <div class="cat">Groceries — after $500</div>
+      <div class="row apple" data-id="groceries-cap" data-k="groceries over past cap after 500 limit exhausted">
+        <div class="cat">Groceries — after $500/cycle</div>
         <div class="rate">2%</div>
-        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">must tap Apple Pay</span></div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">once Citi's 5% cap is used up · tap Apple Pay</span></div>
       </div>
 
-      <div class="row chase" data-k="dining restaurant takeout delivery doordash ubereats food out bar bars brewery breweries pub pubs tavern lounge nightclub drinks happy hour cocktails wine beer">
+      <div class="row chase" data-id="dining" data-k="dining restaurant restaurants eat out takeout delivery doordash ubereats fast food bar bars brewery breweries pub pubs tavern lounge nightclub drinks happy hour cocktails wine beer coffee cafe brunch lunch dinner">
         <div class="cat">Dining, restaurants &amp; bars</div>
         <div class="rate">3x</div>
         <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">bars &amp; lounges included · also takeout &amp; delivery</span></div>
       </div>
 
-      <div class="row citi" data-k="home improvement home depot lowes hardware lumber tools">
-        <div class="cat">Home Depot &amp; home improvement</div>
-        <div class="rate">5%</div>
-        <div class="pick"><span class="pill citi">Citi Custom Cash</span><span class="note">only in a cycle where you move your lane here</span></div>
+      <div class="row chase flag" data-id="wholesale" data-k="wholesale club warehouse costco sams sam bjs bulk">
+        <div class="cat">Wholesale clubs — Costco, Sam's <span class="tag heads">Card gotcha</span></div>
+        <div class="rate">1x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">Costco takes Visa only in-store — Apple Card is declined. On costco.com, use Apple Card 2%.</span></div>
       </div>
 
-      <div class="row hd" data-k="home depot financing big purchase appliance 0% apr installment">
-        <div class="cat">Home Depot — big purchase</div>
+      <div class="row apple flag" data-id="superstore" data-k="superstore target walmart discount store big box">
+        <div class="cat">Superstores — Target, Walmart <span class="tag heads">Not groceries</span></div>
+        <div class="rate">2%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">groceries bought here don't earn 5% — they code as discount stores · tap Apple Pay</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="group" data-group>
+    <div class="sec-head"><h2>Getting around</h2></div>
+    <div class="rows">
+
+      <div class="row discover live" data-id="gas" data-k="gas fuel gasoline petrol station pump fill up">
+        <div class="cat">Gas <span class="tag q3">Q3 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span><span class="note">activated · shared $1,500 cap</span></div>
+      </div>
+
+      <div class="row chase" data-id="gas-cap" data-k="gas ev charging after past cap discover exhausted 1500 year round">
+        <div class="cat">Gas &amp; EV — past Discover's cap</div>
+        <div class="rate">3x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">year-round, no cap · added June 2026</span></div>
+      </div>
+
+      <div class="row discover live" data-id="ev" data-k="ev charging electric vehicle charger tesla supercharger chargepoint">
+        <div class="cat">EV charging <span class="tag q3">Q3 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span></div>
+      </div>
+
+      <div class="row discover live" data-id="transit" data-k="transit public transportation bus train metro rideshare uber lyft taxi rail">
+        <div class="cat">Transit &amp; rideshare <span class="tag q3">Q3 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span><span class="note">Uber &amp; Lyft rides count — Uber Eats is dining</span></div>
+      </div>
+
+      <div class="row chase" data-id="parking" data-k="parking tolls toll garage meter ez pass ezpass">
+        <div class="cat">Parking &amp; tolls</div>
+        <div class="rate">2x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">counts as travel</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="group" data-group>
+    <div class="sec-head"><h2>Travel</h2></div>
+    <div class="rows">
+
+      <div class="row chase" data-id="chase-travel" data-k="travel chase portal book through chase flights hotels rental car bundle">
+        <div class="cat">Anything booked via Chase Travel</div>
+        <div class="rate">5x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">the highest rate you have — use the portal when you can</span></div>
+      </div>
+
+      <div class="row discover live" data-id="flights" data-k="flights airfare airline plane tickets delta united southwest booked direct">
+        <div class="cat">Flights — booked direct <span class="tag q3">Q3 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span><span class="note">but Chase Travel's 5x wins if you transfer points</span></div>
+      </div>
+
+      <div class="row chase" data-id="vacation-rental" data-k="airbnb vrbo vacation rental home stay short term">
+        <div class="cat">Vacation rentals — Airbnb, Vrbo</div>
+        <div class="rate">3x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">added June 2026</span></div>
+      </div>
+
+      <div class="row chase" data-id="travel-direct" data-k="hotel hotels motel resort rental car hertz marriott hilton booked direct cruise">
+        <div class="cat">Hotels &amp; rental cars — direct</div>
+        <div class="rate">2x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">when not through the Chase portal</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="group" data-group>
+    <div class="sec-head"><h2>Bills &amp; subscriptions</h2></div>
+    <div class="rows">
+
+      <div class="row chase" data-id="streaming" data-k="streaming netflix spotify hulu disney max hbo youtube subscription">
+        <div class="cat">Streaming services</div>
+        <div class="rate">3x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">select services — Netflix, Spotify, Disney+, Hulu &amp; more</span></div>
+      </div>
+
+      <div class="row apple" data-id="phone" data-k="phone cell bill wireless mobile verizon att t-mobile tmobile plan">
+        <div class="cat">Cell phone bill</div>
+        <div class="rate">3%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">if T-Mobile (an Apple Pay partner) — Verizon, AT&amp;T &amp; others earn 2%</span></div>
+      </div>
+
+      <div class="row citi" data-id="gym" data-k="gym fitness club membership planet peloton crossfit yoga workout health club">
+        <div class="cat">Gym &amp; fitness <span class="tag lane">If your lane</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill citi">Citi Custom Cash</span><span class="note">eligible for the 5% — but only in a cycle you make it your lane over groceries</span></div>
+      </div>
+
+      <div class="row apple" data-id="utilities" data-k="utilities utility electric power water sewer trash internet cable wifi comcast spectrum bill">
+        <div class="cat">Utilities, internet, cable</div>
+        <div class="rate">2%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">watch for processing fees that can wipe out the reward</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="group" data-group>
+    <div class="sec-head"><h2>Shopping</h2></div>
+    <div class="rows">
+
+      <div class="row apple" data-id="apple-store" data-k="apple store app store itunes icloud iphone ipad mac apple music subscription">
+        <div class="cat">Apple — Store, App Store, iCloud</div>
+        <div class="rate">3%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span></div>
+      </div>
+
+      <div class="row apple" data-id="apple-partners" data-k="nike panera ace hardware exxon mobil partner merchants apple pay">
+        <div class="cat">Nike · Panera · Ace Hardware</div>
+        <div class="rate">3%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">Apple Pay partners — tap to earn 3%</span></div>
+      </div>
+
+      <div class="row citi" data-id="home-improvement" data-k="home improvement home depot lowes hardware lumber tools paint">
+        <div class="cat">Home improvement — Home Depot, Lowe's</div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill citi">Citi Custom Cash</span><span class="note">only in a cycle you move your lane here</span></div>
+      </div>
+
+      <div class="row chase" data-id="online-groceries" data-k="online groceries instacart amazon fresh whole foods delivery shipt">
+        <div class="cat">Online groceries — Instacart, Amazon Fresh</div>
+        <div class="rate">3x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">excludes Target, Walmart &amp; wholesale clubs</span></div>
+      </div>
+
+      <div class="row apple" data-id="amazon" data-k="amazon online shopping general merchandise electronics clothing default">
+        <div class="cat">Amazon &amp; general online shopping</div>
+        <div class="rate">2%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">no bonus with your cards — Apple Pay for 2%</span></div>
+      </div>
+
+      <div class="row hd" data-id="home-depot-finance" data-k="home depot financing big purchase appliance 0% apr installment over 299">
+        <div class="cat">Home Depot — big financed purchase</div>
         <div class="rate">0%</div>
         <div class="pick"><span class="pill hd">Home Depot Card</span><span class="note">earns nothing — use only for 0% financing over $299</span></div>
       </div>
 
-      <div class="row chase" data-k="airbnb vrbo vacation rental home stay booking">
-        <div class="cat">Vacation rentals — Airbnb, Vrbo</div>
-        <div class="rate">3x</div>
-        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">new June 2026</span></div>
+    </div>
+  </section>
+
+  <section class="group" data-group>
+    <div class="sec-head"><h2>Going out</h2></div>
+    <div class="rows">
+
+      <div class="row citi" data-id="live-entertainment" data-k="concert concerts live music sporting event sports game tickets ticketmaster stubhub festival broadway show">
+        <div class="cat">Concerts, sports, live events <span class="tag lane">If your lane</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill citi">Citi Custom Cash</span><span class="note">eligible for the 5% — but competes with groceries for the slot</span></div>
       </div>
 
-      <div class="row chase" data-k="travel direct hotel rental car parking tolls booked direct">
-        <div class="cat">Travel — booked direct</div>
-        <div class="rate">2x</div>
-        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">hotels, rental cars, parking, tolls</span></div>
-      </div>
-
-      <div class="row chase" data-k="streaming netflix spotify hulu disney max subscriptions">
-        <div class="cat">Streaming services</div>
-        <div class="rate">3x</div>
-        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">select services only</span></div>
-      </div>
-
-      <div class="row chase" data-k="online groceries instacart amazon fresh grocery delivery">
-        <div class="cat">Online groceries</div>
-        <div class="rate">3x</div>
-        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">excludes Target, Walmart, wholesale clubs</span></div>
-      </div>
-
-      <div class="row apple" data-k="apple store itunes app store icloud iphone mac apple.com">
-        <div class="cat">Apple purchases</div>
-        <div class="rate">3%</div>
-        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">Apple Store, App Store, subscriptions</span></div>
-      </div>
-
-      <div class="row apple" data-k="uber nike t-mobile tmobile panera ace hardware exxon mobil partner merchants">
-        <div class="cat">Nike · T-Mobile · Panera · Ace Hardware</div>
-        <div class="rate">3%</div>
-        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">Apple Pay required</span></div>
-      </div>
-
-      <div class="row apple" data-k="everything else default general other misc anything unlisted catch all">
-        <div class="cat">Everything else</div>
+      <div class="row apple" data-id="movies" data-k="movie movies theater cinema amc regal fandango ticket">
+        <div class="cat">Movies &amp; theaters</div>
         <div class="rate">2%</div>
-        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">Apple Pay · beats Sapphire's 1x on raw cash back</span></div>
-      </div>
-
-      <div class="row chase" data-k="everything else points travel transfer partners ultimate rewards hyatt">
-        <div class="cat">Everything else — if saving for travel</div>
-        <div class="rate">1x</div>
-        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">weaker since June — Hyatt transfers cut to 4:3 · Apple's flat 2% now usually wins</span></div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">tap Apple Pay</span></div>
       </div>
 
     </div>
-    <div class="empty" id="empty" hidden>No category matches that.</div>
   </section>
+
+  <section class="group" data-group>
+    <div class="sec-head"><h2>Health</h2></div>
+    <div class="rows">
+
+      <div class="row discover live" data-id="pharmacy" data-k="pharmacy drugstore drug store cvs walgreens rite aid prescription medicine">
+        <div class="cat">Drugstores &amp; pharmacy <span class="tag q3">Q3 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span></div>
+      </div>
+
+      <div class="row apple" data-id="medical" data-k="doctor dentist dental medical hospital copay vision optometrist clinic urgent care therapy">
+        <div class="cat">Doctor, dental, vision</div>
+        <div class="rate">2%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">tap Apple Pay where accepted</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="group" data-group>
+    <div class="sec-head"><h2>Anything else</h2></div>
+    <div class="rows">
+
+      <div class="row apple" data-id="everyday" data-k="everything else default general other misc catch all haircut salon vet pet childcare clothing furniture electronics insurance auto repair donation">
+        <div class="cat">Everything else</div>
+        <div class="rate">2%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">tap Apple Pay · beats Sapphire's 1x on raw cash back</span></div>
+      </div>
+
+      <div class="row chase" data-id="everyday-travel" data-k="everything else points travel transfer partners ultimate rewards saving miles">
+        <div class="cat">Everything else — if saving for a big trip</div>
+        <div class="rate">1x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">weaker since June — Hyatt cut to 4:3 · Apple's flat 2% usually wins now</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="empty" id="empty" hidden></div>
+
+  </div>
 
   <section>
     <div class="sec-head"><h2>The cards themselves</h2></div>
@@ -610,7 +802,7 @@
           <li><b>2%</b> anything paid with Apple Pay</li>
           <li><b>1%</b> the physical titanium card</li>
         </ul>
-        <div class="cap">No annual fee. The gap between 2% and 1% is entirely about tapping instead of swiping. Chase takes over as issuer from Goldman Sachs over roughly 24 months starting January 2026 — rewards are unchanged for now, and the 3% list is worth re-checking once the migration lands.</div>
+        <div class="cap">No annual fee. The gap between 2% and 1% is entirely about tapping instead of swiping. It's a Mastercard, so it won't work in a Costco warehouse (Visa only). Chase takes over as issuer from Goldman Sachs over roughly 24 months starting January 2026 — rewards are unchanged for now, and the 3% list is worth re-checking once the migration lands.</div>
       </div>
     </details>
 
@@ -626,8 +818,8 @@
   </section>
 
   <footer>
-    <div>Verified against published terms, July 17 2026. Discover's categories reset October 1 — this sheet needs a refresh then.</div>
-    <div>Card lineup pulled from your Notion finance tracker. Sources: <a href="https://www.nerdwallet.com/credit-cards/news/discover-5-percent-bonus-categories-q3-2026">Discover Q3 categories</a>, <a href="https://frequentmiler.com/discover-it-cards-moving-to-capital-one-7-27-26-more-bonus-spend-categories-capital-one-offers-access-more/">Capital One migration</a>, <a href="https://media.chase.com/news/Meet-the-New-Chase-Sapphire-Preferred">Sapphire refresh</a>, <a href="https://thepointsguy.com/news/chase-sapphire-preferred-refresh-2026/">Hyatt transfer cut</a>, <a href="https://www.apple.com/newsroom/2026/01/chase-to-become-new-issuer-of-apple-card/">Apple Card issuer</a>.</div>
+    <div>Verified against published terms, July 19 2026. Discover's categories reset October 1 — this sheet needs a refresh then.</div>
+    <div>Card lineup pulled from your Notion finance tracker. Sources: <a href="https://www.nerdwallet.com/credit-cards/news/discover-5-percent-bonus-categories-q3-2026">Discover Q3 categories</a>, <a href="https://frequentmiler.com/discover-it-cards-moving-to-capital-one-7-27-26-more-bonus-spend-categories-capital-one-offers-access-more/">Capital One migration</a>, <a href="https://media.chase.com/news/Meet-the-New-Chase-Sapphire-Preferred">Sapphire refresh</a>, <a href="https://www.citi.com/credit-cards/understanding-credit-cards/what-credit-cards-does-costco-accept">Costco card acceptance</a>, <a href="https://www.apple.com/newsroom/2026/01/chase-to-become-new-issuer-of-apple-card/">Apple Card issuer</a>.</div>
   </footer>
 
 </div>
@@ -640,7 +832,6 @@
     var saved = null;
     try { saved = localStorage.getItem('cc-theme'); } catch (e) {}
     if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
-
     function current() {
       var a = root.getAttribute('data-theme');
       if (a) return a;
@@ -652,29 +843,189 @@
       try { localStorage.setItem('cc-theme', next); } catch (e) {}
     });
 
-    /* ---- search ---- */
-    var q = document.getElementById('q');
-    var rows = Array.prototype.slice.call(document.querySelectorAll('.row'));
-    var empty = document.getElementById('empty');
-    var count = document.getElementById('count');
+    /* ---- merchant / synonym dictionary : term -> row id ---- */
+    var GROUPS = {
+      groceries: ["grocery","groceries","supermarket","kroger","publix","safeway","harris teeter","whole foods","trader joes","trader joe","aldi","wegmans","food lion","sprouts","heb","meijer","albertsons","vons","ralphs","giant","stop and shop"],
+      dining: ["dining","restaurant","restaurants","eat out","eating out","takeout","take out","fast food","mcdonalds","chipotle","starbucks","dunkin","chickfila","chick fil a","subway","wendys","taco bell","pizza","dominos","olive garden","chilis","coffee","cafe","bar","bars","pub","brewery","doordash","uber eats","ubereats","grubhub","postmates","brunch","lunch","dinner","happy hour","liquor","alcohol","wine","beer","cocktails"],
+      wholesale: ["costco","sams club","sam's club","sams","bjs","bj's","wholesale","wholesale club","warehouse club","bulk"],
+      superstore: ["target","walmart","wal mart","super target","supercenter","discount store"],
+      gas: ["gas","fuel","gasoline","petrol","gas station","shell","exxon","mobil","chevron","bp","marathon","sunoco","citgo","arco","valero","speedway","fill up","pump"],
+      ev: ["ev","ev charging","electric vehicle","charger","charging station","tesla","supercharger","chargepoint","evgo","electrify america"],
+      transit: ["transit","public transit","public transportation","bus","train","metro","light rail","amtrak","taxi","rideshare","uber","lyft","mta","bart","commute"],
+      parking: ["parking","parking garage","parking meter","garage","tolls","toll","toll road","ez pass","ezpass"],
+      "chase-travel": ["chase travel","chase portal","chase portal booking","book through chase"],
+      flights: ["flight","flights","airfare","airline","plane","plane ticket","delta","united","american airlines","southwest","jetblue","spirit","frontier","alaska airlines"],
+      "vacation-rental": ["airbnb","vrbo","vacation rental","vacation home","home away","homeaway","short term rental"],
+      "travel-direct": ["hotel","hotels","motel","resort","marriott","hilton","hyatt","rental car","car rental","hertz","enterprise","avis","budget rental","cruise"],
+      streaming: ["streaming","netflix","spotify","hulu","disney plus","disney+","max","hbo","youtube tv","peacock","paramount","prime video","apple tv","pandora"],
+      phone: ["phone bill","cell phone","cell bill","phone plan","mobile bill","wireless bill","verizon","att","at&t","t mobile","t-mobile","tmobile"],
+      gym: ["gym","fitness","fitness club","health club","gym membership","planet fitness","la fitness","equinox","peloton","crossfit","yoga","orangetheory","golds gym","workout"],
+      utilities: ["utility","utilities","electric","electric bill","power bill","electricity","water bill","sewer","trash","internet","internet bill","cable","cable bill","wifi","comcast","xfinity","spectrum","gas bill","insurance","car insurance","home insurance"],
+      "apple-store": ["apple","apple store","app store","itunes","icloud","iphone","ipad","mac","macbook","apple music","apple.com","apple com"],
+      "apple-partners": ["nike","panera","ace hardware","apple pay partner"],
+      "home-improvement": ["home improvement","home depot","homedepot","lowes","lowe's","hardware","hardware store","lumber","tools","paint","menards"],
+      "online-groceries": ["online groceries","instacart","amazon fresh","whole foods delivery","grocery delivery","shipt"],
+      amazon: ["amazon","amazon.com","amzn","online shopping","online order","general merchandise"],
+      "home-depot-finance": ["home depot financing","0% financing","appliance","big purchase","installment","home depot card"],
+      "live-entertainment": ["concert","concerts","live music","sporting event","sports game","sports tickets","game tickets","ticketmaster","stubhub","festival","broadway","comedy show","live entertainment","theater show","play"],
+      movies: ["movie","movies","movie theater","cinema","amc","regal","fandango","movie ticket"],
+      pharmacy: ["pharmacy","drugstore","drug store","cvs","walgreens","rite aid","riteaid","prescription","medicine"],
+      medical: ["doctor","dentist","dental","medical","medical bill","hospital","copay","co pay","vision","optometrist","eye doctor","clinic","urgent care","therapy","physical therapy"],
+      everyday: ["everything else","haircut","salon","barber","nail salon","spa","vet","veterinarian","pet supplies","petco","petsmart","chewy","pet food","childcare","daycare","babysitter","donation","charity","charitable","clothing","clothes","apparel","department store","macys","nordstrom","kohls","tj maxx","marshalls","furniture","ikea","wayfair","home goods","electronics","best buy","bestbuy","auto repair","mechanic","car repair","auto parts","oil change","autozone","books","bookstore","office supplies","staples","dry cleaning","laundromat","post office","usps","ups","fedex","florist","jewelry","toys","sporting goods","dicks","rei"]
+    };
 
-    function render(n) {
-      count.textContent = n + (n === 1 ? ' category' : ' categories');
-      empty.hidden = n !== 0;
+    /* invert to term -> id, and build per-id extra keyword text */
+    var ALIAS = {};
+    var idAliasText = {};
+    Object.keys(GROUPS).forEach(function (id) {
+      var terms = GROUPS[id];
+      idAliasText[id] = terms.join(' ');
+      terms.forEach(function (t) { ALIAS[t] = id; });
+    });
+
+    /* ---- fuzzy helper: capped Levenshtein ---- */
+    function lev(a, b) {
+      var m = a.length, n = b.length;
+      if (Math.abs(m - n) > 2) return 3;
+      var prev = [], cur = [], i, j;
+      for (j = 0; j <= n; j++) prev[j] = j;
+      for (i = 1; i <= m; i++) {
+        cur[0] = i;
+        for (j = 1; j <= n; j++) {
+          var cost = a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1;
+          cur[j] = Math.min(cur[j - 1] + 1, prev[j] + 1, prev[j - 1] + cost);
+        }
+        for (j = 0; j <= n; j++) prev[j] = cur[j];
+      }
+      return prev[n];
     }
-    function filter() {
-      var term = q.value.trim().toLowerCase();
-      var shown = 0;
-      rows.forEach(function (row) {
-        var hay = (row.dataset.k || '') + ' ' + row.textContent.toLowerCase();
-        var hit = !term || hay.indexOf(term) !== -1;
-        row.hidden = !hit;
-        if (hit) shown++;
+    function near(a, b) {
+      var mn = Math.min(a.length, b.length);
+      if (mn < 3) return a === b;
+      var tol = mn >= 6 ? 2 : 1;
+      return lev(a, b) <= tol;
+    }
+
+    /* ---- index the rows ---- */
+    var rows = Array.prototype.slice.call(document.querySelectorAll('.row'));
+    rows.forEach(function (row) {
+      var id = row.dataset.id;
+      var label = (row.querySelector('.cat') ? row.querySelector('.cat').textContent : '');
+      var hay = (label + ' ' + (row.dataset.k || '') + ' ' + (idAliasText[id] || '')).toLowerCase();
+      row._id = id;
+      row._label = label.toLowerCase();
+      row._hay = hay;
+      row._words = hay.split(/[^a-z0-9]+/).filter(Boolean);
+    });
+
+    var groups = Array.prototype.slice.call(document.querySelectorAll('[data-group]'));
+    var everyday = rows.filter(function (r) { return r._id === 'everyday'; })[0];
+    var everydayTravel = rows.filter(function (r) { return r._id === 'everyday-travel'; })[0];
+
+    var q = document.getElementById('q');
+    var empty = document.getElementById('empty');
+    var callouts = document.getElementById('callouts');
+    var answer = document.getElementById('answer');
+    var ansEyebrow = document.getElementById('ans-eyebrow');
+    var ansCat = document.getElementById('ans-cat');
+    var ansRate = document.getElementById('ans-rate');
+    var ansPick = document.getElementById('ans-pick');
+    var CARD_CLASSES = ['chase', 'citi', 'discover', 'apple', 'hd'];
+
+    function scoreRow(row, query, tokens, aliasId) {
+      var s = 0;
+      if (aliasId && row._id === aliasId) s += 100;
+      if (query.length >= 2 && row._hay.indexOf(query) !== -1) s += 40;
+      if (row._label.indexOf(query) === 0) s += 25;
+      tokens.forEach(function (t) {
+        if (row._hay.indexOf(t) !== -1) { s += 12; return; }
+        for (var i = 0; i < row._words.length; i++) {
+          if (near(row._words[i], t)) { s += 6; break; }
+        }
       });
-      render(shown);
+      return s;
     }
-    q.addEventListener('input', filter);
-    render(rows.length);
+
+    function resolveAlias(query, tokens) {
+      if (ALIAS[query]) return ALIAS[query];
+      var keys = Object.keys(ALIAS), i;
+      for (i = 0; i < keys.length; i++) {
+        if (query.length >= 4 && near(keys[i], query)) return ALIAS[keys[i]];
+      }
+      /* try a multi-word alias containing every token */
+      for (i = 0; i < keys.length; i++) {
+        var ok = tokens.length > 0;
+        for (var j = 0; j < tokens.length; j++) {
+          if (keys[i].indexOf(tokens[j]) === -1) { ok = false; break; }
+        }
+        if (ok) return ALIAS[keys[i]];
+      }
+      return null;
+    }
+
+    function fillAnswer(row, eyebrow) {
+      ansEyebrow.textContent = eyebrow;
+      ansCat.innerHTML = row.querySelector('.cat').innerHTML;
+      ansRate.innerHTML = row.querySelector('.rate').innerHTML;
+      ansPick.innerHTML = row.querySelector('.pick').innerHTML;
+      var card = 'apple';
+      for (var i = 0; i < CARD_CLASSES.length; i++) {
+        if (row.classList.contains(CARD_CLASSES[i])) { card = CARD_CLASSES[i]; break; }
+      }
+      answer.className = 'answer ' + card;
+      answer.hidden = false;
+    }
+
+    function run() {
+      var query = q.value.trim().toLowerCase();
+
+      if (!query) {
+        rows.forEach(function (r) { r.hidden = false; });
+        groups.forEach(function (g) { g.hidden = false; });
+        answer.hidden = true;
+        empty.hidden = true;
+        callouts.hidden = false;
+        return;
+      }
+
+      callouts.hidden = true;
+      var tokens = query.split(/[^a-z0-9]+/).filter(Boolean);
+      var aliasId = resolveAlias(query, tokens);
+
+      var best = null, bestScore = 0, shown = 0;
+      rows.forEach(function (row) {
+        var s = scoreRow(row, query, tokens, aliasId);
+        row._score = s;
+        if (s > bestScore) { bestScore = s; best = row; }
+      });
+
+      if (bestScore === 0) {
+        /* nothing matched — the honest default is the everyday catch-all */
+        rows.forEach(function (row) {
+          var keep = (row === everyday || row === everydayTravel);
+          row.hidden = !keep;
+          if (keep) shown++;
+        });
+        fillAnswer(everyday, 'No special bonus — use');
+      } else {
+        rows.forEach(function (row) {
+          var keep = row._score > 0;
+          row.hidden = !keep;
+          if (keep) shown++;
+        });
+        fillAnswer(best, 'Best card');
+      }
+
+      groups.forEach(function (g) {
+        var vis = g.querySelectorAll('.row:not([hidden])').length;
+        g.hidden = vis === 0;
+      });
+
+      empty.hidden = true;
+    }
+
+    q.addEventListener('input', run);
+    run();
   })();
 </script>
 
