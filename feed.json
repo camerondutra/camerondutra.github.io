@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T13:30:00Z",
+  "digest": {
+    "headline": "Kimi K3 crashes the frontier, and the agent harnesses all shipped in the same week",
+    "summary": "Moonshot's 2.8T open model K3 took the top coding-leaderboard spot with free weights landing July 27, while Grok 4.5, Sonnet 5, GPT-5.6 and Gemini 3.1 keep the paid frontier crowded. Meanwhile Claude Code, Codex and Pi all pushed notable releases.",
+    "stats": [
+      { "label": "New models", "value": "5" },
+      { "label": "Harness updates", "value": "3" },
+      { "label": "Read", "value": "5 min" }
+    ]
+  },
+  "stories": [
+    {
+      "id": "kimi-k3",
+      "category": "model",
+      "source": "BuildFastWithAI",
+      "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-20-2026-16-biggest-stories",
+      "title": "Moonshot's Kimi K3 tops a major coding leaderboard — free weights drop July 27",
+      "dek": "The 2.8-trillion-parameter open model stunned the US industry over the weekend. Scale plus benchmark position plus open weights is the combination that makes this land differently from prior Chinese releases.",
+      "publishedAt": "2026-07-20T00:00:00Z",
+      "whyItMatters": "An open model at the top of the coding board resets what 'free/local' can do."
+    },
+    {
+      "id": "grok-45",
+      "category": "model",
+      "source": "AIToolsRecap",
+      "url": "https://aitoolsrecap.com/Blog/AINewsJuly2026.aspx",
+      "title": "xAI ships Grok 4.5, pitching ~2× token efficiency for agentic work",
+      "dek": "Released July 8 as xAI's new frontier model for coding, agents and professional knowledge work, with token efficiency framed as the headline advantage over the prior baseline.",
+      "publishedAt": "2026-07-08T00:00:00Z",
+      "whyItMatters": "Token efficiency is the new battleground for agent cost, not just raw benchmark scores."
+    },
+    {
+      "id": "sonnet-5-default",
+      "category": "model",
+      "source": "LLM-Stats",
+      "url": "https://llm-stats.com/llm-updates",
+      "title": "Claude Sonnet 5 becomes the default for all Free and Pro users",
+      "dek": "Launched June 30 with a 63.2% SWE-bench Pro score and $2/$10 intro pricing (rising to $3/$15 in September).",
+      "publishedAt": "2026-06-30T00:00:00Z",
+      "whyItMatters": "The default model most people touch just got materially stronger at coding."
+    },
+    {
+      "id": "gpt-56-line",
+      "category": "model",
+      "source": "AIToolsRecap",
+      "url": "https://aitoolsrecap.com/Blog/AINewsJuly2026.aspx",
+      "title": "OpenAI's GPT-5.6 line (Sol, Terra, Luna) lands on the API with 1M context",
+      "dek": "A three-track line launched June 26, each with standard and Pro tiers, behind a managed access list. All share a 1M-token context window.",
+      "publishedAt": "2026-06-26T00:00:00Z",
+      "whyItMatters": "Three specialized tracks signal the shift away from one-model-fits-all."
+    },
+    {
+      "id": "eu-android",
+      "category": "news",
+      "source": "Medium · AI News Weekly",
+      "url": "https://medium.com/@davidakpovi/ai-news-week-of-july-6-to-july-12-2026-f81a26c49c55",
+      "title": "EU orders Google to open Android to AI rivals as Gemini slips again",
+      "dek": "Regulators push Google to admit competing assistants on Android, adding pressure during a rocky stretch for Gemini's rollout.",
+      "publishedAt": "2026-07-10T00:00:00Z",
+      "whyItMatters": "Distribution, not just model quality, may decide which assistant people actually use."
+    },
+    {
+      "id": "google-africa-lab",
+      "category": "news",
+      "source": "Medium · AI News Weekly",
+      "url": "https://medium.com/@davidakpovi/ai-news-week-of-july-6-to-july-12-2026-f81a26c49c55",
+      "title": "Google opens an Applied AI Lab in Accra for African researchers",
+      "dek": "The Accra-based program gives African researchers and entrepreneurs early access to Google's AI and direct technical guidance.",
+      "publishedAt": "2026-07-09T00:00:00Z",
+      "whyItMatters": "Frontier tooling is starting to reach builders far outside the usual hubs."
+    }
+  ],
+  "models": [
+    { "name": "Claude Fable 5", "org": "Anthropic", "aa": "59.9", "cursor": "70.5", "swe": "70.0", "isNew": false, "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" },
+    { "name": "GPT-5.6 Sol", "org": "OpenAI", "aa": "58.9", "cursor": "67.2", "swe": "72.7", "isNew": false, "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" },
+    { "name": "Kimi K3", "org": "Moonshot AI", "aa": "57.1", "cursor": "—", "swe": "—", "isNew": true, "url": "https://artificialanalysis.ai/articles/four-frontier-launches-in-eight-days-six-labs-now-field-a-model-above-50-on-the-artificial-analysis-intelligence-index" },
+    { "name": "Claude Opus 4.8", "org": "Anthropic", "aa": "56.0", "cursor": "—", "swe": "59.0", "isNew": false, "url": "https://deepswe.datacurve.ai/blog/deepswe" },
+    { "name": "Grok 4.5", "org": "xAI", "aa": "54.0", "cursor": "66.7", "swe": "—", "isNew": true, "url": "https://benchlm.ai/benchmarks/cursorBench" },
+    { "name": "Gemini 3.1 Pro", "org": "Google", "aa": "—", "cursor": "—", "swe": "12.0", "isNew": false, "url": "https://deepswe.datacurve.ai/blog/deepswe" }
+  ],
+  "modelsMeta": {
+    "note": "Best score per column is highlighted. DeepSWE's wide spread — Gemini 3.1 Pro at 12 vs GPT-5.6 Sol at 72.7 — is what separates models that SWE-bench had bunched together.",
+    "benchmarks": [
+      { "key": "aa", "label": "AA", "full": "Artificial Analysis Intelligence Index — composite of 9 evals", "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" },
+      { "key": "cursor", "label": "Cursor", "full": "CursorBench — agentic, repo-aware coding on real Cursor sessions", "url": "https://epoch.ai/benchmarks/cursorbench" },
+      { "key": "swe", "label": "DeepSWE", "full": "DeepSWE — 113 long-horizon SWE tasks across 91 repos (Datacurve)", "url": "https://deepswe.datacurve.ai/blog/deepswe" }
+    ]
+  },
+  "harness": [
+    {
+      "tool": "Claude Code",
+      "version": "July 2026",
+      "released": "2026-07-15T00:00:00Z",
+      "notes": "/fork now copies a conversation into a fresh background session while your current work continues. Plus filesystem-isolation controls, faster long sessions, and live MCP connector data for published artifacts.",
+      "url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "breaking": false
+    },
+    {
+      "tool": "Codex",
+      "version": "Goal Mode + Remote GA",
+      "released": "2026-07-10T00:00:00Z",
+      "notes": "Goal Mode points Codex at a long-horizon objective (\"hours or even days\") without manual steering. Codex Remote hits GA — start/approve work from the ChatGPT mobile app. TTFT down ~50%.",
+      "url": "https://developers.openai.com/codex/changelog?type=codex-cli",
+      "breaking": false
+    },
+    {
+      "tool": "Pi",
+      "version": "0.80.10",
+      "released": "2026-07-16T00:00:00Z",
+      "notes": "Adds Kimi K3 support and deferred tool loading (progressive extension activation). Pi has moved to its long-term home under the Earendil Works org; packages now publish under @earendil-works.",
+      "url": "https://github.com/earendil-works/pi/blob/main/packages/coding-agent/CHANGELOG.md",
+      "breaking": false
+    }
+  ],
+  "extensions": [
+    {
+      "name": "MCP spec 2026-07-28",
+      "kind": "protocol",
+      "source": "modelcontextprotocol.io",
+      "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/",
+      "blurb": "Release candidate lands a stateless protocol core, an Extensions framework, Tasks, and MCP Apps. Final spec ships July 28."
+    },
+    {
+      "name": "Context7 Memory Manager",
+      "kind": "MCP server",
+      "source": "FastMCP",
+      "url": "https://www.digitalapplied.com/blog/mcp-adoption-statistics-2026-model-context-protocol",
+      "blurb": "The most popular server on FastMCP right now — drop-in long-term memory for your agent."
+    },
+    {
+      "name": "Cloudflare MCP",
+      "kind": "MCP server",
+      "source": "Cloudflare",
+      "url": "https://www.digitalapplied.com/blog/mcp-adoption-statistics-2026-model-context-protocol",
+      "blurb": "Covers ~2,500 endpoints. The registry crossed 19,831 servers on Glama this spring — the ecosystem is exploding."
+    }
+  ],
+  "tips": [
+    {
+      "kind": "Workflow",
+      "title": "Keep a 'source of truth' file in your repo root",
+      "body": "A CLAUDE.md / AGENTS.md / .cursorrules with your standards and naming conventions gets read first every session — so the agent writes code that looks like yours without re-explaining.",
+      "url": "https://www.logicweb.com/top-50-best-ai-coding-prompts-for-developers/"
+    },
+    {
+      "kind": "Prompting",
+      "title": "Structure every prompt: Role + Task + Constraints + Output format",
+      "body": "Name the stack (e.g. Python 3.12 + FastAPI), paste the relevant code, and ask for tests. The structure beats cleverness.",
+      "url": "https://ssojet.com/blog/best-coding-agent-prompts"
+    },
+    {
+      "kind": "Agents",
+      "title": "Always give the agent a check it can run",
+      "body": "Tests, a build, or a screenshot to compare. Without verification an agent stops the moment work merely 'looks done' — managing the task graph is the real 2026 skill.",
+      "url": "https://medium.com/@marketing_30607/5-agentic-coding-tips-tricks-to-supercharge-your-workflow-28361654e69f"
+    }
+  ]
+}
