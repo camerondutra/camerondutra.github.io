@@ -631,8 +631,8 @@
 
       <div class="row apple" data-id="phone" data-k="phone cell bill wireless mobile verizon att t-mobile tmobile plan">
         <div class="cat">Cell phone bill</div>
-        <div class="rate">3%</div>
-        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">if T-Mobile (an Apple Pay partner) — Verizon, AT&amp;T &amp; others earn 2%</span></div>
+        <div class="rate">2%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">tap Apple Pay · no carrier earns 3% anymore — T-Mobile's Apple Card perk ended July 2025</span></div>
       </div>
 
       <div class="row citi" data-id="gym" data-k="gym fitness club membership planet peloton crossfit yoga workout health club">
@@ -660,8 +660,8 @@
         <div class="pick"><span class="pill apple">Apple Card</span></div>
       </div>
 
-      <div class="row apple" data-id="apple-partners" data-k="nike panera ace hardware exxon mobil partner merchants apple pay">
-        <div class="cat">Nike · Panera · Ace Hardware</div>
+      <div class="row apple" data-id="apple-partners" data-k="nike ace hardware apple pay partner merchants three percent 3 hertz booking chargepoint uber walgreens exxon mobil">
+        <div class="cat">Nike · Ace Hardware</div>
         <div class="rate">3%</div>
         <div class="pick"><span class="pill apple">Apple Card</span><span class="note">Apple Pay partners — tap to earn 3%</span></div>
       </div>
@@ -798,11 +798,11 @@
       <summary><span class="swatch apple"></span>Apple Card</summary>
       <div class="card-body">
         <ul>
-          <li><b>3%</b> Apple, plus Nike, T-Mobile, Panera, Ace Hardware, Exxon/Mobil, Uber, Walgreens</li>
+          <li><b>3%</b> Apple, plus Nike, Uber, Uber Eats, Walgreens, Exxon/Mobil, Ace, Hertz, Booking.com &amp; ChargePoint</li>
           <li><b>2%</b> anything paid with Apple Pay</li>
           <li><b>1%</b> the physical titanium card</li>
         </ul>
-        <div class="cap">No annual fee. The gap between 2% and 1% is entirely about tapping instead of swiping. It's a Mastercard, so it won't work in a Costco warehouse (Visa only). Chase takes over as issuer from Goldman Sachs over roughly 24 months starting January 2026 — rewards are unchanged for now, and the 3% list is worth re-checking once the migration lands.</div>
+        <div class="cap">No annual fee. The gap between 2% and 1% is entirely about tapping instead of swiping. It's a Mastercard, so it won't work in a Costco warehouse (Visa only). T-Mobile and Panera were both dropped from the 3% list (T-Mobile fell to 2% in July 2025, Panera removed February 2025). Chase takes over as issuer from Goldman Sachs over roughly 24 months starting January 2026 — rewards are unchanged for now, and the 3% list is worth re-checking once the migration lands.</div>
       </div>
     </details>
 
@@ -818,7 +818,7 @@
   </section>
 
   <footer>
-    <div>Verified against published terms, July 19 2026. Discover's categories reset October 1 — this sheet needs a refresh then.</div>
+    <div>Verified against published terms, July 26 2026. Discover's categories reset October 1 — this sheet needs a refresh then.</div>
     <div>Card lineup pulled from your Notion finance tracker. Sources: <a href="https://www.nerdwallet.com/credit-cards/news/discover-5-percent-bonus-categories-q3-2026">Discover Q3 categories</a>, <a href="https://frequentmiler.com/discover-it-cards-moving-to-capital-one-7-27-26-more-bonus-spend-categories-capital-one-offers-access-more/">Capital One migration</a>, <a href="https://media.chase.com/news/Meet-the-New-Chase-Sapphire-Preferred">Sapphire refresh</a>, <a href="https://www.citi.com/credit-cards/understanding-credit-cards/what-credit-cards-does-costco-accept">Costco card acceptance</a>, <a href="https://www.apple.com/newsroom/2026/01/chase-to-become-new-issuer-of-apple-card/">Apple Card issuer</a>.</div>
   </footer>
 
@@ -846,7 +846,7 @@
     /* ---- merchant / synonym dictionary : term -> row id ---- */
     var GROUPS = {
       groceries: ["grocery","groceries","supermarket","kroger","publix","safeway","harris teeter","whole foods","trader joes","trader joe","aldi","wegmans","food lion","sprouts","heb","meijer","albertsons","vons","ralphs","giant","stop and shop"],
-      dining: ["dining","restaurant","restaurants","eat out","eating out","takeout","take out","fast food","mcdonalds","chipotle","starbucks","dunkin","chickfila","chick fil a","subway","wendys","taco bell","pizza","dominos","olive garden","chilis","coffee","cafe","bar","bars","pub","brewery","doordash","uber eats","ubereats","grubhub","postmates","brunch","lunch","dinner","happy hour","liquor","alcohol","wine","beer","cocktails"],
+      dining: ["dining","restaurant","restaurants","eat out","eating out","takeout","take out","fast food","mcdonalds","chipotle","starbucks","dunkin","chickfila","chick fil a","subway","wendys","taco bell","pizza","dominos","olive garden","chilis","panera","coffee","cafe","bar","bars","pub","brewery","doordash","uber eats","ubereats","grubhub","postmates","brunch","lunch","dinner","happy hour","liquor","alcohol","wine","beer","cocktails"],
       wholesale: ["costco","sams club","sam's club","sams","bjs","bj's","wholesale","wholesale club","warehouse club","bulk"],
       superstore: ["target","walmart","wal mart","super target","supercenter","discount store"],
       gas: ["gas","fuel","gasoline","petrol","gas station","shell","exxon","mobil","chevron","bp","marathon","sunoco","citgo","arco","valero","speedway","fill up","pump"],
@@ -862,7 +862,7 @@
       gym: ["gym","fitness","fitness club","health club","gym membership","planet fitness","la fitness","equinox","peloton","crossfit","yoga","orangetheory","golds gym","workout"],
       utilities: ["utility","utilities","electric","electric bill","power bill","electricity","water bill","sewer","trash","internet","internet bill","cable","cable bill","wifi","comcast","xfinity","spectrum","gas bill","insurance","car insurance","home insurance"],
       "apple-store": ["apple","apple store","app store","itunes","icloud","iphone","ipad","mac","macbook","apple music","apple.com","apple com"],
-      "apple-partners": ["nike","panera","ace hardware","apple pay partner"],
+      "apple-partners": ["nike","ace hardware","apple pay partner"],
       "home-improvement": ["home improvement","home depot","homedepot","lowes","lowe's","hardware","hardware store","lumber","tools","paint","menards"],
       "online-groceries": ["online groceries","instacart","amazon fresh","whole foods delivery","grocery delivery","shipt"],
       amazon: ["amazon","amazon.com","amzn","online shopping","online order","general merchandise"],
