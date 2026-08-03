@@ -1,90 +1,81 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T10:33:54Z",
+  "generatedAt": "2026-08-03T14:00:00Z",
   "digest": {
-    "headline": "Kimi K3's weights actually land as the largest open release ever, Nvidia lines up a $250B backstop for OpenAI's Ohio megacampus, and Claude Opus 5 takes the FrontierBench lead",
-    "summary": "Moonshot AI's 2.8-trillion-parameter Kimi K3 went live on Hugging Face at 00:00 UTC today — roughly 594GB in MXFP4 format under Apache 2.0 — closing out the countdown from earlier this week. The Wall Street Journal reports Nvidia is in talks to guarantee $250 billion in financing for OpenAI's 10-gigawatt Piketon, Ohio data center lease, on the heels of Nvidia's separate $500B+ letters of intent with SK Group covering Vera Rubin-powered AI factories and HBM4 memory supply. Claude Opus 5 posted a 43.3% score on FrontierBench v0.1 versus GPT-5.6 Sol's 37.5%, extending its lead a couple days after launch. Meanwhile MCP's biggest-ever spec revision goes final tomorrow, the EU AI Act's transparency and GPAI obligations land in six days, and Anthropic shipped a beta security-scanning plugin for Claude Code.",
+    "headline": "OpenAI teases a math-proving \"Astra\" days before the EU AI Act's transparency rules go live, while MCP's biggest-ever spec update lands inside Claude and DeepSeek quietly beats its own flagship with a Flash model",
+    "summary": "OpenAI revealed that an internal version of its next major model, Astra, resolved ten decades-old open problems in math and theoretical computer science — including the first-ever construction of a non-sofic group — publishing machine-checkable Lean proofs for about $2,000 in compute; Fields Medalist Timothy Gowers said he'd recommend one of the proofs for a top journal without hesitation. Two days later, the EU's AI Act transparency and GPAI obligations became enforceable, requiring chatbots to disclose they're AI and deepfakes to carry machine-readable marks. On the infrastructure side, Anthropic finished rolling MCP's stateless 2026-07-28 spec into Claude, adding a private-network \"MCP tunnels\" research preview, and DeepSeek's re-post-trained V4-Flash-0731 beat its own larger V4-Pro on all nine published benchmarks. Codex and Pi both shipped harness updates, and Claude Sonnet 5's intro pricing quietly starts a 50% step-up on September 1.",
     "stats": [
-      { "label": "New models", "value": "0" },
-      { "label": "Harness updates", "value": "0" },
+      { "label": "New models", "value": "1" },
+      { "label": "Harness updates", "value": "2" },
       { "label": "Read", "value": "5 min" }
     ]
   },
   "stories": [
     {
-      "id": "kimi-k3-weights-released",
+      "id": "openai-astra-solves-10-math-problems",
       "category": "model",
-      "source": "kimi-k2.org",
-      "url": "https://kimi-k2.org/blog/31-kimi-k3-open-weights-july-27",
-      "title": "Kimi K3's open weights land: the largest open-weight release in history is real",
-      "dek": "Moonshot AI published the full 2.8-trillion-parameter Kimi K3 weights to Hugging Face at 00:00 UTC on July 27 under an Apache 2.0 license — roughly 594GB in native MXFP4 quantization, with community BF16 and GGUF re-quants already appearing. The model already scores 57.1 on the AA Intelligence Index, ahead of Opus 4.8.",
-      "publishedAt": "2026-07-27T00:00:00Z",
-      "whyItMatters": "This closes out the countdown covered earlier this week and turns the US-China distillation dispute over K3's training into a live question the moment self-hosters start poking at the model card and weights themselves."
+      "source": "SiliconANGLE",
+      "url": "https://siliconangle.com/2026/08/02/openais-astra-solves-10-long-open-math-problems-publishes-proofs/",
+      "title": "OpenAI's unreleased Astra model solves 10 open math problems, publishes the proofs",
+      "dek": "An internal version of OpenAI's next major model, Astra, resolved ten problems in high-dimensional geometry, group theory, coding theory, and extremal combinatorics that had seen no progress in at least a decade — including the first explicit construction of a non-sofic group, a question open since Gromov coined the term in 1999. OpenAI published a 249-page manuscript with machine-checkable Lean 4 certificates on GitHub, putting the total compute cost at roughly $2,000.",
+      "publishedAt": "2026-08-02T00:00:00Z",
+      "whyItMatters": "OpenAI is debuting its next flagship through verifiable mathematical proof rather than benchmark scores — Fields Medalist Timothy Gowers said he'd recommend one of the results for a top journal without hesitation, and the $2,000 price tag suggests frontier-math research is becoming compute-scalable rather than talent-limited."
     },
     {
-      "id": "nvidia-openai-250b-backstop",
+      "id": "eu-ai-act-transparency-enforcement-begins",
       "category": "news",
-      "source": "BusinessWorld / WSJ",
-      "url": "https://bworldonline.com/technology/2026/07/27/766070/nvidia-in-talks-with-openai-to-guarantee-250-billion-financing-for-data-center-wsj-reports/",
-      "title": "Nvidia in talks to guarantee $250B in financing for OpenAI's Ohio megacampus",
-      "dek": "The Wall Street Journal reports Nvidia is negotiating a roughly $250 billion backstop covering the lease and construction debt for a 10-gigawatt PORTS Technology Campus data center in Piketon, Ohio that SoftBank's SB Energy is developing — part of a project expected to exceed $500 billion over multiple phases. A separate ~$350 billion in chip-purchase financing is also under discussion.",
-      "publishedAt": "2026-07-27T00:00:00Z",
-      "whyItMatters": "Nvidia underwriting its own customer's data-center debt at this scale is a new twist on vendor financing — worth watching for how it shapes who can compete for gigawatt-scale compute at all."
+      "source": "European Commission",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
+      "title": "EU AI Act transparency rules become enforceable, with fines up to €15M",
+      "dek": "As of August 2, the European Commission's AI Office and national authorities began enforcing the AI Act's Article 50 transparency duties: chatbots must disclose they're AI rather than human, and deepfakes must carry machine-readable marks. Providers face fines up to €15 million or 3% of global turnover; a shorter extension to December 2 applies to marking obligations for generative systems already on the market before August 2.",
+      "publishedAt": "2026-08-02T00:00:00Z",
+      "whyItMatters": "This is the day EU AI enforcement stops being theoretical — any product built on a chatbot or generative model serving EU users needs disclosure and provenance marking in place now, not on a roadmap."
     },
     {
-      "id": "nvidia-sk-group-500b-deal",
+      "id": "mcp-2026-07-28-lands-in-claude",
       "category": "news",
-      "source": "NVIDIA Newsroom",
-      "url": "https://nvidianews.nvidia.com/news/sk-group-and-nvidia-expand-strategic-partnership-across-ai-factories-and-next-generation-memory",
-      "title": "Nvidia and SK Group ink $500B+ pact for AI factories and HBM4 memory",
-      "dek": "SK Telecom will build a 2-gigawatt AI data center on Nvidia's Vera Rubin platform (first phase online 2027), while SK hynix deepens its role as Nvidia's HBM4 supplier — letters of intent signed at a San Francisco AI summit alongside South Korean president Lee Jae Myung.",
-      "publishedAt": "2026-07-25T00:00:00Z",
-      "whyItMatters": "Locking down next-gen HBM4 supply this early signals Nvidia expects memory, not just compute, to be the binding constraint on the next platform generation."
+      "source": "Claude by Anthropic",
+      "url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude",
+      "title": "MCP's stateless spec finishes rolling into Claude, plus a private-network tunnels preview",
+      "dek": "Anthropic detailed how Claude is adopting the finalized MCP 2026-07-28 specification: a stateless request/response core suited to serverless and edge deployment, standardized Apps and Tasks extensions, and auth hardened to production OAuth 2.0/OIDC so enterprises can connect Entra or Okta directly. Claude's connectors directory now lists over 950 MCP servers, and MCP SDK downloads are up 4x this year to 400M+ monthly.",
+      "publishedAt": "2026-07-28T00:00:00Z",
+      "whyItMatters": "This is MCP's biggest revision since launch, and Claude shipping full support the same week as the spec finalizes signals the stateless, load-balancer-friendly transport is now the real target for anyone running a server at scale."
     },
     {
-      "id": "claude-opus-5-frontierbench-lead",
+      "id": "deepseek-v4-flash-0731-release",
       "category": "model",
-      "source": "llm-stats.com",
-      "url": "https://llm-stats.com/blog/research/claude-opus-5-vs-gpt-5-6-sol",
-      "title": "Claude Opus 5 posts a 43.3% vs 37.5% FrontierBench lead over GPT-5.6 Sol",
-      "dek": "On FrontierBench v0.1, run at maximum effort, Claude Opus 5 scored 43.3% against GPT-5.6 Sol's 37.5% — the exact workload of multi-step, tool-using coding agents that plan, edit, run, and fix. Opus 5 also leads on ARC-AGI-3 and GDPval-AA v2, while Sol still leads on context window size and DeepSWE 1.1.",
-      "publishedAt": "2026-07-26T00:00:00Z",
-      "whyItMatters": "This is the first head-to-head agentic benchmark since Opus 5's July 24 launch, and it's the workload — not raw knowledge tests — that most engineering teams should weight when picking a model for coding agents."
+      "source": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/07/31/deepseek-upgrades-deepseek-v4-flash-0731-with-major-agentic-and-coding-gains/",
+      "title": "DeepSeek's re-trained V4-Flash-0731 beats its own bigger V4-Pro on every published benchmark",
+      "dek": "DeepSeek moved V4-Flash out of preview into public beta as a re-post-trained 284B-total/13B-active checkpoint. Terminal-Bench 2.1 jumped from 61.8 to 82.7 and DeepSWE rose 7.5x over the preview build; Artificial Analysis independently measured the release at 50 on its Intelligence Index, 6 points ahead of the larger V4-Pro, while using about 12% fewer output tokens to complete the eval suite.",
+      "publishedAt": "2026-07-31T00:00:00Z",
+      "whyItMatters": "A 13B-active model outscoring its own 1.6T flagship on agentic coding work is a strong signal that post-training gains, not raw parameter count, are now the cheaper lever for frontier-adjacent performance — though all the agent-benchmark numbers are still vendor-run on DeepSeek's own harness, with no third-party reproduction yet."
     },
     {
-      "id": "mcp-spec-goes-final-tomorrow",
+      "id": "claude-sonnet-5-pricing-step-up",
       "category": "news",
-      "source": "Model Context Protocol Blog",
-      "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/",
-      "title": "MCP's stateless rewrite becomes official tomorrow, and GitHub's server is already running it",
-      "dek": "The 2026-07-28 spec — dropping the initialize handshake and sticky sessions for stateless, load-balancer-friendly HTTP, plus a formal Extensions framework and OAuth/OIDC-aligned auth — locks in tomorrow. GitHub's MCP Server already shipped support ahead of the deadline, and beta Python, TypeScript, Go, and C# SDKs have been out for testing.",
-      "publishedAt": "2026-07-23T00:00:00Z",
-      "whyItMatters": "With 10,000+ public servers live, tomorrow is the actual cutover — if you run or depend on an MCP server, this is the last day to test it against the beta SDKs before the final spec ships."
-    },
-    {
-      "id": "eu-ai-act-august-deadline",
-      "category": "news",
-      "source": "Digital Applied",
-      "url": "https://www.digitalapplied.com/blog/eu-ai-act-august-2026-transparency-obligations-agency-checklist",
-      "title": "The EU AI Act's transparency and GPAI obligations land in six days",
-      "dek": "From August 2, 2026, Article 50 transparency duties and the Commission's general-purpose AI enforcement powers become active — providers like OpenAI, Anthropic, and Google must maintain technical documentation on training and testing, give downstream users enough information to meet their own obligations, and implement a copyright compliance policy.",
-      "publishedAt": "2026-07-27T00:00:00Z",
-      "whyItMatters": "This is the deadline where EU enforcement stops being theoretical — any product built on a general-purpose model should already have its downstream compliance paperwork in order."
+      "source": "FinOps LLM",
+      "url": "https://finopsllm.com/research/sonnet-5-intro-pricing-deadline",
+      "title": "Claude Sonnet 5's intro pricing ends August 31 — a 50% step-up on September 1",
+      "dek": "Sonnet 5 has been running introductory API pricing of $2/$10 per million input/output tokens since its June 30 launch. That rate expires August 31; standard pricing of $3/$15 per Mtok takes effect September 1, a flat 50% increase for anyone still on the intro rate.",
+      "publishedAt": "2026-07-30T00:00:00Z",
+      "whyItMatters": "Any team that sized its Sonnet 5 budget off launch pricing should re-run the math before September 1 — this is a real cost change, not a benchmark footnote."
     }
   ],
   "models": [
-    { "name": "Claude Opus 5", "org": "Anthropic", "aa": "61.0", "cursor": "70.0", "swe": "68.8", "isNew": true, "url": "https://artificialanalysis.ai/models/claude-opus-5" },
+    { "name": "Claude Opus 5", "org": "Anthropic", "aa": "61.0", "cursor": "70.0", "swe": "68.8", "isNew": false, "url": "https://artificialanalysis.ai/models/claude-opus-5" },
     { "name": "Claude Fable 5", "org": "Anthropic", "aa": "59.9", "cursor": "70.5", "swe": "70.0", "isNew": false, "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" },
     { "name": "GPT-5.6 Sol", "org": "OpenAI", "aa": "58.9", "cursor": "67.2", "swe": "72.7", "isNew": false, "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" },
     { "name": "Kimi K3", "org": "Moonshot AI", "aa": "57.1", "cursor": "—", "swe": "64.0", "isNew": false, "url": "https://artificialanalysis.ai/articles/kimi-k3-achieves-3-in-the-artificial-analysis-intelligence-index-comparable-to-opus-4-8-and-gpt-5-5" },
     { "name": "Claude Opus 4.8", "org": "Anthropic", "aa": "56.0", "cursor": "—", "swe": "59.0", "isNew": false, "url": "https://deepswe.datacurve.ai/blog/deepswe" },
     { "name": "Grok 4.5", "org": "xAI", "aa": "54.0", "cursor": "66.7", "swe": "62.0", "isNew": false, "url": "https://benchlm.ai/benchmarks/cursorBench" },
     { "name": "Muse Spark 1.1", "org": "Meta", "aa": "51.0", "cursor": "—", "swe": "—", "isNew": false, "url": "https://artificialanalysis.ai/articles/muse-spark-1-1-everything-you-need-to-know" },
+    { "name": "DeepSeek V4-Flash-0731", "org": "DeepSeek", "aa": "50.0", "cursor": "—", "swe": "54.4", "isNew": true, "url": "https://artificialanalysis.ai/models/deepseek-v4-flash" },
     { "name": "Gemini 3.6 Flash", "org": "Google", "aa": "50.0", "cursor": "—", "swe": "49.0", "isNew": false, "url": "https://artificialanalysis.ai/models/gemini-3-6-flash" },
     { "name": "Gemini 3.1 Pro", "org": "Google", "aa": "—", "cursor": "—", "swe": "12.0", "isNew": false, "url": "https://deepswe.datacurve.ai/blog/deepswe" }
   ],
   "modelsMeta": {
-    "note": "Best score per column is highlighted. Claude Opus 5 is this week's new entrant, narrowly topping the AA Intelligence Index (61.0) while undercutting Fable 5 on cost per task by roughly half — the first time the Opus tier has led the index outright. Muse Spark 1.1 and Gemini 3.6 Flash are no longer this week's new models.",
+    "note": "Best score per column is highlighted. DeepSeek V4-Flash-0731 is this week's new entrant, tying Gemini 3.6 Flash on the AA index at 50.0 while running on a fraction of the active parameters (13B vs undisclosed) — Claude Opus 5 is no longer this week's new model but still leads the index outright at 61.0.",
     "benchmarks": [
       { "key": "aa", "label": "AA", "full": "Artificial Analysis Intelligence Index — composite of 9 evals", "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" },
       { "key": "cursor", "label": "Cursor", "full": "CursorBench — agentic, repo-aware coding on real Cursor sessions", "url": "https://epoch.ai/benchmarks/cursorbench" },
@@ -96,68 +87,68 @@
       "tool": "Claude Code",
       "version": "2.1.220",
       "released": "2026-07-25T00:00:00Z",
-      "notes": "Still the latest stable: 2.1.219 made Claude Opus 5 the default Opus model (1M context), added a sandbox.network.strictAllowlist setting, a DirectoryAdded hook for mid-session /add-dir calls, nested subagent forwarding in stream-json, and raised the default subagent nesting depth from 1 to 3; 2.1.220 followed with bug fixes and reliability improvements. Anthropic separately shipped a beta Claude Security plugin adding a /claude-security multi-agent vulnerability scanner.",
+      "notes": "Still the latest stable release: 2.1.219 made Claude Opus 5 the default Opus model (1M context) and raised default subagent nesting depth from 1 to 3; 2.1.220 followed with bug fixes and reliability improvements. Separately, Claude's shared MCP layer finished adopting the 2026-07-28 spec, adding a private-network \"MCP tunnels\" research preview usable from Claude Code.",
       "url": "https://code.claude.com/docs/en/changelog",
       "breaking": false
     },
     {
       "tool": "Codex",
-      "version": "0.145.0",
-      "released": "2026-07-21T00:00:00Z",
-      "notes": "Still the latest stable release: paginated thread history with fast resume and search, /import support for Cursor and Claude settings, experimental Amazon Bedrock login, audio inputs for realtime conversations, and multi-agent V2 stabilized with configurable sub-agent models. 0.146.0 remains in alpha (currently 0.146.0-alpha.10.1).",
+      "version": "0.146.0",
+      "released": "2026-07-29T00:00:00Z",
+      "notes": "Adds named sessions (via /new or /clear) with pinning and side-conversation switching, Agent Plugins manifests plus workspace plugin publishing, paginated thread history with temporary forks, app-server connections to remote Code Mode hosts over WebSocket, standalone web search for compatible model providers, and discovery of executor-provided skills.",
       "url": "https://learn.chatgpt.com/docs/changelog?type=codex-cli",
       "breaking": false
     },
     {
       "tool": "Pi",
-      "version": "0.82.1",
-      "released": "2026-07-25T00:00:00Z",
-      "notes": "Adds Claude Opus 5 support on Anthropic and Amazon Bedrock (adaptive xhigh thinking, inference profiles, prompt caching) plus ANTHROPIC_AUTH_TOKEN bearer auth for Anthropic-compatible gateways and faster, 304-aware model-catalog revalidation. Follows 0.82.0's constrained tool sampling (strict JSON Schema or Lark/regex grammars) from a day earlier.",
+      "version": "0.83.0",
+      "released": "2026-07-29T00:00:00Z",
+      "notes": "Adds credential export for external clients and fixes forced model-availability refreshes that stayed blocked behind a stalled earlier refresh. Follows 0.82.1's Claude Opus 5 support on Anthropic and Amazon Bedrock a few days earlier.",
       "url": "https://github.com/earendil-works/pi/blob/main/packages/coding-agent/CHANGELOG.md",
       "breaking": false
     }
   ],
   "extensions": [
     {
-      "name": "Claude Security plugin",
-      "kind": "Claude Code plugin",
-      "source": "MarkTechPost",
-      "url": "https://www.marktechpost.com/2026/07/22/anthropic-releases-claude-security-plugin-for-claude-code-in-beta-a-multi-agent-vulnerability-scanner-that-runs-in-your-terminal/",
-      "blurb": "Anthropic's beta plugin adds a /claude-security command with Scan codebase and Scan changes jobs, running a multi-agent vulnerability scan inside an existing Claude Code session and turning selected findings into patch files you review before applying."
+      "name": "MCP tunnels",
+      "kind": "Claude feature (research preview)",
+      "source": "Claude by Anthropic",
+      "url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude",
+      "blurb": "Lets Claude connect to MCP servers inside a private network with no inbound firewall rules, public endpoints, or IP allowlisting — teams can expose internal tools to Claude without putting them on the public internet."
     },
     {
-      "name": "GitHub MCP Server (spec-ready)",
-      "kind": "MCP server",
-      "source": "GitHub Changelog",
-      "url": "https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification/",
-      "blurb": "GitHub's MCP Server now supports the upcoming 2026-07-28 MCP specification ahead of its official release, giving teams a real server to test the stateless, session-free transport against before the cutover."
+      "name": "Record a Skill",
+      "kind": "Claude Cowork feature",
+      "source": "Coursiv",
+      "url": "https://coursiv.io/blog/claude-cowork-record-a-skill",
+      "blurb": "Demonstrate a task on screen while narrating the rules and exceptions, and Claude Desktop (Pro/Max/Team) converts the recording into a reusable Skill — no private model training on the recording involved."
     },
     {
-      "name": "Arcade.dev toolkit round-up",
-      "kind": "MCP toolkits",
-      "source": "Arcade.dev",
-      "url": "https://www.arcade.dev/blog/new-toolkit-round-up",
-      "blurb": "Arcade.dev shipped four new agent-optimized toolkits this month — Power BI, Postman, Fireflies, and Insightly — plus upgrades to its existing Gmail, Excel, Outlook, and Linear toolkits."
+      "name": "DeepTutor v1.5.7",
+      "kind": "Open-source MCP + CLI catalog",
+      "source": "GitHub — HKUDS/DeepTutor",
+      "url": "https://github.com/HKUDS/DeepTutor/releases",
+      "blurb": "Adds a one-click store of 45 curated hosted MCP servers (Notion, Linear, Sentry via OAuth 2.1/PKCE, tokens resolved in memory rather than written to config) plus 101 sandboxed CLI tools sourced from the CLI-Anything registries."
     }
   ],
   "tips": [
     {
-      "kind": "Agent design",
-      "title": "Stop hand-holding your coding agent — design the loop, not the step",
-      "body": "A slogan that took hold in mid-2026: a loop specification (a trigger, a goal, a verification step, a stopping rule, and memory) lets an agent pursue a goal on its own, replacing step-by-step prompting that has to be re-issued for every task. If you find yourself re-writing near-identical prompts for a recurring workflow, that's the signal to bind it into a reusable loop instead.",
-      "url": "https://arxiv.org/html/2607.00038"
+      "kind": "Prompting",
+      "title": "\"Pencil and paper mode\" stops your agent from coding before you're ready",
+      "body": "Prepending \"Stay in pencil and paper mode\" (or just \"Pencil and paper mode\") to a request gets Claude Code, Codex, or Antigravity to discuss and plan before touching any files — it works even in cases where softer phrasing like \"what would be involved\" fails to stop premature edits. Example: \"Stay in pencil and paper mode. What would be involved in removing the 'counter' readout in the top header?\" The same trick works for any task where you want analysis before action, not just coding.",
+      "url": "https://www.pcworld.com/article/3191721/this-quick-prompt-stops-claude-code-from-coding-before-youre-ready.html"
     },
     {
-      "kind": "Prompting",
-      "title": "Attentive Reasoning Queries: a checklist the model has to answer before it responds",
-      "body": "Rather than a single freeform instruction, ARQ wraps each turn with a short list of pointed questions the model must work through before generating output — e.g. 'what constraint might I be missing?' or 'does this action match the user's stated goal?'. It's cheaper than full chain-of-thought and catches a narrower, more useful class of mistakes on tasks with known failure modes.",
-      "url": "https://agent-cookbook.com/tutorial/top-30-prompt-techniques-that-actually-work-in-2026"
+      "kind": "Agent design",
+      "title": "Give autonomous tasks a way to verify themselves, not just a way to run",
+      "body": "For any task you want Claude Code to run unattended, close the write-test cycle explicitly — give it a command or check it can run itself to confirm the change worked, rather than a task that ends at \"wrote the code.\" Without a verification step baked in, autonomous runs tend to stop at plausible-looking output instead of confirmed-working output.",
+      "url": "https://agenticcoding.substack.com/p/32-claude-code-tips-from-basics-to"
     },
     {
       "kind": "Claude Code",
-      "title": "Nested subagents now go three levels deep by default — use it for real hierarchies",
-      "body": "Claude Code 2.1.219 raised the default subagent nesting depth from 1 to 3, so a top-level agent can now delegate to a subagent that itself delegates further. That's enough to model a lead-agent-plus-specialists hierarchy in one session instead of flattening every delegation back to the main thread — worth revisiting any workflow you'd previously split across separate manual invocations.",
-      "url": "https://code.claude.com/docs/en/changelog"
+      "title": "Write a handoff document before a session gets unwieldy, not after",
+      "body": "When a long session's context starts to degrade, have Claude write a handoff file first — what it tried, what worked, what didn't — so a fresh session can resume without re-deriving everything. The /handoff command automates this, capturing goals, progress, and next steps; treat it as a checkpoint to reach for proactively rather than a recovery step for after things go sideways.",
+      "url": "https://github.com/ykdojo/claude-code-tips"
     }
   ]
 }
