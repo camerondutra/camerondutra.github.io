@@ -1,81 +1,102 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-03T14:00:00Z",
+  "generatedAt": "2026-08-07T21:53:59Z",
   "digest": {
-    "headline": "OpenAI teases a math-proving \"Astra\" days before the EU AI Act's transparency rules go live, while MCP's biggest-ever spec update lands inside Claude and DeepSeek quietly beats its own flagship with a Flash model",
-    "summary": "OpenAI revealed that an internal version of its next major model, Astra, resolved ten decades-old open problems in math and theoretical computer science — including the first-ever construction of a non-sofic group — publishing machine-checkable Lean proofs for about $2,000 in compute; Fields Medalist Timothy Gowers said he'd recommend one of the proofs for a top journal without hesitation. Two days later, the EU's AI Act transparency and GPAI obligations became enforceable, requiring chatbots to disclose they're AI and deepfakes to carry machine-readable marks. On the infrastructure side, Anthropic finished rolling MCP's stateless 2026-07-28 spec into Claude, adding a private-network \"MCP tunnels\" research preview, and DeepSeek's re-post-trained V4-Flash-0731 beat its own larger V4-Pro on all nine published benchmarks. Codex and Pi both shipped harness updates, and Claude Sonnet 5's intro pricing quietly starts a 50% step-up on September 1.",
+    "headline": "Alibaba's Qwen3.8-Max and Meta's Muse Code headline a crowded model week, Anthropic names its first policy chief, and the White House quietly locks in a voluntary AI safety framework",
+    "summary": "Alibaba unveiled Qwen3.8-Max, a 2.4T-parameter MoE model scoring 58 on Artificial Analysis's Intelligence Index and closing in on Western frontier labs, with open weights due within the week. Two days later Meta shipped Muse Code, a terminal coding agent built on the new Muse Spark 1.2 model, and Liquid AI released LFM2.5-2.6B, an on-device agentic model that runs agent loops on phones and even a Raspberry Pi. On the policy side, Anthropic hired former California Supreme Court Justice Tino Cuéllar as its first Chief Global Affairs Officer the same week a dozen AI companies met the White House to finalize a voluntary frontier-model evaluation framework that won't be made public. All three major coding harnesses shipped again: Claude Code patched a Bash permission-bypass vulnerability and added self-hosted runners, Codex CLI added portable Agent Plugins, and Pi shipped a fullscreen TUI mode.",
     "stats": [
-      { "label": "New models", "value": "1" },
-      { "label": "Harness updates", "value": "2" },
-      { "label": "Read", "value": "5 min" }
+      { "label": "New models", "value": "3" },
+      { "label": "Harness updates", "value": "3" },
+      { "label": "Read", "value": "6 min" }
     ]
   },
   "stories": [
     {
-      "id": "openai-astra-solves-10-math-problems",
-      "category": "model",
-      "source": "SiliconANGLE",
-      "url": "https://siliconangle.com/2026/08/02/openais-astra-solves-10-long-open-math-problems-publishes-proofs/",
-      "title": "OpenAI's unreleased Astra model solves 10 open math problems, publishes the proofs",
-      "dek": "An internal version of OpenAI's next major model, Astra, resolved ten problems in high-dimensional geometry, group theory, coding theory, and extremal combinatorics that had seen no progress in at least a decade — including the first explicit construction of a non-sofic group, a question open since Gromov coined the term in 1999. OpenAI published a 249-page manuscript with machine-checkable Lean 4 certificates on GitHub, putting the total compute cost at roughly $2,000.",
-      "publishedAt": "2026-08-02T00:00:00Z",
-      "whyItMatters": "OpenAI is debuting its next flagship through verifiable mathematical proof rather than benchmark scores — Fields Medalist Timothy Gowers said he'd recommend one of the results for a top journal without hesitation, and the $2,000 price tag suggests frontier-math research is becoming compute-scalable rather than talent-limited."
-    },
-    {
-      "id": "eu-ai-act-transparency-enforcement-begins",
-      "category": "news",
-      "source": "European Commission",
-      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
-      "title": "EU AI Act transparency rules become enforceable, with fines up to €15M",
-      "dek": "As of August 2, the European Commission's AI Office and national authorities began enforcing the AI Act's Article 50 transparency duties: chatbots must disclose they're AI rather than human, and deepfakes must carry machine-readable marks. Providers face fines up to €15 million or 3% of global turnover; a shorter extension to December 2 applies to marking obligations for generative systems already on the market before August 2.",
-      "publishedAt": "2026-08-02T00:00:00Z",
-      "whyItMatters": "This is the day EU AI enforcement stops being theoretical — any product built on a chatbot or generative model serving EU users needs disclosure and provenance marking in place now, not on a roadmap."
-    },
-    {
-      "id": "mcp-2026-07-28-lands-in-claude",
-      "category": "news",
-      "source": "Claude by Anthropic",
-      "url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude",
-      "title": "MCP's stateless spec finishes rolling into Claude, plus a private-network tunnels preview",
-      "dek": "Anthropic detailed how Claude is adopting the finalized MCP 2026-07-28 specification: a stateless request/response core suited to serverless and edge deployment, standardized Apps and Tasks extensions, and auth hardened to production OAuth 2.0/OIDC so enterprises can connect Entra or Okta directly. Claude's connectors directory now lists over 950 MCP servers, and MCP SDK downloads are up 4x this year to 400M+ monthly.",
-      "publishedAt": "2026-07-28T00:00:00Z",
-      "whyItMatters": "This is MCP's biggest revision since launch, and Claude shipping full support the same week as the spec finalizes signals the stateless, load-balancer-friendly transport is now the real target for anyone running a server at scale."
-    },
-    {
-      "id": "deepseek-v4-flash-0731-release",
+      "id": "alibaba-qwen3-8-max-release",
       "category": "model",
       "source": "MarkTechPost",
-      "url": "https://www.marktechpost.com/2026/07/31/deepseek-upgrades-deepseek-v4-flash-0731-with-major-agentic-and-coding-gains/",
-      "title": "DeepSeek's re-trained V4-Flash-0731 beats its own bigger V4-Pro on every published benchmark",
-      "dek": "DeepSeek moved V4-Flash out of preview into public beta as a re-post-trained 284B-total/13B-active checkpoint. Terminal-Bench 2.1 jumped from 61.8 to 82.7 and DeepSWE rose 7.5x over the preview build; Artificial Analysis independently measured the release at 50 on its Intelligence Index, 6 points ahead of the larger V4-Pro, while using about 12% fewer output tokens to complete the eval suite.",
-      "publishedAt": "2026-07-31T00:00:00Z",
-      "whyItMatters": "A 13B-active model outscoring its own 1.6T flagship on agentic coding work is a strong signal that post-training gains, not raw parameter count, are now the cheaper lever for frontier-adjacent performance — though all the agent-benchmark numbers are still vendor-run on DeepSeek's own harness, with no third-party reproduction yet."
+      "url": "https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/",
+      "title": "Alibaba releases Qwen3.8-Max, a 2.4T-parameter MoE model closing in on Western frontier labs",
+      "dek": "Qwen3.8-Max activates 95B of its 2.4 trillion parameters per token, handles text, image, and video up to a million tokens of context, and scored 58 on Artificial Analysis's Intelligence Index — up from 46 for Qwen3.7-Max and now ahead of every US lab except Anthropic and OpenAI on that measure. It's live on Alibaba Cloud's Model Studio now, with open weights due within the week, making it the first Max-class Qwen model to be open-sourced.",
+      "publishedAt": "2026-08-03T00:00:00Z",
+      "whyItMatters": "A trillion-parameter-class model from a Chinese lab landing within a few points of Claude Fable 5 on a public benchmark — and shipping open weights days later — keeps narrowing the gap between closed frontier labs and open alternatives that anyone can self-host."
     },
     {
-      "id": "claude-sonnet-5-pricing-step-up",
+      "id": "meta-muse-code-muse-spark-1-2",
+      "category": "model",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/orchestration/meta-enters-the-ai-coding-wars-with-muse-spark-1-2-and-muse-code-with-persistent-async-background-agents",
+      "title": "Meta enters the coding-agent race with Muse Code, built on new Muse Spark 1.2 model",
+      "dek": "Muse Code is Meta's first terminal coding agent: a replay-exact, restart-safe event log, approval-gated /plan and stress-testing /grill skills, and background agents that persist for a whole session instead of spawning per task. It runs on Muse Spark 1.2, which scored 54–57 on Artificial Analysis's Intelligence Index (xhigh) and 82.9% on Terminal-Bench 2.1 under Meta's own harness — behind Claude Opus 5's 86.7% but ahead of Codex and Grok Build's scores on the same test. Pricing is $1.25/$4.25 per million input/output tokens.",
+      "publishedAt": "2026-08-05T00:00:00Z",
+      "whyItMatters": "Meta is now fielding a full coding-agent stack — model plus terminal harness — rather than just an API model, putting it in direct competition with Claude Code, Codex, and Cursor rather than just their underlying models; note the headline benchmark numbers are Meta's own harness, not independently reproduced."
+    },
+    {
+      "id": "liquid-ai-lfm2-5-2-6b",
+      "category": "model",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/no-cloud-no-gpus-no-problem-liquid-ais-new-model-lfm2-5-2-6b-brings-powerful-ai-agents-to-devices-as-small-as-a-raspberry-pi",
+      "title": "Liquid AI's LFM2.5-2.6B runs full agent loops entirely on-device, no cloud required",
+      "dek": "LFM2.5-2.6B is a 2.6B dense model with a 128K context window and native tool calling, built to plan and run multi-step agentic tasks locally on phones, laptops, and even a Raspberry Pi. It hits 220 tokens/sec on an Apple M5 Max in under 2.5GB of memory, ships day-zero support for llama.cpp, MLX, vLLM, SGLang, and ONNX, and is trained to work inside agent harnesses including Pi. Weights are open on Hugging Face.",
+      "publishedAt": "2026-08-06T00:00:00Z",
+      "whyItMatters": "A sub-3B model that leads larger models on tool-use and instruction-following benchmarks while running fully offline pushes agentic AI toward zero-marginal-cost, private, on-device deployment — relevant for anyone building agents that shouldn't depend on a live API connection."
+    },
+    {
+      "id": "anthropic-first-global-affairs-chief",
       "category": "news",
-      "source": "FinOps LLM",
-      "url": "https://finopsllm.com/research/sonnet-5-intro-pricing-deadline",
-      "title": "Claude Sonnet 5's intro pricing ends August 31 — a 50% step-up on September 1",
-      "dek": "Sonnet 5 has been running introductory API pricing of $2/$10 per million input/output tokens since its June 30 launch. That rate expires August 31; standard pricing of $3/$15 per Mtok takes effect September 1, a flat 50% increase for anyone still on the intro rate.",
-      "publishedAt": "2026-07-30T00:00:00Z",
-      "whyItMatters": "Any team that sized its Sonnet 5 budget off launch pricing should re-run the math before September 1 — this is a real cost change, not a benchmark footnote."
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/tino-cuellar",
+      "title": "Anthropic names Tino Cuéllar its first Chief Global Affairs Officer",
+      "dek": "Mariano-Florentino \"Tino\" Cuéllar — a former California Supreme Court justice and outgoing president of the Carnegie Endowment for International Peace — will lead Anthropic's policy, international engagement, and government relations, reporting to President Daniela Amodei. He arrives as Anthropic contests a Pentagon blacklist and Fable 5 export controls and prepares for a potential IPO.",
+      "publishedAt": "2026-08-04T00:00:00Z",
+      "whyItMatters": "Creating a dedicated C-suite policy role signals Anthropic expects sustained, high-stakes government friction rather than a one-off dispute — worth tracking for anyone whose Claude usage touches regulated industries or government contracts."
+    },
+    {
+      "id": "white-house-voluntary-ai-framework",
+      "category": "news",
+      "source": "Fortune",
+      "url": "https://fortune.com/2026/08/04/baffling-white-house-wont-publicly-release-ai-model-evaluation-framework-it-reviewed-today-with-openai-anthropic-microsoft-and-others/",
+      "title": "White House finalizes voluntary AI evaluation framework with OpenAI, Anthropic, Google, Meta — details stay classified",
+      "dek": "About a dozen companies, including Anthropic, OpenAI, Google, Meta, Microsoft, and Nvidia, met White House officials to close out a voluntary framework — stemming from a June executive order — under which companies can give the government early access to frontier models for up to 30 days. The administration confirmed the framework won't be publicly released and much of its content will be classified; it explicitly cannot be used to create a mandatory licensing regime.",
+      "publishedAt": "2026-08-04T00:00:00Z",
+      "whyItMatters": "A US federal AI safety framework is now locked in without public disclosure of its actual standards — a notable contrast with the EU's published, enforceable AI Act transparency rules that took effect five days earlier."
+    },
+    {
+      "id": "bytedance-seedrealtime-launch",
+      "category": "news",
+      "source": "TechNode",
+      "url": "https://technode.com/2026/08/05/bytedance-launches-seedrealtime-full-duplex-audio-video-model/",
+      "title": "ByteDance launches SeedRealtime, a full-duplex model that watches, listens, and speaks at once",
+      "dek": "SeedRealtime natively fuses continuous audio, video, and text streams in one end-to-end model rather than stitching together separate ASR, vision, and TTS components. It decides conversational timing itself — tracking scenes, speakers, and pauses to judge when to answer — and can speak unprompted when it spots a requested object or an on-screen mistake. It's now fully rolled out inside the Douyin app.",
+      "publishedAt": "2026-08-05T00:00:00Z",
+      "whyItMatters": "Full-duplex, always-watching multimodal models at consumer scale (rather than as a research demo) push voice/video assistants toward genuinely continuous interaction instead of turn-based request-response."
+    },
+    {
+      "id": "claude-code-bash-permission-bypass-fix",
+      "category": "news",
+      "source": "GitHub — anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.223",
+      "title": "Claude Code patches a Bash permission-check bypass in v2.1.223",
+      "dek": "Claude Code 2.1.223 fixed a vulnerability where crafted commands — including ones padded with tabs or invisible Unicode — could hide part of themselves from Bash permission checks and approval-dialog review. The same release fixed a gap where an agent definition's bypassPermissions mode ignored an org's bypass-permissions-disable policy, and closed a sandbox escape via dynamic import() in workflow scripts.",
+      "publishedAt": "2026-08-05T00:00:00Z",
+      "whyItMatters": "If you rely on Claude Code's permission prompts or org-level bypass policies as a safety boundary for autonomous runs, this is a real gap that's now closed — worth updating rather than treating as routine changelog noise."
     }
   ],
   "models": [
     { "name": "Claude Opus 5", "org": "Anthropic", "aa": "61.0", "cursor": "70.0", "swe": "68.8", "isNew": false, "url": "https://artificialanalysis.ai/models/claude-opus-5" },
     { "name": "Claude Fable 5", "org": "Anthropic", "aa": "59.9", "cursor": "70.5", "swe": "70.0", "isNew": false, "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" },
     { "name": "GPT-5.6 Sol", "org": "OpenAI", "aa": "58.9", "cursor": "67.2", "swe": "72.7", "isNew": false, "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" },
+    { "name": "Qwen3.8-Max", "org": "Alibaba", "aa": "58.0", "cursor": "—", "swe": "—", "isNew": true, "url": "https://artificialanalysis.ai/models/qwen3-8-max" },
     { "name": "Kimi K3", "org": "Moonshot AI", "aa": "57.1", "cursor": "—", "swe": "64.0", "isNew": false, "url": "https://artificialanalysis.ai/articles/kimi-k3-achieves-3-in-the-artificial-analysis-intelligence-index-comparable-to-opus-4-8-and-gpt-5-5" },
+    { "name": "Muse Spark 1.2", "org": "Meta", "aa": "57.0", "cursor": "—", "swe": "—", "isNew": true, "url": "https://artificialanalysis.ai/models/muse-spark-1-2" },
     { "name": "Claude Opus 4.8", "org": "Anthropic", "aa": "56.0", "cursor": "—", "swe": "59.0", "isNew": false, "url": "https://deepswe.datacurve.ai/blog/deepswe" },
     { "name": "Grok 4.5", "org": "xAI", "aa": "54.0", "cursor": "66.7", "swe": "62.0", "isNew": false, "url": "https://benchlm.ai/benchmarks/cursorBench" },
-    { "name": "Muse Spark 1.1", "org": "Meta", "aa": "51.0", "cursor": "—", "swe": "—", "isNew": false, "url": "https://artificialanalysis.ai/articles/muse-spark-1-1-everything-you-need-to-know" },
-    { "name": "DeepSeek V4-Flash-0731", "org": "DeepSeek", "aa": "50.0", "cursor": "—", "swe": "54.4", "isNew": true, "url": "https://artificialanalysis.ai/models/deepseek-v4-flash" },
+    { "name": "DeepSeek V4-Flash-0731", "org": "DeepSeek", "aa": "50.0", "cursor": "—", "swe": "54.4", "isNew": false, "url": "https://artificialanalysis.ai/models/deepseek-v4-flash" },
     { "name": "Gemini 3.6 Flash", "org": "Google", "aa": "50.0", "cursor": "—", "swe": "49.0", "isNew": false, "url": "https://artificialanalysis.ai/models/gemini-3-6-flash" },
     { "name": "Gemini 3.1 Pro", "org": "Google", "aa": "—", "cursor": "—", "swe": "12.0", "isNew": false, "url": "https://deepswe.datacurve.ai/blog/deepswe" }
   ],
   "modelsMeta": {
-    "note": "Best score per column is highlighted. DeepSeek V4-Flash-0731 is this week's new entrant, tying Gemini 3.6 Flash on the AA index at 50.0 while running on a fraction of the active parameters (13B vs undisclosed) — Claude Opus 5 is no longer this week's new model but still leads the index outright at 61.0.",
+    "note": "Best score per column is highlighted. Qwen3.8-Max and Muse Spark 1.2 are this week's new entrants — Qwen3.8-Max at 58.0 on the AA index (a 2.4T-parameter MoE model, open weights pending) and Muse Spark 1.2 at 57.0, powering Meta's new Muse Code agent. Neither has a published score yet on epoch.ai's CursorBench or Datacurve's DeepSWE leaderboard. Claude Opus 5 still leads the index outright at 61.0.",
     "benchmarks": [
       { "key": "aa", "label": "AA", "full": "Artificial Analysis Intelligence Index — composite of 9 evals", "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index" },
       { "key": "cursor", "label": "Cursor", "full": "CursorBench — agentic, repo-aware coding on real Cursor sessions", "url": "https://epoch.ai/benchmarks/cursorbench" },
@@ -85,70 +106,70 @@
   "harness": [
     {
       "tool": "Claude Code",
-      "version": "2.1.220",
-      "released": "2026-07-25T00:00:00Z",
-      "notes": "Still the latest stable release: 2.1.219 made Claude Opus 5 the default Opus model (1M context) and raised default subagent nesting depth from 1 to 3; 2.1.220 followed with bug fixes and reliability improvements. Separately, Claude's shared MCP layer finished adopting the 2026-07-28 spec, adding a private-network \"MCP tunnels\" research preview usable from Claude Code.",
+      "version": "2.1.224",
+      "released": "2026-08-07T00:00:00Z",
+      "notes": "Adds self-hosted environments via `claude self-hosted-runner` (Team/Enterprise), an `archive` plugin source for installing plugins from a zip over HTTPS without git or npm, and cross-session messaging (SendMessage/ListAgents). Follows 2.1.223, which fixed a Bash permission-check bypass exploitable with tab- or Unicode-padded commands and a sandbox escape via dynamic import() in workflow scripts.",
       "url": "https://code.claude.com/docs/en/changelog",
       "breaking": false
     },
     {
       "tool": "Codex",
-      "version": "0.146.0",
-      "released": "2026-07-29T00:00:00Z",
-      "notes": "Adds named sessions (via /new or /clear) with pinning and side-conversation switching, Agent Plugins manifests plus workspace plugin publishing, paginated thread history with temporary forks, app-server connections to remote Code Mode hosts over WebSocket, standalone web search for compatible model providers, and discovery of executor-provided skills.",
+      "version": "0.147.0",
+      "released": "2026-08-07T00:00:00Z",
+      "notes": "Adds portable Agent Plugins with search across local, personal, workspace, and remote catalogs, persistent thread sections with manual ordering, an `--approve-for-me` auto-approval flag, Cursor skill migration with synchronized imports from Claude conversations, and support for the MCP 2026-07-28 spec's paginated discovery.",
       "url": "https://learn.chatgpt.com/docs/changelog?type=codex-cli",
       "breaking": false
     },
     {
       "tool": "Pi",
-      "version": "0.83.0",
-      "released": "2026-07-29T00:00:00Z",
-      "notes": "Adds credential export for external clients and fixes forced model-availability refreshes that stayed blocked behind a stalled earlier refresh. Follows 0.82.1's Claude Opus 5 support on Anthropic and Amazon Bedrock a few days earlier.",
-      "url": "https://github.com/earendil-works/pi/blob/main/packages/coding-agent/CHANGELOG.md",
-      "breaking": false
+      "version": "0.84.0",
+      "released": "2026-08-06T00:00:00Z",
+      "notes": "Adds a fullscreen TUI mode with a sticky editor and independently scrollable transcript, Mermaid diagram and LaTeX rendering, and directory-specific context overrides via AGENTS.override.md. Includes breaking API changes: renamed interfaces (ModelsRequestTransforms), reworked message_update event emissions, and a v4 lane-based session model.",
+      "url": "https://github.com/earendil-works/pi/releases/tag/v0.84.0",
+      "breaking": true
     }
   ],
   "extensions": [
     {
-      "name": "MCP tunnels",
-      "kind": "Claude feature (research preview)",
+      "name": "Agent Plugins",
+      "kind": "Codex CLI feature",
+      "source": "OpenAI",
+      "url": "https://learn.chatgpt.com/docs/changelog?type=codex-cli",
+      "blurb": "Portable plugin manifests you can search across local, personal, workspace, and remote catalogs, plus workspace-level plugin publishing — shipped in Codex 0.147.0."
+    },
+    {
+      "name": "Archive plugin source",
+      "kind": "Claude Code feature",
       "source": "Claude by Anthropic",
-      "url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude",
-      "blurb": "Lets Claude connect to MCP servers inside a private network with no inbound firewall rules, public endpoints, or IP allowlisting — teams can expose internal tools to Claude without putting them on the public internet."
+      "url": "https://code.claude.com/docs/en/changelog",
+      "blurb": "Install Claude Code plugins straight from a zip file over HTTPS — no git or npm required — with optional SHA-256 pinning for supply-chain integrity."
     },
     {
-      "name": "Record a Skill",
-      "kind": "Claude Cowork feature",
-      "source": "Coursiv",
-      "url": "https://coursiv.io/blog/claude-cowork-record-a-skill",
-      "blurb": "Demonstrate a task on screen while narrating the rules and exceptions, and Claude Desktop (Pro/Max/Team) converts the recording into a reusable Skill — no private model training on the recording involved."
-    },
-    {
-      "name": "DeepTutor v1.5.7",
-      "kind": "Open-source MCP + CLI catalog",
-      "source": "GitHub — HKUDS/DeepTutor",
-      "url": "https://github.com/HKUDS/DeepTutor/releases",
-      "blurb": "Adds a one-click store of 45 curated hosted MCP servers (Notion, Linear, Sentry via OAuth 2.1/PKCE, tokens resolved in memory rather than written to config) plus 101 sandboxed CLI tools sourced from the CLI-Anything registries."
+      "name": "pi-claude-marketplace",
+      "kind": "Pi Coding Agent package",
+      "source": "pi.dev",
+      "url": "https://pi.dev/packages/pi-claude-marketplace",
+      "blurb": "Lets Pi Coding Agent install commands, skills, agents, hooks, and MCP servers straight from Claude Code plugin marketplaces — bootstrap the official Anthropic marketplace and install with the same UX as Claude Code's /plugin."
     }
   ],
   "tips": [
     {
       "kind": "Prompting",
-      "title": "\"Pencil and paper mode\" stops your agent from coding before you're ready",
-      "body": "Prepending \"Stay in pencil and paper mode\" (or just \"Pencil and paper mode\") to a request gets Claude Code, Codex, or Antigravity to discuss and plan before touching any files — it works even in cases where softer phrasing like \"what would be involved\" fails to stop premature edits. Example: \"Stay in pencil and paper mode. What would be involved in removing the 'counter' readout in the top header?\" The same trick works for any task where you want analysis before action, not just coding.",
-      "url": "https://www.pcworld.com/article/3191721/this-quick-prompt-stops-claude-code-from-coding-before-youre-ready.html"
-    },
-    {
-      "kind": "Agent design",
-      "title": "Give autonomous tasks a way to verify themselves, not just a way to run",
-      "body": "For any task you want Claude Code to run unattended, close the write-test cycle explicitly — give it a command or check it can run itself to confirm the change worked, rather than a task that ends at \"wrote the code.\" Without a verification step baked in, autonomous runs tend to stop at plausible-looking output instead of confirmed-working output.",
-      "url": "https://agenticcoding.substack.com/p/32-claude-code-tips-from-basics-to"
+      "title": "Point at a reference file instead of describing your conventions",
+      "body": "Rather than explaining your coding style or conventions in prose, name or @-reference a file that already embodies them — \"follow the patterns in components/Button.tsx\" — and let the agent read the source directly. Anthropic's own prompt-engineering guidance calls this out as more reliable than verbal description, and it applies to any convention-following task, not just code style.",
+      "url": "https://claude.com/blog/best-practices-for-prompt-engineering"
     },
     {
       "kind": "Claude Code",
-      "title": "Write a handoff document before a session gets unwieldy, not after",
-      "body": "When a long session's context starts to degrade, have Claude write a handoff file first — what it tried, what worked, what didn't — so a fresh session can resume without re-deriving everything. The /handoff command automates this, capturing goals, progress, and next steps; treat it as a checkpoint to reach for proactively rather than a recovery step for after things go sideways.",
-      "url": "https://github.com/ykdojo/claude-code-tips"
+      "title": "Use task dependencies (blockedBy) instead of hoping parallel agents don't collide",
+      "body": "When breaking a large refactor into many pieces, mark tasks with blockedBy relationships to form a dependency graph rather than just firing off sub-agents in parallel — Claude Code auto-unblocks dependent tasks as prerequisites finish, and workers claim tasks via ownership tracking, which avoids the conflicts that come from multiple agents editing without any ordering.",
+      "url": "https://www.dplooy.com/blog/claude-code-tasks-complete-guide-to-ai-agent-workflow"
+    },
+    {
+      "kind": "Agent design",
+      "title": "Give monorepo subdirectories their own agent instructions with AGENTS.override.md",
+      "body": "Pi 0.84 added directory-specific context overrides: drop an AGENTS.override.md in a subdirectory and the agent picks up different rules there than at the repo root — useful for monorepos where a frontend package and a backend service genuinely need different conventions instead of one bloated top-level instructions file.",
+      "url": "https://github.com/earendil-works/pi/releases/tag/v0.84.0"
     }
   ]
 }
