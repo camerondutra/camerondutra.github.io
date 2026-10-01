@@ -481,7 +481,7 @@
   <header>
     <div class="top">
       <div style="display:flex;flex-direction:column;gap:8px;">
-        <div class="eyebrow">Point maximizer · Q3 2026</div>
+        <div class="eyebrow">Point maximizer · Q4 2026</div>
         <h1>Which card do I pull out?</h1>
       </div>
       <button id="theme" type="button" aria-label="Switch between light and dark">◐</button>
@@ -502,13 +502,13 @@
 
   <div class="collapsible" id="callouts">
     <div class="callout disc-b">
-      <h2>Discover: activate now, and the categories flip Oct 1</h2>
-      <p>This quarter's 5% — <strong>gas, EV charging, transit, flights, drugstores</strong> — only pays if the quarter is activated. If you haven't tapped activate in the Discover / Capital One app, do it; it's free and the window closes <strong>September 30</strong>. On <strong>October 1 the categories rotate to a new set and must be activated again</strong> — this sheet still shows Q3, so treat the 5% rows below as good only through month-end. Separately, Discover is still becoming Capital One (began July 27, 2026): same card number, same rotating 5%, same Cash Back Match — nothing about how you earn changes.</p>
+      <h2>Discover Q4: new categories — activate before you spend</h2>
+      <p>The 5% categories rotated on October 1 to <strong>restaurants, entertainment, and utilities</strong> (gas, transit, flights and drugstores are gone). The 5% only pays if the quarter is activated — if you haven't tapped activate in the Discover / Capital One app, do it; it's free, it's not retroactive, and the window runs <strong>through December 31</strong>. The <strong>$1,500 cap is shared across all three</strong> combined, so spend it where it beats your other cards. One catch: utilities and phone bills must be paid <strong>online or by phone</strong> to count (in-store doesn't), and standalone streaming is excluded. Separately, Discover is still becoming Capital One (began July 27, 2026): same card number, same rotating 5%, same Cash Back Match — nothing about how you earn changes.</p>
     </div>
 
     <div class="callout citi-b">
       <h2>The one rule that matters</h2>
-      <p><strong>Citi Custom Cash only pays 5% on one category per billing cycle</strong> — whichever eligible category you spent the most in, capped at the first $500. It picks automatically, so splitting between categories silently halves the bonus. Pick one lane and stay in it. <strong>Groceries is the right lane this quarter</strong>, because Discover already covers gas and drugstores through September. Gym and live entertainment are eligible too, but they compete with groceries for the single slot.</p>
+      <p><strong>Citi Custom Cash only pays 5% on one category per billing cycle</strong> — whichever eligible category you spent the most in, capped at the first $500. It picks automatically, so splitting between categories silently halves the bonus. Pick one lane and stay in it. <strong>Groceries is the right lane this quarter</strong>, because Discover now covers restaurants and live entertainment (and groceries aren't on anyone else's 5% list). Gym, home improvement and live entertainment are eligible lanes too, but they compete with groceries for the single slot.</p>
     </div>
   </div>
 
@@ -530,10 +530,10 @@
         <div class="pick"><span class="pill apple">Apple Card</span><span class="note">once Citi's 5% cap is used up · tap Apple Pay</span></div>
       </div>
 
-      <div class="row chase" data-id="dining" data-k="dining restaurant restaurants eat out takeout delivery doordash ubereats fast food bar bars brewery breweries pub pubs tavern lounge nightclub drinks happy hour cocktails wine beer coffee cafe brunch lunch dinner">
-        <div class="cat">Dining, restaurants &amp; bars</div>
-        <div class="rate">3x</div>
-        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">bars &amp; lounges included · also takeout &amp; delivery</span></div>
+      <div class="row discover live" data-id="dining" data-k="dining restaurant restaurants eat out takeout delivery doordash ubereats fast food bar bars brewery breweries pub pubs tavern lounge nightclub drinks happy hour cocktails wine beer coffee cafe brunch lunch dinner">
+        <div class="cat">Dining, restaurants &amp; takeout <span class="tag q3">Q4 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span><span class="note">activate if you haven't · fast food, cafes, takeout &amp; delivery count · shared $1,500 cap, then Sapphire 3x · standalone bars may code outside restaurants — use Sapphire 3x there</span></div>
       </div>
 
       <div class="row chase flag" data-id="wholesale" data-k="wholesale club warehouse costco sams sam bjs bulk">
@@ -555,28 +555,22 @@
     <div class="sec-head"><h2>Getting around</h2></div>
     <div class="rows">
 
-      <div class="row discover live" data-id="gas" data-k="gas fuel gasoline petrol station pump fill up">
-        <div class="cat">Gas <span class="tag q3">Q3 only</span></div>
-        <div class="rate">5%</div>
-        <div class="pick"><span class="pill discover">Discover It</span><span class="note">activate the quarter if you haven't · shared $1,500 cap</span></div>
-      </div>
-
-      <div class="row chase" data-id="gas-cap" data-k="gas ev charging after past cap discover exhausted 1500 year round">
-        <div class="cat">Gas &amp; EV — past Discover's cap</div>
+      <div class="row chase" data-id="gas" data-k="gas fuel gasoline petrol station pump fill up">
+        <div class="cat">Gas</div>
         <div class="rate">3x</div>
-        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">year-round, no cap · added June 2026</span></div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">year-round, no cap · Discover dropped gas after Q3</span></div>
       </div>
 
-      <div class="row discover live" data-id="ev" data-k="ev charging electric vehicle charger tesla supercharger chargepoint">
-        <div class="cat">EV charging <span class="tag q3">Q3 only</span></div>
-        <div class="rate">5%</div>
-        <div class="pick"><span class="pill discover">Discover It</span></div>
+      <div class="row chase" data-id="ev" data-k="ev charging electric vehicle charger tesla supercharger chargepoint">
+        <div class="cat">EV charging</div>
+        <div class="rate">3x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">year-round, no cap · ChargePoint also earns Apple 3%</span></div>
       </div>
 
-      <div class="row discover live" data-id="transit" data-k="transit public transportation bus train metro rideshare uber lyft taxi rail">
-        <div class="cat">Transit &amp; rideshare <span class="tag q3">Q3 only</span></div>
-        <div class="rate">5%</div>
-        <div class="pick"><span class="pill discover">Discover It</span><span class="note">Uber &amp; Lyft rides count — Uber Eats is dining</span></div>
+      <div class="row chase" data-id="transit" data-k="transit public transportation bus train metro rideshare uber lyft taxi rail">
+        <div class="cat">Transit &amp; rideshare</div>
+        <div class="rate">2x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">counts as travel · Uber rides earn Apple 3% — Uber Eats is dining</span></div>
       </div>
 
       <div class="row chase" data-id="parking" data-k="parking tolls toll garage meter ez pass ezpass">
@@ -598,10 +592,10 @@
         <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">the highest rate you have — use the portal when you can</span></div>
       </div>
 
-      <div class="row discover live" data-id="flights" data-k="flights airfare airline plane tickets delta united southwest booked direct">
-        <div class="cat">Flights — booked direct <span class="tag q3">Q3 only</span></div>
-        <div class="rate">5%</div>
-        <div class="pick"><span class="pill discover">Discover It</span><span class="note">but Chase Travel's 5x wins if you transfer points</span></div>
+      <div class="row chase" data-id="flights" data-k="flights airfare airline plane tickets delta united southwest booked direct">
+        <div class="cat">Flights — booked direct</div>
+        <div class="rate">2x</div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">Chase Travel's 5x wins if you book in the portal · Discover dropped flights after Q3</span></div>
       </div>
 
       <div class="row chase" data-id="vacation-rental" data-k="airbnb vrbo vacation rental home stay short term">
@@ -626,13 +620,13 @@
       <div class="row chase" data-id="streaming" data-k="streaming netflix spotify hulu disney max hbo youtube subscription">
         <div class="cat">Streaming services</div>
         <div class="rate">3x</div>
-        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">select services — Netflix, Spotify, Disney+, Hulu &amp; more</span></div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">select services — Netflix, Spotify, Disney+, Hulu &amp; more · standalone streaming is not in Discover's utilities 5%</span></div>
       </div>
 
-      <div class="row apple" data-id="phone" data-k="phone cell bill wireless mobile verizon att t-mobile tmobile plan">
-        <div class="cat">Cell phone bill</div>
-        <div class="rate">2%</div>
-        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">tap Apple Pay · no carrier earns 3% anymore — T-Mobile's Apple Card perk ended July 2025</span></div>
+      <div class="row discover live" data-id="phone" data-k="phone cell bill wireless mobile verizon att t-mobile tmobile plan">
+        <div class="cat">Cell phone bill <span class="tag q3">Q4 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span><span class="note">activate if you haven't · pay online or in-app, not in-store · shared $1,500 cap, then Apple Card 2%</span></div>
       </div>
 
       <div class="row citi" data-id="gym" data-k="gym fitness club membership planet peloton crossfit yoga workout health club">
@@ -641,10 +635,10 @@
         <div class="pick"><span class="pill citi">Citi Custom Cash</span><span class="note">eligible for the 5% — but only in a cycle you make it your lane over groceries</span></div>
       </div>
 
-      <div class="row apple" data-id="utilities" data-k="utilities utility electric power water sewer trash internet cable wifi comcast spectrum bill">
-        <div class="cat">Utilities, internet, cable</div>
-        <div class="rate">2%</div>
-        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">watch for processing fees that can wipe out the reward</span></div>
+      <div class="row discover live" data-id="utilities" data-k="utilities utility electric power water sewer trash internet cable wifi comcast spectrum bill natural gas">
+        <div class="cat">Utilities, internet, cable <span class="tag q3">Q4 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span><span class="note">electric, natural gas, water, internet &amp; cable · pay online or by phone, not in-store · shared $1,500 cap, then Apple Card 2%</span></div>
       </div>
 
     </div>
@@ -697,16 +691,16 @@
     <div class="sec-head"><h2>Going out</h2></div>
     <div class="rows">
 
-      <div class="row citi" data-id="live-entertainment" data-k="concert concerts live music sporting event sports game tickets ticketmaster stubhub festival broadway show">
-        <div class="cat">Concerts, sports, live events <span class="tag lane">If your lane</span></div>
+      <div class="row discover live" data-id="live-entertainment" data-k="concert concerts live music sporting event sports game tickets ticketmaster stubhub festival broadway show">
+        <div class="cat">Concerts, sports, live events <span class="tag q3">Q4 only</span></div>
         <div class="rate">5%</div>
-        <div class="pick"><span class="pill citi">Citi Custom Cash</span><span class="note">eligible for the 5% — but competes with groceries for the slot</span></div>
+        <div class="pick"><span class="pill discover">Discover It</span><span class="note">activate if you haven't · entertainment category · shared $1,500 cap · also a Citi lane, but Discover needs no lane</span></div>
       </div>
 
-      <div class="row apple" data-id="movies" data-k="movie movies theater cinema amc regal fandango ticket">
-        <div class="cat">Movies &amp; theaters</div>
-        <div class="rate">2%</div>
-        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">tap Apple Pay</span></div>
+      <div class="row discover live" data-id="movies" data-k="movie movies theater cinema amc regal fandango ticket">
+        <div class="cat">Movies &amp; theaters <span class="tag q3">Q4 only</span></div>
+        <div class="rate">5%</div>
+        <div class="pick"><span class="pill discover">Discover It</span><span class="note">counts as entertainment · shared $1,500 cap, then Apple Card 2%</span></div>
       </div>
 
     </div>
@@ -716,10 +710,10 @@
     <div class="sec-head"><h2>Health</h2></div>
     <div class="rows">
 
-      <div class="row discover live" data-id="pharmacy" data-k="pharmacy drugstore drug store cvs walgreens rite aid prescription medicine">
-        <div class="cat">Drugstores &amp; pharmacy <span class="tag q3">Q3 only</span></div>
-        <div class="rate">5%</div>
-        <div class="pick"><span class="pill discover">Discover It</span></div>
+      <div class="row apple" data-id="pharmacy" data-k="pharmacy drugstore drug store cvs walgreens duane reade rite aid prescription medicine">
+        <div class="cat">Drugstores &amp; pharmacy</div>
+        <div class="rate">2%</div>
+        <div class="pick"><span class="pill apple">Apple Card</span><span class="note">Walgreens &amp; Duane Reade earn Apple 3% · also a Citi lane · Discover dropped drugstores after Q3</span></div>
       </div>
 
       <div class="row apple" data-id="medical" data-k="doctor dentist dental medical hospital copay vision optometrist clinic urgent care therapy">
@@ -744,7 +738,7 @@
       <div class="row chase" data-id="everyday-travel" data-k="everything else points travel transfer partners ultimate rewards saving miles">
         <div class="cat">Everything else — if saving for a big trip</div>
         <div class="rate">1x</div>
-        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">Hyatt drops to 4:3 on Oct 1 for cards opened before June 15 · Apple's flat 2% often wins on raw value</span></div>
+        <div class="pick"><span class="pill chase">Sapphire Preferred</span><span class="note">Hyatt transfers are now 4:3 (dropped Oct 1 for cards opened before June 15) · Apple's flat 2% often wins on raw value</span></div>
       </div>
 
     </div>
@@ -758,13 +752,13 @@
     <div class="sec-head"><h2>The cards themselves</h2></div>
 
     <details class="card">
-      <summary><span class="swatch discover"></span>Discover It — Q3 2026</summary>
+      <summary><span class="swatch discover"></span>Discover It — Q4 2026</summary>
       <div class="card-body">
         <ul>
-          <li><b>5%</b> gas stations, EV charging, public transportation, flights, drugstores</li>
+          <li><b>5%</b> restaurants, entertainment, utilities</li>
           <li><b>1%</b> everything else</li>
         </ul>
-        <div class="cap">The $1,500 cap is <b>shared across all five categories combined</b>, not per category — spend it where the alternative card is weakest. Activation window runs through September 30. The move to Capital One began July 27, 2026 and is rolling out in waves into 2027; rotating categories and Cash Back Match both survive it, and Capital One Travel and Entertainment bookings earn 5% once your account switches over.</div>
+        <div class="cap">Q4 (Oct–Dec): <b>restaurants</b> (incl. fast food, takeout &amp; delivery), <b>entertainment</b> (movies, concerts, live sports), and <b>utilities</b> (electric, gas, water, internet, cable, phone). The $1,500 cap is <b>shared across all three combined</b>, not per category — spend it where the alternative card is weakest. Utilities and phone must be paid online or by phone (in-store doesn't count), and standalone streaming is excluded. Activation opened Sept 1 and runs through Dec 31; it is not retroactive. The move to Capital One began July 27, 2026 and is rolling out in waves into 2027; rotating categories and Cash Back Match both survive it, and Capital One Travel and Entertainment bookings earn 5% once your account switches over.</div>
       </div>
     </details>
 
@@ -790,7 +784,7 @@
           <li><b>2x</b> all other travel</li>
           <li><b>1x</b> everything else</li>
         </ul>
-        <div class="cap">$95 annual fee, unchanged by the June 15 2026 refresh. That refresh also took two things away: the 10% anniversary points bonus is gone, and Hyatt transfers are dropping to 4:3 — 1,000 Chase points will buy only 750 Hyatt points. For cards opened before June 15 2026 that cut takes effect October 1, 2026; until then Hyatt is still 1:1. Hyatt was the strongest transfer partner, so once the cut lands treat 1.5–2¢ per point as a ceiling rather than a given, and lean on Apple's flat 2% for unbonused spend. Added in exchange: a $100 Chase Travel hotel credit, a $120 TSA PreCheck/Global Entry credit every four years, and a year of Apple TV.</div>
+        <div class="cap">$95 annual fee, unchanged by the June 15 2026 refresh. That refresh also took two things away: the 10% anniversary points bonus is gone, and Hyatt transfers dropped to 4:3 — 1,000 Chase points now buy only 750 Hyatt points. That cut took effect October 1, 2026 for cards opened before June 15 2026 (new cards got it immediately; the Sapphire Reserve keeps 1:1). Hyatt was the strongest transfer partner, so now that the cut has landed treat 1.5–2¢ per point as a ceiling rather than a given, and lean on Apple's flat 2% for unbonused spend. Added in exchange: a $100 Chase Travel hotel credit, a $120 TSA PreCheck/Global Entry credit every four years, and a year of Apple TV.</div>
       </div>
     </details>
 
@@ -818,8 +812,8 @@
   </section>
 
   <footer>
-    <div>Verified against published terms, September 1 2026. Discover's Q3 categories run through September 30 and reset October 1 — this sheet needs a refresh then.</div>
-    <div>Card lineup pulled from your Notion finance tracker. Sources: <a href="https://www.nerdwallet.com/credit-cards/news/discover-5-percent-bonus-categories-q3-2026">Discover Q3 categories</a>, <a href="https://frequentmiler.com/discover-it-cards-moving-to-capital-one-7-27-26-more-bonus-spend-categories-capital-one-offers-access-more/">Capital One migration</a>, <a href="https://media.chase.com/news/Meet-the-New-Chase-Sapphire-Preferred">Sapphire refresh</a>, <a href="https://www.citi.com/credit-cards/understanding-credit-cards/what-credit-cards-does-costco-accept">Costco card acceptance</a>, <a href="https://www.apple.com/newsroom/2026/01/chase-to-become-new-issuer-of-apple-card/">Apple Card issuer</a>.</div>
+    <div>Verified against published terms, October 1 2026. Discover's Q4 categories run October 1–December 31 and must be activated in the Discover / Capital One app — this sheet needs a refresh when the Q1 2027 calendar posts.</div>
+    <div>Card lineup pulled from your Notion finance tracker. Sources: <a href="https://www.doctorofcredit.com/discover-q4-2026-5-categories-utilities-restaurants-entertainment/">Discover Q4 categories</a>, <a href="https://thepointsguy.com/credit-cards/activate-discover-cash-back-quarterly-categories/">Discover activation &amp; terms</a>, <a href="https://thepointsguy.com/news/chase-sapphire-preferred-refresh-2026/">Sapphire refresh &amp; Hyatt cut</a>, <a href="https://frequentmiler.com/citi-custom-cash-credit-card-review/">Citi Custom Cash</a>, <a href="https://techcrunch.com/2026/01/07/jpmorgan-chase-becomes-the-new-issuer-of-the-apple-card/">Apple Card issuer</a>, <a href="https://www.citi.com/credit-cards/understanding-credit-cards/what-credit-cards-does-costco-accept">Costco card acceptance</a>.</div>
   </footer>
 
 </div>
@@ -869,7 +863,7 @@
       "home-depot-finance": ["home depot financing","0% financing","appliance","big purchase","installment","home depot card"],
       "live-entertainment": ["concert","concerts","live music","sporting event","sports game","sports tickets","game tickets","ticketmaster","stubhub","festival","broadway","comedy show","live entertainment","theater show","play"],
       movies: ["movie","movies","movie theater","cinema","amc","regal","fandango","movie ticket"],
-      pharmacy: ["pharmacy","drugstore","drug store","cvs","walgreens","rite aid","riteaid","prescription","medicine"],
+      pharmacy: ["pharmacy","drugstore","drug store","cvs","walgreens","duane reade","rite aid","riteaid","prescription","medicine"],
       medical: ["doctor","dentist","dental","medical","medical bill","hospital","copay","co pay","vision","optometrist","eye doctor","clinic","urgent care","therapy","physical therapy"],
       everyday: ["everything else","haircut","salon","barber","nail salon","spa","vet","veterinarian","pet supplies","petco","petsmart","chewy","pet food","childcare","daycare","babysitter","donation","charity","charitable","clothing","clothes","apparel","department store","macys","nordstrom","kohls","tj maxx","marshalls","furniture","ikea","wayfair","home goods","electronics","best buy","bestbuy","auto repair","mechanic","car repair","auto parts","oil change","autozone","books","bookstore","office supplies","staples","dry cleaning","laundromat","post office","usps","ups","fedex","florist","jewelry","toys","sporting goods","dicks","rei"]
     };
