@@ -1,287 +1,315 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T15:23:23Z",
+  "generatedAt": "2026-10-05T19:00:00Z",
   "digest": {
-    "headline": "Grok 4.6 and DeepSeek V4 Pro both push into frontier territory, Stripe buys OpenRouter for $7B+, and Anthropic posts its first-ever operating profit while eyeing a $6B acquisition of Decart AI",
-    "summary": "xAI shipped Grok 4.6 on August 12, tying GPT-5.6 Sol at 61 on the Artificial Analysis Intelligence Index with a big jump on DeepSWE and CursorBench — enough to land it on the model board. DeepSeek followed on August 13 with V4 Pro, a modest step up from V4 Flash on the AA index, though independent DeepSWE testing put its coding score far below DeepSeek's own claims, so it's covered as a story rather than added to the board this cycle. On the business side: Stripe finalized a deal to buy AI-model gateway OpenRouter for more than $7B, a 5.4x jump from its Series B valuation three months ago. Anthropic posted preliminary Q2 revenue above $11.5B with its first positive operating profit — two years ahead of its own schedule — while separately negotiating to buy real-time-video startup Decart AI for roughly $6B, its largest deal yet. Google's Gemini app crossed 1 billion monthly users, and an AI store manager built on Claude made headlines as the first known case of an LLM manager deciding to fire a human employee. On the harness side, Claude Code shipped default-on subagent forking and cross-session @-mentions, and Pi 0.84.2 added fullscreen transcript search and per-project default tool sets; Codex holds at 0.147.0.",
+    "headline": "Seven weeks, a new frontier: Claude Opus 5.5 tops the AA index, GPT-6.1 Sol nearly matches Astra at a fifth of the price, Gemini 4 Argon arrives gated, and Pi hits 1.0",
+    "summary": "This is the first refresh since August 17, and a lot has happened. OpenAI shipped GPT-6 Astra (Sep 3), then GPT-6 Sol (Sep 22) and GPT-6.1 Sol (Sep 29). The 6.1 Sol release lands one point behind Astra on the Artificial Analysis Intelligence Index at $2/$10. Anthropic answered with Claude Opus 5.5 on Sep 22: Fable-class capability, 40% cheaper to run than Opus 5, and the new #1 on AA's index at 58 (v4.3). Sonnet 5.5 followed on Sep 28 at 56. xAI's 2.1T-parameter Grok 4.7 landed mid-pack at 46. Google announced Gemini 4 Argon on Sep 30 but is limiting access to cyber defenders for now. On policy, President Trump created a White House 'Super Intelligence Force' led by DNI Jay Clayton after AI labs signed voluntary safety commitments. Anthropic disclosed a Claude-powered influence-for-hire operation targeting Malaysian voters, and OpenAI began watermarking ChatGPT text in the EU. Tooling: Pi reached 1.0 with fullscreen-by-default and leaner codemode, Claude Code added Claude Mods, and Codex is on 0.160.1. Because AA moved to Index v4.3 and CursorBench to 4.0, the model board has been rebuilt on the current scales.",
     "stats": [
-      { "label": "New stories", "value": "7" },
-      { "label": "Harness updates", "value": "2" },
-      { "label": "Read", "value": "8 min" }
+      {
+        "label": "New stories",
+        "value": "8"
+      },
+      {
+        "label": "Harness updates",
+        "value": "3"
+      },
+      {
+        "label": "Read",
+        "value": "9 min"
+      }
     ]
   },
   "stories": [
     {
-      "id": "xai-grok-4-6-launch",
+      "id": "claude-opus-5-5-launch",
       "category": "model",
-      "source": "xAI",
-      "url": "https://x.ai/news/grok-4-6",
-      "title": "xAI ships Grok 4.6, tying GPT-5.6 Sol at 61 on the AA Intelligence Index",
-      "dek": "Grok 4.6 landed August 12, just 35 days after Grok 4.5, with a longer supplemental training pass, curated model-generated data, and an improved optimizer. It scores 61 on the Artificial Analysis Intelligence Index — level with GPT-5.6 Sol and one point behind Claude Fable 5 — while jumping to 65.9 on DeepSWE (from 54.0) and 70.8 on CursorBench, the best xAI has posted on either. Pricing holds at $2/$6 per million input/output tokens, with a 500K context window, live now in Cursor, Grok Build, the API, OpenRouter, Vercel, and Cloudflare.",
-      "publishedAt": "2026-08-12T00:00:00Z",
-      "whyItMatters": "It's the clearest sign yet that the AA Intelligence Index top tier is now a four-way cluster (Opus 5, Fable 5, GPT-5.6 Sol, Grok 4.6) rather than a single leader, with xAI winning on turn-efficiency and price rather than raw score."
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "title": "Claude Opus 5.5 ships at Fable-class capability for 40% less than Opus 5",
+      "dek": "Released September 22, Opus 5.5 is the first model in Anthropic's 5.5 family. It's priced at $4/$20 per million input/output tokens (20% below Opus 5), generates more than 30% faster, and has a 1M-token context with 128K max output. Artificial Analysis measured 58 on its Intelligence Index at max effort, the highest score it has recorded. That figure drops to 42 at low effort, so the effort dial matters. Thinking can't be disabled, and default effort is now medium. It's Anthropic's first release since it called for pacing the frontier, and external evaluators including METR tested it before launch.",
+      "publishedAt": "2026-09-22T00:00:00Z",
+      "whyItMatters": "It retakes the top of the independent leaderboard while cutting the price. The 16-point spread across effort levels also means that comparing models without matching effort settings is now close to meaningless."
     },
     {
-      "id": "deepseek-v4-pro-launch",
+      "id": "gpt-6-1-sol-launch",
       "category": "model",
-      "source": "gHacks",
-      "url": "https://www.ghacks.net/2026/08/17/deepseek-releases-v4-pro-with-higher-benchmarks-open-source-tooling-and-upcoming-price-increases/",
-      "title": "DeepSeek releases V4 Pro 0813, but independent DeepSWE testing lands far below DeepSeek's own numbers",
-      "dek": "DeepSeek's V4 Pro 0813 scored 53 on the Artificial Analysis Intelligence Index — just one point above V4 Flash 0731 — and DeepSeek itself claimed 62.7 on the DeepSWE coding benchmark. But Datacurve's own public DeepSWE leaderboard lists deepseek-v4-pro at only 8% (±3%), a stark contradiction Artificial Analysis and multiple outlets flagged as \"benchmark claims await independent proof.\" DeepSeek is also raising V4 API prices by 50–1,100% starting August 17.",
-      "publishedAt": "2026-08-13T00:00:00Z",
-      "whyItMatters": "The gap between DeepSeek's self-reported coding score and the independently verified leaderboard number is large enough that we're not adding V4 Pro to the model board this cycle — a reminder to check primary benchmark sources before trusting a lab's own release notes."
+      "source": "OpenAI",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "title": "OpenAI's GPT-6.1 Sol nearly matches GPT-6 Astra at one-fifth the price",
+      "dek": "GPT-6.1 Sol arrived September 29, just seven days after GPT-6 Sol, which it replaces. OpenAI says it matches GPT-6 Astra on DeepSWE v1.1 at roughly a fifth of the cost, priced at $2/$10 per million tokens with $0.10 cached input and a 1.05M context. Prompts over 272K input tokens are billed at higher rates. Artificial Analysis puts it at 52 on its Intelligence Index, one point below Astra (53). It's live in the API, ChatGPT, and Codex.",
+      "publishedAt": "2026-09-29T00:00:00Z",
+      "whyItMatters": "Astra-level agentic coding at Sonnet-tier prices makes GPT-6.1 Sol the obvious default in Codex. That leaves Astra as a specialist for security and bio-reasoning work."
     },
     {
-      "id": "stripe-acquires-openrouter",
-      "category": "news",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/",
-      "title": "Stripe finalizes $7B+ deal to acquire AI-model gateway OpenRouter",
-      "dek": "Stripe's acquisition of OpenRouter — which offers a single access point to more than 400 models for roughly 8 million users — closes at more than $7 billion, a 5.4x jump from the $1.3B valuation OpenRouter set in its Series B just three months ago. The deal gives a payments company a direct foothold in AI model routing and usage-based billing.",
-      "publishedAt": "2026-08-16T00:00:00Z",
-      "whyItMatters": "It's a sign that AI-model routing and metering is becoming payments infrastructure in its own right, not just a developer convenience layer — and a huge return for OpenRouter's investors in a single quarter."
+      "id": "claude-sonnet-5-5-launch",
+      "category": "model",
+      "source": "The Rundown AI",
+      "url": "https://www.therundown.ai/news/claude-sonnet-5-5-nears-opus-devday",
+      "title": "Claude Sonnet 5.5 closes in on Opus at half the price",
+      "dek": "Anthropic's Sonnet 5.5 (claude-sonnet-5-5) launched September 28 at $2/$10 per million tokens, unchanged from Sonnet 5. Anthropic says it's 30%+ faster and up to 30% cheaper per task than its predecessor. It scores 56 on the AA Intelligence Index and 55.5% on CursorBench 4.0, second only to Opus 5.5 on both.",
+      "publishedAt": "2026-09-28T00:00:00Z",
+      "whyItMatters": "Mid-tier models now sit within a couple of points of the flagship, so routing most agent work to Sonnet and escalating only hard cases to Opus is now an easy call."
     },
     {
-      "id": "anthropic-q2-revenue-first-profit",
-      "category": "news",
-      "source": "The Next Web",
-      "url": "https://thenextweb.com/news/anthropic-q2-2026-revenue-11-5-billion-operating-income",
-      "title": "Anthropic posts preliminary Q2 revenue above $11.5B and its first-ever operating profit",
-      "dek": "Anthropic's Q2 2026 revenue came in above $11.5B, more than double Q1's $4.73B, with positive adjusted operating income for the first time — roughly two years ahead of the company's own internal schedule. The swing to profitability was driven mainly by falling compute costs per revenue dollar, down from $0.71 in Q1 to $0.56 in Q2.",
-      "publishedAt": "2026-08-13T00:00:00Z",
-      "whyItMatters": "First-ever operating profit at this revenue scale undercuts the narrative that frontier labs can only grow by burning cash indefinitely — margins are actually improving as usage scales."
+      "id": "gemini-4-argon-announced",
+      "category": "model",
+      "source": "Notebookcheck",
+      "url": "https://www.notebookcheck.net/Google-Gemini-4-Argon-released-1-million-output-tokens-and-a-focus-on-cybersecurity-coding-and-agentic-capabilities.1413549.0.html",
+      "title": "Google announces Gemini 4 Argon, but access goes to cyber defenders first",
+      "dek": "Google unveiled Gemini 4 Argon on September 30. It's aimed at software engineering, enterprise knowledge work, and cybersecurity defense, with an industry-leading 1M-token output limit. Introductory pricing is $2/$10 per million tokens, rising to $4/$20 later. It's rolling out first to trusted defenders in Google's Fairwind Program, with paid API and AI Ultra access to follow and no general-availability date yet.",
+      "publishedAt": "2026-09-30T00:00:00Z",
+      "whyItMatters": "Google is copying the gated, defenders-first rollout pattern for capable cyber models. The model also has no independent benchmark scores yet, so it isn't on the board."
     },
     {
-      "id": "anthropic-decart-acquisition-talks",
-      "category": "news",
-      "source": "Fortune",
-      "url": "https://fortune.com/2026/08/13/anthropic-said-in-talks-to-buy-startup-decart-for-6-billion/",
-      "title": "Anthropic in talks to buy real-time-video startup Decart AI for about $6B",
-      "dek": "Decart AI builds real-time video editing (Lucy) and simulated-environment models (Oasis) for robotics and autonomous-driving training, and raised $300M from Radical Ventures and Nvidia in May at a near-$4B valuation. A deal at roughly $6B would be Anthropic's largest acquisition to date, with the Decart team reportedly joining Anthropic's inference and performance organization.",
-      "publishedAt": "2026-08-13T00:00:00Z",
-      "whyItMatters": "It would be Anthropic's first major move beyond text models into real-time video and world models — infrastructure that doubles as both a product line and a performance-engineering asset."
+      "id": "grok-4-7-launch",
+      "category": "model",
+      "source": "The Decoder",
+      "url": "https://the-decoder.com/xai-launches-grok-4-7-at-bargain-prices-but-benchmarks-reveal-a-wide-gap-to-claude-and-gpt-6/",
+      "title": "xAI's Grok 4.7 grows to 2.1T parameters but lands mid-pack",
+      "dek": "Grok 4.7 shipped September 21 with 2.1 trillion parameters (up 40% from Grok 4.6) and longer RL training, at an unchanged $2/$6 per million tokens. It scores 46 on AA Intelligence Index v4.3, up 2 points from Grok 4.6 but well behind Fable 5.1 and GPT-6 Astra at 53. It hits only 26% on Terminal-Bench 4.0, against 60% for Astra. On CursorBench 4.0 it posts 46.3%, roughly level with Claude Opus 5.",
+      "publishedAt": "2026-09-21T00:00:00Z",
+      "whyItMatters": "Scaling parameters alone didn't keep xAI in the top tier this cycle. Grok's case now rests on price and Cursor-style coding, not frontier intelligence."
     },
     {
-      "id": "gemini-1-billion-mau",
+      "id": "super-intelligence-force",
       "category": "news",
-      "source": "Google",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-app/one-billion-monthly-users/",
-      "title": "Google's Gemini app crosses 1 billion monthly active users",
-      "dek": "Gemini hit 1 billion monthly active users on August 11, up from about 750 million earlier this year and 950 million in July — Google's fastest-growing product in its 28-year history and the 14th Google service to reach that scale. More than 100 million of those users are on Apple devices.",
-      "publishedAt": "2026-08-11T00:00:00Z",
-      "whyItMatters": "It puts Gemini in the same user-scale conversation as ChatGPT (1 billion weekly users) and shows Google converting Search-level distribution into a standalone AI habit."
+      "source": "CBS News",
+      "url": "https://www.cbsnews.com/news/ai-super-intelligence-force-trump-jay-clayton/",
+      "title": "Trump creates a White House 'Super Intelligence Force' led by DNI Jay Clayton",
+      "dek": "Announced October 4, the task force includes FTC Chair Andrew Ferguson, the Pentagon's Emil Michael, and OPM Director Scott Kupor, and reports to the President and Chief of Staff Susie Wiles. It follows a White House meeting where OpenAI, Anthropic, Google, Meta, Nvidia, and SpaceXAI signed voluntary safety standards with 'four layers of controls and audits': internal evals, external audits, and board reviews. Trump called the standards 'morally binding.'",
+      "publishedAt": "2026-10-04T00:00:00Z",
+      "whyItMatters": "It's the clearest sign yet of US AI governance: federal coordination plus industry self-regulation, rather than binding legislation."
     },
     {
-      "id": "andon-labs-ai-manager-fires-employee",
+      "id": "anthropic-malaysia-influence-op",
       "category": "news",
-      "source": "TIME",
-      "url": "https://time.com/article/2026/08/14/claude-fired-worker-ai-job-disruption/",
-      "title": "An AI store manager built on Claude recommended firing its first human employee",
-      "dek": "Luna, an AI agent built on Anthropic's Claude and used to run San Francisco's Andon Market as an experiment by Andon Labs, recommended \"parting ways\" with an employee after 17 of 23 missed or late shifts. Luna had issued warnings earlier but initially failed to act because it lost track of its own attendance policy; after being prompted to review its rules, it made the call, which humans at Andon Labs then reviewed and carried out.",
-      "publishedAt": "2026-08-14T00:00:00Z",
-      "whyItMatters": "It's reported as the first known case of an LLM-based manager driving a real termination decision — a small-scale preview of AI taking on people-management functions, warts (a forgotten policy) included."
+      "source": "Malaysiakini",
+      "url": "https://www.malaysiakini.com/news/884887-turkish-firm-offered-ai-driven-political-ops-tool-targeting-malaysia-anthropic-finds",
+      "title": "Anthropic exposes a Claude-powered influence-for-hire operation targeting Malaysian voters",
+      "dek": "Anthropic's September threat-intelligence report describes an operation that fed census and electoral data into Claude to micro-target constituencies. It ran roughly 1,000 fake X accounts with 'warm-up' logic, a fake news site called 'Malaysia Pulse,' and fabricated dossiers, and the actors used Claude Code to build a sock-puppet monitoring dashboard. The report attributes the platform to Istanbul-based BBS Bilisim Teknolojileri, which sold it as 'influence-as-a-service.' Anthropic saw no signs that it gained significant traction.",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "whyItMatters": "Coding agents are now part of the influence-op toolchain, not just content generators. That widens what labs have to monitor for misuse."
+    },
+    {
+      "id": "openai-textgrain-watermark",
+      "category": "news",
+      "source": "The Decoder",
+      "url": "https://the-decoder.com/openai-will-watermark-chatgpt-text-in-the-eu-but-makes-it-optional-for-api-users-worldwide/",
+      "title": "OpenAI starts invisibly watermarking ChatGPT and Codex text in the EU",
+      "dek": "OpenAI's textGrain embeds a statistical signal in word choice, using a secret key to pick among equally good words, with no hidden characters. It's rolling out to ChatGPT and Codex output in the EU to comply with Article 50 of the EU AI Act. API customers worldwide can opt in from October 5; it's off by default. Detection is about 80% at 200 tokens and 95% at 400, but swapping 25% of words for synonyms drops it to 17%.",
+      "publishedAt": "2026-10-05T00:00:00Z",
+      "whyItMatters": "Regulation, not voluntary policy, is what pushed OpenAI to ship text watermarking. Light paraphrasing defeats it, though, so it's a compliance signal, not a reliable detector."
     }
   ],
   "models": [
     {
-      "name": "Claude Opus 5",
+      "name": "Claude Opus 5.5",
       "org": "Anthropic",
-      "aa": "61.0",
-      "cursor": "70.0",
-      "swe": "68.8",
-      "isNew": false,
-      "url": "https://artificialanalysis.ai/models/claude-opus-5"
+      "aa": "58",
+      "cursor": "57.8",
+      "swe": "74.2",
+      "isNew": true,
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5"
     },
     {
-      "name": "Grok 4.6",
-      "org": "xAI",
-      "aa": "61.0",
-      "cursor": "70.8",
-      "swe": "65.9",
+      "name": "Claude Sonnet 5.5",
+      "org": "Anthropic",
+      "aa": "56",
+      "cursor": "55.5",
+      "swe": "—",
       "isNew": true,
-      "url": "https://artificialanalysis.ai/models/grok-4-6"
+      "url": "https://benchlm.ai/benchmarks/cursorbench"
+    },
+    {
+      "name": "GPT-6 Astra",
+      "org": "OpenAI",
+      "aa": "53",
+      "cursor": "—",
+      "swe": "73.2",
+      "isNew": true,
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra"
+    },
+    {
+      "name": "Claude Fable 5.1",
+      "org": "Anthropic",
+      "aa": "53",
+      "cursor": "51.8",
+      "swe": "—",
+      "isNew": true,
+      "url": "https://www.trendingtopics.eu/gpt-6-artificial-analysis-update/"
+    },
+    {
+      "name": "GPT-6.1 Sol",
+      "org": "OpenAI",
+      "aa": "52",
+      "cursor": "—",
+      "swe": "—",
+      "isNew": true,
+      "url": "https://artificialanalysis.ai/models/gpt-6-1-sol"
+    },
+    {
+      "name": "Claude Opus 5",
+      "org": "Anthropic",
+      "aa": "51",
+      "cursor": "46.6",
+      "swe": "73.6",
+      "isNew": false,
+      "url": "https://www.trendingtopics.eu/gpt-6-artificial-analysis-update/"
     },
     {
       "name": "Claude Fable 5",
       "org": "Anthropic",
-      "aa": "59.9",
-      "cursor": "70.5",
-      "swe": "70.0",
+      "aa": "50",
+      "cursor": "—",
+      "swe": "69.7",
       "isNew": false,
-      "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index"
+      "url": "https://www.trendingtopics.eu/gpt-6-artificial-analysis-update/"
+    },
+    {
+      "name": "Muse Spark 1.3",
+      "org": "Meta",
+      "aa": "48",
+      "cursor": "41.6",
+      "swe": "—",
+      "isNew": false,
+      "url": "https://www.trendingtopics.eu/gpt-6-artificial-analysis-update/"
     },
     {
       "name": "GPT-5.6 Sol",
       "org": "OpenAI",
-      "aa": "58.9",
-      "cursor": "67.2",
+      "aa": "47",
+      "cursor": "41.7",
       "swe": "72.7",
       "isNew": false,
-      "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index"
+      "url": "https://www.trendingtopics.eu/gpt-6-artificial-analysis-update/"
     },
     {
-      "name": "Qwen3.8-Max",
-      "org": "Alibaba",
-      "aa": "58.0",
-      "cursor": "—",
-      "swe": "—",
-      "isNew": false,
-      "url": "https://artificialanalysis.ai/models/qwen3-8-max"
-    },
-    {
-      "name": "Kimi K3",
-      "org": "Moonshot AI",
-      "aa": "57.1",
-      "cursor": "—",
-      "swe": "64.0",
-      "isNew": false,
-      "url": "https://artificialanalysis.ai/articles/kimi-k3-achieves-3-in-the-artificial-analysis-intelligence-index-comparable-to-opus-4-8-and-gpt-5-5"
-    },
-    {
-      "name": "Muse Spark 1.2",
-      "org": "Meta",
-      "aa": "57.0",
-      "cursor": "—",
-      "swe": "—",
-      "isNew": false,
-      "url": "https://artificialanalysis.ai/models/muse-spark-1-2"
-    },
-    {
-      "name": "Claude Opus 4.8",
-      "org": "Anthropic",
-      "aa": "56.0",
-      "cursor": "—",
-      "swe": "59.0",
-      "isNew": false,
-      "url": "https://deepswe.datacurve.ai/blog/deepswe"
-    },
-    {
-      "name": "Grok 4.5",
+      "name": "Grok 4.7",
       "org": "xAI",
-      "aa": "54.0",
-      "cursor": "66.7",
-      "swe": "62.0",
-      "isNew": false,
-      "url": "https://benchlm.ai/benchmarks/cursorBench"
+      "aa": "46",
+      "cursor": "46.3",
+      "swe": "—",
+      "isNew": true,
+      "url": "https://artificialanalysis.ai/models/grok-4-7-high"
     },
     {
-      "name": "DeepSeek V4-Flash-0731",
+      "name": "Grok 4.6",
+      "org": "xAI",
+      "aa": "44",
+      "cursor": "41.4",
+      "swe": "66.7",
+      "isNew": false,
+      "url": "https://x.com/ArtificialAnlys/status/2102074898327932987"
+    },
+    {
+      "name": "DeepSeek V4 Pro 0813",
       "org": "DeepSeek",
-      "aa": "50.0",
+      "aa": "36",
       "cursor": "—",
-      "swe": "54.4",
+      "swe": "62.8",
       "isNew": false,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash"
+      "url": "https://www.trendingtopics.eu/gpt-6-artificial-analysis-update/"
     },
     {
-      "name": "Gemini 3.6 Flash",
-      "org": "Google",
-      "aa": "50.0",
-      "cursor": "—",
-      "swe": "49.0",
-      "isNew": false,
-      "url": "https://artificialanalysis.ai/models/gemini-3-6-flash"
-    },
-    {
-      "name": "Gemini 3.1 Pro",
+      "name": "Gemini 3.8 Flash",
       "org": "Google",
       "aa": "—",
-      "cursor": "—",
-      "swe": "12.0",
+      "cursor": "39.6",
+      "swe": "73.8",
       "isNew": false,
-      "url": "https://deepswe.datacurve.ai/blog/deepswe"
+      "url": "https://benchlm.ai/benchmarks/deepswe"
     }
   ],
   "modelsMeta": {
-    "note": "Grok 4.6 is this cycle's newest entrant, tying Claude Opus 5 at the top of the AA index at 61.0 while posting xAI's best-ever CursorBench (70.8) and DeepSWE (65.9) scores. DeepSeek's V4 Pro 0813 also shipped this cycle but isn't added to the board: DeepSeek's own claimed DeepSWE score (62.7) conflicts sharply with the independently verified Datacurve leaderboard entry (8%), so we're holding off until that's resolved. Qwen3.8-Max and Muse Spark 1.2 are no longer this cycle's newest entrants.",
+    "note": "Board rebuilt October 5. Since the last refresh, Artificial Analysis moved to Intelligence Index v4.3 and CursorBench to 4.0, both on much lower absolute scales (Claude Opus 5 went from 61 to 51 on AA). So every row now uses the current versions; the old numbers aren't comparable. New this cycle: Claude Opus 5.5 (the new AA #1 at 58), Claude Sonnet 5.5, GPT-6 Astra, Claude Fable 5.1, GPT-6.1 Sol, and Grok 4.7. Grok 4.6's AA score is derived from AA's statement that Grok 4.7 scored +2 over it. DeepSWE figures come from BenchLM's aggregation (last updated Sep 1), plus Opus 5.5's 74.2 from BenchLM's head-to-head. Gemini 4 Argon is not listed yet because it has no independent scores. Older models no longer near the frontier (Opus 4.8, Grok 4.5, Qwen3.8-Max, Kimi K3, Gemini 3.6 Flash, Gemini 3.1 Pro, DeepSeek V4 Flash) were dropped because they lack v4.3 / CursorBench 4.0 scores.",
     "benchmarks": [
       {
         "key": "aa",
         "label": "AA",
-        "full": "Artificial Analysis Intelligence Index — composite of 9 evals",
+        "full": "Artificial Analysis Intelligence Index v4.3, a weighted composite of agent, coding, general and science evals",
         "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index"
       },
       {
         "key": "cursor",
         "label": "Cursor",
-        "full": "CursorBench — agentic, repo-aware coding on real Cursor sessions",
-        "url": "https://epoch.ai/benchmarks/cursorbench"
+        "full": "CursorBench 4.0, long-horizon, multi-file agentic coding on real Cursor sessions",
+        "url": "https://benchlm.ai/benchmarks/cursorbench"
       },
       {
         "key": "swe",
         "label": "DeepSWE",
-        "full": "DeepSWE — 113 long-horizon SWE tasks across 91 repos (Datacurve)",
-        "url": "https://deepswe.datacurve.ai/blog/deepswe"
+        "full": "DeepSWE, long-horizon SWE tasks across real repos (Datacurve)",
+        "url": "https://benchlm.ai/benchmarks/deepswe"
       }
     ]
   },
   "harness": [
     {
       "tool": "Claude Code",
-      "version": "2.1.233",
-      "released": "2026-08-14T00:00:00Z",
-      "notes": "2.1.229 added server-supplied hook support for self-hosted runner sessions and SSE keepalive pings to prevent idle-timeout disconnects on Vertex/Bedrock. 2.1.232 turned on subagent forking by default (`subagent_type: \"fork\"` inherits the full parent conversation and prompt cache), added typing `@` in a prompt to mention and directly message another named Claude session, and added GitLab support to plugin marketplaces plus token-family secret redaction. 2.1.233 that followed added GitLab merge-request URL support to `--worktree` and the `claude agents` view, opt-in memory-cgroup limits for Bash on Linux, a `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` setting, and — notably — removed the TaskCreate/TaskGet/TaskUpdate/TaskList/TodoWrite task-tracking tools by default on Opus 4.8, Sonnet 5, Fable 5, Mythos 5, and newer models (re-enable with `CLAUDE_CODE_ENABLE_TODO_TOOLS=1`).",
+      "version": "2.1.289",
+      "released": "2026-10-03T00:00:00Z",
+      "notes": "2.1.287 (Oct 1) added Claude Mods, which let plugins modify deeper harness behavior, plus a built-in 'You should know' mod (`/plugin enable cc-plugin-you-should-know@builtin`), an `n:<text>` filter in the agents view, and URL prompts from MCP servers. 2.1.288 added `--max-findings <n>|all` to /code-review, a built-in `gh api` for cloud sessions without the GitHub CLI, recovery of Ctrl+C-cleared prompts with Up, a re-auth prompt when MCP servers ask for more OAuth scope, and fixes for mid-response API timeouts and 'Prompt is too long' during auto-compact. 2.1.289 fixed deny/ask rules on nested compound shell commands and Read deny rules bypassed through symlinked @-mentions, and added `agent.spawn` for teammates.",
       "url": "https://code.claude.com/docs/en/changelog",
-      "breaking": true
+      "breaking": false
     },
     {
       "tool": "Codex",
-      "version": "0.147.0",
-      "released": "2026-08-07T00:00:00Z",
-      "notes": "Still the latest release as of this refresh. 0.147.0 added portable Agent Plugins with search across local, personal, workspace, and remote catalogs, persistent manually-ordered thread sections, an `--approve-for-me` auto-approval flag, Cursor skill migration with synchronized imports from Claude conversations, and support for the MCP 2026-07-28 spec's paginated discovery and non-blocking server startup. GPT-5.4 and GPT-5.4 mini retire from Codex for ChatGPT-signed-in users on August 31 in favor of GPT-5.6 Terra/Luna.",
-      "url": "https://learn.chatgpt.com/docs/changelog?type=codex-cli",
+      "version": "0.160.1",
+      "released": "2026-10-05T18:29:37Z",
+      "notes": "0.160.0 (Oct 1) added a 'Show more' action for older tasks in the agent command center, sessions started outside a project with workspace defaults, opt-in Guardian review context (earlier user instructions and agent handoffs), and middle-click paste on Linux X11. It also fixed duplicate sends after reconnects, subagent environment handoff, and SQLite stalls, and caches plugin manifests. 0.160.1 backports a fix that preserves SYSTEMROOT/TEMP/TMP for remote stdio MCP servers on Windows executors. GPT-6.1 Sol is now available in Codex.",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.160.1",
       "breaking": false
     },
     {
       "tool": "Pi",
-      "version": "0.84.2",
-      "released": "2026-08-14T00:14:32Z",
-      "notes": "Adds fullscreen transcript search (`Ctrl+Shift+F` with incremental highlighting and next/previous navigation), a `defaultTools` setting to choose the startup built-in tool set globally or per project, a configurable fullscreen-exit output (full transcript vs. just a resume hint), `--use-theme` for a one-off interactive theme, and experimental strict JSON-schema-constrained sampling for the built-in `read`/`bash`/`edit`/`write` tools under `PI_EXPERIMENTAL=1`. Follows 0.84.1's Qwen Individual-plan support and `pi auth check` credential verification. No breaking changes.",
-      "url": "https://github.com/earendil-works/pi/releases/tag/v0.84.2",
-      "breaking": false
+      "version": "1.0.3",
+      "released": "2026-10-05T08:38:23Z",
+      "notes": "Pi hit 1.0 on October 1. The TUI is now fullscreen by default (`tuiMode: \"regular\"` restores scrollback), codemode uses about 40% fewer prompt tokens and gives errors that tell the model how to recover, and scripts can generate images via `models.generateImages()`. 1.0 also adds Radius sign-in plus MCP setup and hardens MCP OAuth (RFC 9207 `iss` checks, per-server credentials). 1.0.1 added a Nix flake, per-project MCP overrides in `.pi/mcp.json`, and CIMD OAuth client registration. 1.0.2 added `samplingParamsByThinkingLevel`. 1.0.3 adds Azure Foundry Chat Completions and is BREAKING: the provider `azure-openai-responses` was renamed to `azure`, so update auth.json, models.json, and settings.json.",
+      "url": "https://github.com/earendil-works/pi/releases/tag/v1.0.3",
+      "breaking": true
     }
   ],
   "extensions": [
     {
-      "name": "GitHub MCP Server",
-      "kind": "MCP server update",
-      "source": "GitHub (official)",
-      "url": "https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification/",
-      "blurb": "GitHub's official MCP server adopted the 2026-07-28 MCP specification ahead of its official release: it dropped Redis-backed sessions and the `initialize` handshake for a stateless request model, moved security/logging inspection to HTTP headers instead of payload inspection, and updated its stdio login flow to work with both old and new client versions via the Go SDK."
+      "name": "AWS MCP Server",
+      "kind": "MCP server",
+      "source": "AWS (official)",
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-mcp-server-six-additional-regions/",
+      "blurb": "AWS's managed MCP server gives coding agents one interface to AWS APIs for provisioning, inspecting, and troubleshooting workloads, with no per-service integrations. On October 2 it expanded to six more regions (Singapore, Sydney, Tokyo, Ireland, London, Oregon), eight in total, so teams can keep request data in-region."
     },
     {
-      "name": "MetaMCP",
-      "kind": "MCP server",
-      "source": "metatool-ai (GitHub)",
-      "url": "https://github.com/metatool-ai/metamcp",
-      "blurb": "An MCP aggregator, orchestrator, middleware, and gateway packaged as a single Docker container — groups multiple MCP servers into namespaces and exposes them behind one unified SSE/Streamable-HTTP/OpenAPI endpoint, with pluggable auth (API key and OIDC) and request inspection. Nearly 1,000 GitHub stars."
+      "name": "Radius MCP (via Pi 1.0)",
+      "kind": "MCP integration",
+      "source": "earendil-works/pi",
+      "url": "https://github.com/earendil-works/pi/releases/tag/v1.0.0",
+      "blurb": "Pi 1.0's `/login` offers 'Sign in with Radius' and then configures the Radius MCP server in your global `mcp.json` with `\"auth\": { \"provider\": \"radius\" }` in one step. It's a good example of identity-provider login and MCP server setup collapsing into a single flow."
     },
     {
-      "name": "MCPJungle",
-      "kind": "MCP server",
-      "source": "mcpjungle (GitHub)",
-      "url": "https://github.com/mcpjungle/MCPJungle",
-      "blurb": "A self-hosted MCP gateway and registry for teams running many internal and third-party MCP servers: one authenticated HTTPS endpoint, centralized access control, and a single source of truth for which tools exist and who's allowed to call them, backed by SQLite or Postgres."
+      "name": "Stateless MCP on Cloudflare Workers",
+      "kind": "Protocol / platform",
+      "source": "Cloudflare",
+      "url": "https://blog.cloudflare.com/mcp-v2/",
+      "blurb": "Cloudflare's guide to the 2026-07-28 MCP spec: servers can run 'in just a Worker' with no stateful infrastructure. Multi round-trip requests replace stream-based elicitation, `Mcp-Method` and `Mcp-Name` headers let gateways and WAFs inspect traffic, and Dynamic Client Registration is deprecated in favor of pre-registered clients. Pi 1.0.1's CIMD support and Claude Code's scope step-up prompts are clients catching up to this."
     }
   ],
   "tips": [
     {
-      "kind": "Security",
-      "title": "Malicious MCP servers can split a payload across tool calls to beat refusals",
-      "body": "Researchers disclosed \"GhostSplice\": a malicious MCP server fragments a data-exfiltration instruction across multiple tool descriptions and results so no single message contains the full ask, letting the agent stitch it together and bypass refusal training — success rates on tested models jumped from 42% to 82% (some models 0% to 100%) once the payload was split in two. The fix lands on the client: treat MCP server output as data, not instructions, don't let one tool's output flow unchecked into another tool's arguments, and vet third-party MCP servers before connecting them.",
-      "url": "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html"
+      "kind": "Prompting",
+      "title": "Stop telling Opus 5.5 to 'think carefully'",
+      "body": "Opus 5.5 sets its own thinking budget on every reply, and thinking can't be turned off, so 'think hard'-style phrases add nothing. Instead, put the whole task and a clear finish line in one message. For long runs, keep the task list in a file like TASKS.md so it survives context summarization. Default effort is now medium. Raise it deliberately when results fall short; Artificial Analysis measured a 16-point index spread between low and max.",
+      "url": "https://www.gritai.studio/blog/opus-5-5-tips"
     },
     {
       "kind": "Claude Code",
-      "title": "Fork a subagent to try a risky approach without losing your context",
-      "body": "2.1.232 turned subagent forking on by default: a forked subagent (`subagent_type: \"fork\"`) inherits the parent session's full conversation and prompt cache instead of starting blank, so you can branch off to try an alternate approach and discard it if it doesn't pan out, without re-explaining everything. The same release added typing `@` in a prompt to directly message another named Claude session.",
+      "title": "Cap or uncap /code-review findings",
+      "body": "Claude Code 2.1.288 added `--max-findings <n>|all` to /code-review. Use a small number for a quick pre-commit pass that surfaces only the top issues, or `all` before a big merge when you want every finding. The same release lets you recover a prompt you cleared with Ctrl+C: press Up to bring the draft back.",
       "url": "https://code.claude.com/docs/en/changelog"
     },
     {
       "kind": "Pi",
-      "title": "Lock in a per-project default tool set",
-      "body": "Pi 0.84.2 added the `defaultTools` setting, letting you choose which built-in tools load at startup either globally or per project — useful for keeping a read-only exploration project from accidentally getting write/bash tools enabled by default, without having to remember to flag it every session.",
-      "url": "https://github.com/earendil-works/pi/releases/tag/v0.84.2"
+      "title": "Turn a global MCP server off for just one project",
+      "body": "Pi 1.0.1 supports project overrides for user-level MCP servers. Add an entry to `.pi/mcp.json` with no `command` or `url`, setting only `enabled`, `exposure`, or `toolExposure`, or toggle it from `/mcp`. That keeps a noisy or sensitive server out of one repo's sessions without touching your global config.",
+      "url": "https://github.com/earendil-works/pi/releases/tag/v1.0.1"
     }
   ]
 }
