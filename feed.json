@@ -1,25 +1,65 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T10:45:00Z",
+  "generatedAt": "2026-10-08T11:00:00Z",
   "digest": {
-    "headline": "Mistral Large 4 makes Europe competitive again, Reflection teases a 501B open model, Meta and Sierra pitch a sign-in standard for agents, and labs won't guarantee their guardrails",
-    "summary": "No frontier launch this cycle, but the open-weight tier moved. On October 6 Mistral released Large 4 in research preview: a 1T-parameter MoE (49B active) that scores 38 on the AA Intelligence Index, the highest of any model from outside the US and China. Its headline claim is cyber capability, reproducing and patching 82% of real vulnerabilities. Reflection announced Beam, a 501B sparse MoE (23B active) promised under Apache 2.0 later this month. Meta and Sierra published the Personal Agent Protocol, an OAuth-based way for personal agents to sign in to businesses; Walmart, Shopify and Stripe are partners, while OpenAI, Anthropic and Amazon are not. At a New York City Council hearing, OpenAI, Anthropic, Google and Meta all declined to guarantee their agents will always follow safety guardrails. The Pentagon told the BBC it has stopped using Claude, and SemiAnalysis estimates Anthropic's $200 plan gives about 5x the API-equivalent value of OpenAI's. Atlassian and OpenAI expanded their partnership with MCP connectors for ChatGPT and Codex. Tooling: Claude Code 2.1.292 lets you set effort per subagent, Pi 1.0.4 adds glob patterns for tool filtering, and Codex has 0.162 alphas out but no new stable release.",
+    "headline": "Claude Haiku 5.5 brings a near-frontier small model at $0.10 per million input tokens, OpenAI publishes 722 math manuscripts, and Common Sense calls ChatGPT for Teens an 'Unacceptable Risk'",
+    "summary": "Anthropic released Claude Haiku 5.5 on October 7. It's the first Haiku with effort settings and adaptive thinking, has a 1M-token context, and costs $0.10/$0.50 per million tokens up to 100K-token prompts. Artificial Analysis scores it 43 on its Intelligence Index, 26 points above the last Haiku and just behind Kimi K3, but at max effort it uses about 162K output tokens per task, roughly 3x GPT-6 Luna. Alongside it, Anthropic halved Sonnet 5.5 cache-read prices and added monthly API credits for Max and Team subscribers. OpenAI released 722 math manuscripts from an unreleased internal model, grouped into 372 result families with Lean proofs for 162 of them. Common Sense Media's Youth AI Safety Institute rated ChatGPT for Teens an 'Unacceptable Risk' after 4,000+ test prompts; OpenAI disputes the testing. Tooling: Codex 0.161.0 makes GPT-6.1 Sol the default and adds `/mcp login`, Pi 1.1.0 adds Haiku 5.5 and `+name/-name` tool tweaks, and Claude Code 2.1.293–2.1.294 adds Haiku 5.5 and fixes prompt hooks.",
     "stats": [
       {
         "label": "New stories",
-        "value": "8"
+        "value": "4"
       },
       {
         "label": "Harness updates",
-        "value": "2"
+        "value": "3"
       },
       {
         "label": "Read",
-        "value": "8 min"
+        "value": "7 min"
       }
     ]
   },
   "stories": [
+    {
+      "id": "claude-haiku-5-5",
+      "category": "model",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "title": "Anthropic releases Claude Haiku 5.5: 1M context at $0.10/$0.50 per million tokens",
+      "dek": "Released October 7, Haiku 5.5 is the first Haiku with adjustable effort (Low through Max) and adaptive thinking. It costs $0.10/$0.50 per million input/output tokens for prompts up to 100K tokens and $0.50/$2.50 above that; Anthropic estimates real workloads cost about 75% less than on Haiku 4.5. Anthropic reports 1620 Elo on GDPval-AA v2.1 (Haiku 4.5: 735), 72.4% on OSWorld 2.1, 39.2% on Terminal-Bench 4.0, and 57.4% on Humanity's Last Exam with tools. It's available as `claude-haiku-5-5` on the Claude Platform, AWS, Google Cloud, and Azure. Anthropic also halved Sonnet 5.5 cache-read prices and added monthly API credits for Max and Team subscribers.",
+      "publishedAt": "2026-10-07T00:00:00Z",
+      "whyItMatters": "Anthropic is pitching it for subagents, compaction, classification, and browser automation, the high-volume parts of agent workloads where model cost adds up fastest."
+    },
+    {
+      "id": "haiku-5-5-aa-tokens",
+      "category": "model",
+      "source": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/articles/claude-haiku-5-5",
+      "title": "Artificial Analysis scores Haiku 5.5 at 43, but it uses far more tokens than GPT-6 Luna",
+      "dek": "Haiku 5.5 at max effort scores 43 on the AA Intelligence Index, ahead of GLM-5.3 Flash (42) and Gemini 3.8 Flash (41), just behind Kimi K3 (44), and 13 points below Sonnet 5.5. The catch is token use: about 162K output tokens per Intelligence Index task at max, more than Opus 5.5 at max and roughly 3x GPT-6 Luna. At high effort it needs about 55K tokens to reach scores similar to Luna's (about 50K). AA also measured 33% on Terminal-Bench 4.0 and 1578 Elo on AA-Briefcase.",
+      "publishedAt": "2026-10-07T00:00:00Z",
+      "whyItMatters": "The low per-token price doesn't tell you the whole cost. Run Haiku 5.5 at high or medium effort unless you need max, or you'll pay for tokens you don't need."
+    },
+    {
+      "id": "openai-math-manuscripts",
+      "category": "news",
+      "source": "Unite.AI",
+      "url": "https://www.unite.ai/openai-releases-722-math-manuscripts-from-an-unreleased-ai-model/",
+      "title": "OpenAI releases 722 math manuscripts from an unreleased internal model",
+      "dek": "On October 6 OpenAI published 722 manuscripts, grouped into 372 result families across 17 fields, in an Apache 2.0 GitHub repository along with abridged summaries of the model's reasoning. The model was given about 4,000 problems, and each accepted result cost about three hours of ChatGPT Pro reasoning on average. Lean formalizations cover the main result of 162 of the papers. The model itself remains closed.",
+      "publishedAt": "2026-10-06T00:00:00Z",
+      "whyItMatters": "It's the largest batch of AI-generated math so far, and Lean proofs back less than a quarter of it. Checking the rest falls to human mathematicians."
+    },
+    {
+      "id": "common-sense-chatgpt-teens",
+      "category": "news",
+      "source": "Common Sense Media",
+      "url": "https://www.commonsensemedia.org/press-releases/chatgpt-for-teens-poses-unacceptable-risk-to-kids-common-sense-media-finds",
+      "title": "Common Sense Media rates ChatGPT for Teens an 'Unacceptable Risk'",
+      "dek": "The Youth AI Safety Institute tested more than 4,000 prompts on accounts registered to 13- to 17-year-olds. It found that teens could discuss self-harm for long stretches without parents on newly linked accounts being notified, and that ChatGPT missed more than one in four warranted crisis referrals. Study mode was easy to bypass, and adult-registered accounts never switched to the under-18 experience even when the user said they were 13. The group wants independent verification before OpenAI resumes marketing to teens. OpenAI says the tests don't reflect how its safeguards work.",
+      "publishedAt": "2026-10-07T00:00:00Z",
+      "whyItMatters": "'Unacceptable Risk' is the top of the Institute's five-level scale. Coming days after the New York City Council hearing, it adds pressure for binding rules on teen safety."
+    },
     {
       "id": "mistral-large-4-preview",
       "category": "model",
@@ -31,26 +71,6 @@
       "whyItMatters": "Europe now has an open-weight model close to the frontier. It's still 20 points behind Opus 5.5, though, and seven Chinese open models still rank above it."
     },
     {
-      "id": "mistral-large-4-cyber",
-      "category": "model",
-      "source": "The Decoder",
-      "url": "https://the-decoder.com/mistral-large-4-is-said-to-be-the-most-powerful-open-ai-model-from-europe-and-the-u-s/",
-      "title": "Mistral pitches Large 4 as the model that will do the security work US models refuse",
-      "dek": "Mistral says Large 4 reproduces and patches 82% of real vulnerabilities in its test, tasks it says Claude and GPT-6 refuse outright. It also reports high refusal rates on clearly malicious prompts, but hasn't explained how it tells legitimate research apart from attack preparation. The Decoder reports a 1M-token context and 49.8% on AA's Coding Agent Index.",
-      "publishedAt": "2026-10-06T00:00:00Z",
-      "whyItMatters": "While US labs gate their cyber-capable models (Gemini 4 Argon, GPT-6 Astra), Mistral is selling openness on cyber tasks as the feature. Expect pressure on that policy from both sides."
-    },
-    {
-      "id": "reflection-beam",
-      "category": "model",
-      "source": "Reflection AI",
-      "url": "https://reflection.ai/blog/introducing-beam",
-      "title": "Reflection unveils Beam, a 501B open-weight MoE coming under Apache 2.0",
-      "dek": "Beam is a sparse mixture-of-experts model with 23B active parameters, pretrained on 23.8T tokens and refined with more than 100M RL rollouts on 10.5K NVIDIA GB300s over four weeks. Reflection reports 77.2 on SWE-Bench Pro v2-Hard and 80.1 on Terminal-Bench v2.1, and says it matches GLM-5.2's reasoning with 3–4x less inference compute. Weights, a technical report, and a model card are due later this month; for now there's an early-access waitlist.",
-      "publishedAt": "2026-10-06T00:00:00Z",
-      "whyItMatters": "These are self-reported numbers from a preview with no independent scores yet, so it isn't on the board. If they hold, it's a strong US open-weight entry."
-    },
-    {
       "id": "personal-agent-protocol",
       "category": "news",
       "source": "Implicator",
@@ -59,46 +79,6 @@
       "dek": "Announced October 6, PAP builds on OAuth so a personal agent can show a business who it is, which user it represents, and what that user authorized: read-only or write, with sessions that carry across web, API, and chat. A v0.1 spec is due later in October. Walmart, Shopify, Stripe, Genesys, and Instinct are partners; OpenAI, Anthropic, and Amazon are not. It comes after Amazon blocked Meta's Muse agent on September 20. Bret Taylor said it's 'kind of chaos until such a standard exists.'",
       "publishedAt": "2026-10-06T00:00:00Z",
       "whyItMatters": "Agent commerce now has several competing identity standards (Visa, Google, OpenAI, and now PAP), and the big retailers are backing more than one of them."
-    },
-    {
-      "id": "nyc-council-ai-hearing",
-      "category": "news",
-      "source": "Fox News",
-      "url": "https://www.foxnews.com/live-news/ai-super-intelligence-safety-10-06",
-      "title": "OpenAI, Anthropic, Google, and Meta won't guarantee their agents will follow guardrails",
-      "dek": "At a New York City Council hearing on October 6, OpenAI's Morgan Dwyer said she couldn't guarantee 'any technology is without risk.' Anthropic's Logan Graham called the science 'fundamentally hard and unsettled,' and Google's Alice Friend said promising perfection isn't possible. Meta's Shane Cahill committed only to safe deployment. Council Speaker Julie Menin said lawmakers want accountability and transparency, not perfection.",
-      "publishedAt": "2026-10-06T00:00:00Z",
-      "whyItMatters": "Two days after the White House praised 'morally binding' voluntary standards, labs are telling local lawmakers on the record that guardrails can fail. That gives cities and states an opening to regulate."
-    },
-    {
-      "id": "pentagon-drops-claude",
-      "category": "news",
-      "source": "AI Weekly (via BBC)",
-      "url": "https://aiweekly.co/alerts/pentagon-tells-bbc-it-has-stopped-using-anthropics-claude",
-      "title": "Pentagon tells the BBC it has stopped using Claude, but reports say Maven still ran it",
-      "dek": "A Defense Department official told the BBC that the Pentagon no longer uses Anthropic products. That completes the six-month phase-out ordered in February, when Anthropic was designated a supply-chain risk after refusing to drop guardrails on autonomous weapons and mass surveillance. Anthropic lost its federal appeal in September. BBC sources say Claude was still running in Palantir's Maven Smart System for Iran operations as recently as last week.",
-      "publishedAt": "2026-10-06T00:00:00Z",
-      "whyItMatters": "It's the clearest test yet of what a lab pays for holding usage limits against a government customer. Google, xAI, and OpenAI pick up the work."
-    },
-    {
-      "id": "semianalysis-subscription-value",
-      "category": "news",
-      "source": "SemiAnalysis",
-      "url": "https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x",
-      "title": "SemiAnalysis: Claude's $200 plan gives about 5x the API value of OpenAI's",
-      "dek": "SemiAnalysis estimates Anthropic's $200 plan delivers roughly five times the API-equivalent value of OpenAI's $200 tier on comparable workloads (Opus 5.5 vs GPT-6.1 Sol). A user maxing out Opus 5.5 runs at a -369% gross margin for Anthropic, improving to 6% at a realistic 20% utilization. Subscriptions bring in about 10% of Anthropic's revenue but use more than 40% of its inference compute.",
-      "publishedAt": "2026-10-06T00:00:00Z",
-      "whyItMatters": "If you're heavy on agentic coding, the subscription is far cheaper than the API right now. But the margins suggest those limits are the next thing to change."
-    },
-    {
-      "id": "atlassian-openai-mcp",
-      "category": "news",
-      "source": "Atlassian",
-      "url": "https://www.atlassian.com/blog/company-news/atlassian-openai-strategic-partnership",
-      "title": "Atlassian and OpenAI expand their partnership with MCP connectors for ChatGPT and Codex",
-      "dek": "OpenAI models will now power reasoning across Rovo and the Atlassian platform. Developers can connect ChatGPT and Codex to Jira and Confluence through Atlassian's MCP server. More than 3,000 Atlassian engineers already use Codex this way, pulling live work items and docs into the development loop. Atlassian says agents that pick up tickets, run tests, and sync session history back to boards are next.",
-      "publishedAt": "2026-10-06T00:00:00Z",
-      "whyItMatters": "MCP is becoming the standard way enterprise SaaS plugs into coding agents, and Atlassian's partnership with OpenAI shows it's happening on the vendor's side too."
     }
   ],
   "models": [
@@ -202,12 +182,21 @@
       "url": "https://x.com/ArtificialAnlys/status/2102074898327932987"
     },
     {
+      "name": "Claude Haiku 5.5",
+      "org": "Anthropic",
+      "aa": "43",
+      "cursor": "—",
+      "swe": "—",
+      "isNew": true,
+      "url": "https://artificialanalysis.ai/models/claude-haiku-5-5"
+    },
+    {
       "name": "Mistral Large 4",
       "org": "Mistral",
       "aa": "38",
       "cursor": "—",
       "swe": "—",
-      "isNew": true,
+      "isNew": false,
       "url": "https://artificialanalysis.ai/models/mistral-large-4"
     },
     {
@@ -230,7 +219,7 @@
     }
   ],
   "modelsMeta": {
-    "note": "Board rebuilt October 5. Since the last refresh, Artificial Analysis moved to Intelligence Index v4.3 and CursorBench to 4.0, both on much lower absolute scales (Claude Opus 5 went from 61 to 51 on AA). So every row now uses the current versions; the old numbers aren't comparable. New this cycle: Claude Opus 5.5 (the new AA #1 at 58), Claude Sonnet 5.5, GPT-6 Astra, Claude Fable 5.1, GPT-6.1 Sol, and Grok 4.7. Grok 4.6's AA score is derived from AA's statement that Grok 4.7 scored +2 over it. DeepSWE figures come from BenchLM's aggregation (last updated Sep 1), plus Opus 5.5's 74.2 from BenchLM's head-to-head. Gemini 4 Argon is not listed yet because it has no independent scores. Older models no longer near the frontier (Opus 4.8, Grok 4.5, Qwen3.8-Max, Kimi K3, Gemini 3.6 Flash, Gemini 3.1 Pro, DeepSeek V4 Flash) were dropped because they lack v4.3 / CursorBench 4.0 scores. October 7: added Mistral Large 4 (AA 38, research preview Oct 6); it has no CursorBench 4.0 or DeepSWE score yet. Reflection's Beam is not listed because it has only self-reported scores.",
+    "note": "Board rebuilt October 5. Since the last refresh, Artificial Analysis moved to Intelligence Index v4.3 and CursorBench to 4.0, both on much lower absolute scales (Claude Opus 5 went from 61 to 51 on AA). So every row now uses the current versions; the old numbers aren't comparable. New this cycle: Claude Opus 5.5 (the new AA #1 at 58), Claude Sonnet 5.5, GPT-6 Astra, Claude Fable 5.1, GPT-6.1 Sol, and Grok 4.7. Grok 4.6's AA score is derived from AA's statement that Grok 4.7 scored +2 over it. DeepSWE figures come from BenchLM's aggregation (last updated Sep 1), plus Opus 5.5's 74.2 from BenchLM's head-to-head. Gemini 4 Argon is not listed yet because it has no independent scores. Older models no longer near the frontier (Opus 4.8, Grok 4.5, Qwen3.8-Max, Kimi K3, Gemini 3.6 Flash, Gemini 3.1 Pro, DeepSeek V4 Flash) were dropped because they lack v4.3 / CursorBench 4.0 scores. October 7: added Mistral Large 4 (AA 38, research preview Oct 6); it has no CursorBench 4.0 or DeepSWE score yet. Reflection's Beam is not listed because it has only self-reported scores. October 8: added Claude Haiku 5.5 (AA 43 at max effort, released Oct 7); it has no CursorBench 4.0 or DeepSWE score yet.",
     "benchmarks": [
       {
         "key": "aa",
@@ -255,70 +244,70 @@
   "harness": [
     {
       "tool": "Claude Code",
-      "version": "2.1.292",
-      "released": "2026-10-06T00:00:00Z",
-      "notes": "2.1.292 adds an `effort` parameter to the Agent tool so subagents run at the effort level you ask for, and `claude plugin install --marketplace <source>` to add a marketplace and install from it in one step (with the same policy checks). It also adds `CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS` for longer backoff on 529s, a `prompt.autocomplete` mod event, prompt caching for mods' `$.model.complete` (`cache: true` on a block), and workflow agents in the `agent.spawn` hook, along with security and bug fixes. 2.1.291 fixed regressions where cloud sessions dropped permission-prompt answers and the last messages of a session were lost on quit. 2.1.290 (Oct 5) added `serverToolUses` to `turn.step`, `agentId` to `tool.check` plugin hooks, and an org approval `ceiling` for mods.",
+      "version": "2.1.294",
+      "released": "2026-10-08T00:00:00Z",
+      "notes": "2.1.294 fixes `prompt` and `agent` hooks that were written as instructions allowing actions they should have blocked, and judges `prompt` hooks on Stop and SubagentStop better so sessions stop early less often. 2.1.293 (Oct 7) adds Claude Haiku 5.5 (`claude-haiku-5-5`, 1M context), `agentType` in the `subagentStatusLine` payload so you can tell custom subagent types apart, and `isDeferred` on `$.tool.register` so mods can keep a tool's schema behind tool search. It also fixes compaction memory leaks and many Remote Control, cloud session, plugin, and Slack bugs. 2.1.292 (Oct 6) added per-subagent `effort`.",
       "url": "https://code.claude.com/docs/en/changelog",
       "breaking": false
     },
     {
       "tool": "Codex",
-      "version": "0.160.1",
-      "released": "2026-10-05T18:29:37Z",
-      "notes": "No new stable release since 0.160.1. That release backports a fix that preserves SYSTEMROOT/TEMP/TMP when launching remote stdio MCP servers on Windows executors. 0.160.0 (Oct 1) added 'Show more' for older tasks in the agent command center, sessions started outside a project, opt-in Guardian review context, and fixes for duplicate sends and SQLite stalls. The 0.162.0 alphas (alpha.18 on Oct 7) suggest a new stable release is close. Atlassian's MCP server now connects Codex to Jira and Confluence.",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.160.1",
+      "version": "0.161.0",
+      "released": "2026-10-07T15:58:45Z",
+      "notes": "GPT-6.1 Sol is now the default model in the bundled and Amazon Bedrock catalogs, and Bedrock gets multi-agent V2 and Ultra reasoning. New `/mcp login <name>` signs in to an MCP server without leaving the TUI. Daybreak cyber routing is now strictly opt-in (`--enable cli_daybreak`), and `codex exec --cyber-access-program` picks a Cyber access program per turn. Fixes: approved filesystem escalation keeps denied reads and network limits, launch permissions survive reconnects, SQLite corruption is caught earlier and backed up, and retries follow server retry guidance under overload. 0.162.0 alphas continue.",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0",
       "breaking": false
     },
     {
       "tool": "Pi",
-      "version": "1.0.4",
-      "released": "2026-10-05T22:03:50Z",
-      "notes": "1.0.4 lets `--tools` and `--exclude-tools` take `*` patterns (for example `--tools read,codemode,'mcp__radius__*'` keeps a single MCP server's tools) and adds `--no-mcp` to turn off MCP for one run. `--tools` now keeps MCP tools unless an entry starts with `mcp__`, which fixes `pi --tools codemode` losing every MCP server. In codemode, `tools.read()` now returns an image block for image files. Fixes cover MCP OAuth `invalid_redirect_uri` on OIDC-registered servers (pi now registers as a native client), sessions shutting down while a server was still connecting, and highlighting of multiline code. Earlier 1.0.3 was BREAKING: the `azure-openai-responses` provider was renamed to `azure`.",
-      "url": "https://github.com/earendil-works/pi/releases/tag/v1.0.4",
+      "version": "1.1.0",
+      "released": "2026-10-07T22:26:31Z",
+      "notes": "Adds Claude Haiku 5.5 (`anthropic/claude-haiku-5-5`, adaptive thinking up to xhigh/max). `--tools` now takes `+name`/`-name` entries (for example `pi -t +codemode,-write`) that adjust the default tool set instead of replacing it. Pi reports program status over OSC 7501, so supporting terminals and dashboards can show whether it's working, blocked, done, or failed. GPT-6 Luna and native llama.cpp decision models work as classifiers, and codemode's `models.classify()` accepts images. Fixes: standalone binaries no longer load `.env` files from the launch directory, and `pi update` prunes old releases.",
+      "url": "https://github.com/earendil-works/pi/releases/tag/v1.1.0",
       "breaking": false
     }
   ],
   "extensions": [
     {
-      "name": "Atlassian MCP Server (ChatGPT & Codex)",
+      "name": "LMCP",
       "kind": "MCP server",
-      "source": "Atlassian (official)",
-      "url": "https://www.atlassian.com/partnerships/openai/guide",
-      "blurb": "Atlassian's rebuilt MCP server connects ChatGPT and Codex to Jira and Confluence, so an agent can pull live tickets and docs into a coding session. It came with the expanded OpenAI partnership on October 6, and Atlassian says it already serves its own 3,000+ Codex users."
+      "source": "local-mcp.com",
+      "url": "https://dev.to/lmcp/we-built-a-free-mcp-server-that-lets-claude-code-use-the-apps-on-your-mac-k0l",
+      "blurb": "A free Mac app that turns the apps you already use (Mail, Calendar, Teams, Slack, WhatsApp, iMessage, Outlook, OneDrive, Google Drive, Zoom, Office files, the browser, and the terminal) into 190+ MCP tools for Claude Code, Codex, Cursor, and other clients. It reads local caches where it can, so most apps need no API keys or OAuth setup. The installer configures supported clients automatically."
     },
     {
-      "name": "Personal Agent Protocol",
-      "kind": "Protocol",
-      "source": "Meta & Sierra",
-      "url": "https://www.implicator.ai/meta-sierra-personal-agent-protocol/",
-      "blurb": "An OAuth-based open standard for personal agents to identify themselves, say which user they act for, and hold read or write permissions with businesses across channels. It complements MCP on the identity side: MCP covers tool calls, PAP covers whether a store trusts your agent at all. The v0.1 spec is due this month."
+      "name": "AWS MCP Server (six new regions)",
+      "kind": "MCP server",
+      "source": "AWS (official)",
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-mcp-server-six-additional-regions/",
+      "blurb": "AWS's managed MCP server, which gives coding agents one interface to AWS APIs, is now available in Singapore, Sydney, Tokyo, Ireland, London, and Oregon. Teams outside us-east can keep agent traffic in their own region."
     },
     {
-      "name": "Chainstack MCP Server",
+      "name": "Trustgrid MCP Server",
       "kind": "MCP server",
-      "source": "Chainstack",
-      "url": "https://docs.chainstack.com/changelog/chainstack-updates-october-6-2026",
-      "blurb": "A hosted MCP endpoint (`https://mcp.chainstack.com/mcp`) that gives Claude Code, Cursor, and other clients access to Chainstack's blockchain infrastructure. The October 6 update moved it to FastMCP 3.x and the latest MCP Python SDK, which clears all open dependency advisories, and closes idle sessions after 30 minutes; compliant clients reconnect automatically."
+      "source": "Trustgrid",
+      "url": "https://docs.trustgrid.io/release-notes/mcp/2026-10/",
+      "blurb": "The October 6 update lets agents run interactive, websocket-backed node tools such as `ping` and `arping` through Trustgrid's MCP server, which turns an agent into a hands-on network diagnostics assistant for edge nodes."
     }
   ],
   "tips": [
     {
       "kind": "Claude Code",
-      "title": "Match subagent effort to the job",
-      "body": "Claude Code 2.1.292 added an `effort` parameter to the Agent tool, so you can ask Claude to send a quick file search or lint pass to a low-effort subagent and keep high effort for the hard debugging. Opus 5.5 scores vary by about 16 points across effort levels, so lowering effort on easy subtasks saves real time and tokens without hurting the main thread.",
-      "url": "https://code.claude.com/docs/en/changelog"
+      "title": "Use Haiku 5.5 for subagents, at high effort rather than max",
+      "body": "Haiku 5.5 is built for subagent and compaction work and costs a fraction of Sonnet. Artificial Analysis found that at max effort it burns about 162K output tokens per task, about 3x GPT-6 Luna, while at high effort it lands near Luna's scores on about 55K. Combine it with Claude Code's per-subagent `effort` parameter: send search and summary subagents to Haiku at medium or high effort.",
+      "url": "https://artificialanalysis.ai/articles/claude-haiku-5-5"
     },
     {
       "kind": "Pi",
-      "title": "Keep only one MCP server's tools with a glob",
-      "body": "Pi 1.0.4 accepts `*` patterns in `--tools`, so `pi --tools read,codemode,'mcp__radius__*'` keeps a single MCP server's tools and drops the rest. Use `--no-mcp` for a quick run with no MCP at all. A smaller tool list means a shorter system prompt and fewer wrong tool picks.",
-      "url": "https://github.com/earendil-works/pi/releases/tag/v1.0.4"
+      "title": "Tweak the default tool set instead of restating it",
+      "body": "Pi 1.1.0 accepts `+name` and `-name` in `--tools`, so `pi -t +codemode,-write` keeps the default tools, adds codemode, and drops write. That's handy for a read-only review run without listing every tool. It combines with the `mcp__server__*` globs from 1.0.4.",
+      "url": "https://github.com/earendil-works/pi/releases/tag/v1.1.0"
     },
     {
-      "kind": "Workflow",
-      "title": "Use your subscription for heavy agent loops, not the API",
-      "body": "SemiAnalysis estimates Claude's $200 plan gives about 5x the API-equivalent value of OpenAI's $200 tier, and a fully used Opus 5.5 subscription costs Anthropic far more than it earns. If you run long agent sessions, run them on the subscription and save API keys for CI and automation that need predictable billing. Watch for limit changes, which the report expects next.",
-      "url": "https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x"
+      "kind": "Codex",
+      "title": "Re-auth MCP servers mid-session with /mcp login",
+      "body": "When an MCP server's token expires partway through a Codex session, you no longer need to quit. Codex 0.161.0's `/mcp login <name>` runs the sign-in from the active TUI, and the session keeps its context. Enterprise MCP sign-in now also fails closed when the config refresh fails.",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0"
     }
   ]
 }
