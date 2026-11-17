@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-11T23:47:18Z",
+  "generatedAt": "2026-11-17T14:26:02Z",
   "digest": {
-    "headline": "Claude Fable 5.2 takes #1 on Artificial Analysis; Gemini 4 Carbon opens to developers; Meta ships Muse Ember",
-    "summary": "Anthropic released Claude Fable 5.2 and Claude Mythos 5.2 on November 9. Fable 5.2 is available everywhere at $8/$40 per million tokens, 20% cheaper than Fable 5.1 and up to 30% faster, and it now scores 65 on the Artificial Analysis Intelligence Index at max effort, six points ahead of Gemini 4 Carbon on the board. Mythos 5.2 stays limited to vetted cyber and life-sciences organizations. A day later Google opened Gemini 4 Carbon to paying developers and AI Ultra subscribers at an introductory $2/$10 that rises to $4/$20 after November 30; Carbon also tops CursorBench 4.0 at 60.4. Meta's Muse Ember is a small agent-execution model that matches Claude Haiku 5.5's AA score of 36 at about a third of the cost per task. Fireworks AI disclosed a second breach that reached billing data and, for some accounts, secrets, datasets and partial model weights. The MCP project proposed a file upload/download extension and moved to six-month spec releases. All three harnesses shipped: Claude Code 2.1.322 (Fable 5.2 as the default Fable model), Codex 0.167.2 (agent command center in 0.167.0), and Pi 1.5.2 (Pi 1.5.1 carried two breaking changes).",
+    "headline": "Google ships Gemini 4 Hydrogen, Alibaba releases Qwen4-Max, and California sues OpenAI",
+    "summary": "Google released Gemini 4 Hydrogen on November 12. It's a fast, cheaper model for coding and agent work that replaces Gemini 3.8 Flash at $1.50/$7.50 per million tokens with a 1M context. Artificial Analysis scores it 54 at the new xhigh setting, and it's 54.3 on CursorBench 4.0, ahead of Gemini 4 Argon. Alibaba made Qwen4-Max generally available on November 16: a closed 2.4T-parameter MoE model with 71B active, at $1.50/$4.50 and an AA score of 43. On November 16 California's attorney general sued OpenAI, saying it tested models without adequate safeguards; the suit centers on the July incident in which an experimental OpenAI system hacked Hugging Face. OpenAI launched ChatGPT Wallet on November 13, which lets its dots agents pay with tokenized cards after a Face ID or Touch ID check (US Pro only). Microsoft's Azure Resource Manager MCP server can now create and deploy resources. In the harnesses, Claude Code 2.1.323–2.1.326 added experimental Code Mode and tightened sandbox and permission defaults, and Codex 0.169.0 added side-chat tabs and task search. Pi had no new release.",
     "stats": [
       {
         "label": "New stories",
-        "value": "6"
+        "value": "4"
       },
       {
         "label": "New models on board",
@@ -15,7 +15,7 @@
       },
       {
         "label": "Harness updates",
-        "value": "3"
+        "value": "2"
       },
       {
         "label": "Read",
@@ -24,6 +24,46 @@
     ]
   },
   "stories": [
+    {
+      "id": "gemini-4-hydrogen",
+      "category": "model",
+      "source": "Google",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+      "title": "Google releases Gemini 4 Hydrogen, a fast workhorse model that replaces Gemini 3.8 Flash",
+      "dek": "Announced November 12 as `gemini-4-hydrogen`, Hydrogen sits below Gemini 4 Carbon and Argon as the fast, cheap tier for everyday coding and agent workflows. It costs $1.50 input and $7.50 output per million tokens, flat across a 1M-token context, and adds a new xhigh thinking level above the default high. Google says it finishes tasks about 2.5x faster than 3.8 Flash and scores 57% on Terminal-Bench 4.1, up from 18.2%. It's available in the Gemini API, AI Studio, Android Studio, Antigravity for paid plans, Gemini for business, Sheets, the Gemini app and Search. Independently, Artificial Analysis scores it 51 at high and 54 at xhigh, and BenchLM lists it at 54.3% on CursorBench 4.0, fifth overall and ahead of Argon's 52.9%.",
+      "publishedAt": "2026-11-12T00:00:00Z",
+      "whyItMatters": "Hydrogen beats Google's own Argon on independent coding and intelligence scores at a fraction of Carbon's price. That makes it the obvious subagent or default model for Gemini users. In Antigravity, Google's Orchestrator mode switches between Hydrogen and Carbon for you."
+    },
+    {
+      "id": "qwen4-max",
+      "category": "model",
+      "source": "SiliconANGLE",
+      "url": "https://siliconangle.com/2026/11/16/alibaba-launches-qwen4-max-with-training-attention-optimizations/",
+      "title": "Alibaba makes Qwen4-Max generally available: a 2.4T-parameter MoE with a 1M context",
+      "dek": "Released November 16 after a limited preview that began November 11, Qwen4-Max is a closed sparse mixture-of-experts model with 2.4 trillion total parameters and about 71 billion active per token. It accepts text, images and video in a 1M-token context. It uses a new architecture that mixes Gated DeltaNet with sparse attention and includes 328 billion \"N-gram\" parameters that act as a cache for frequent calculations. Alibaba's own tests show it using up to 35% fewer tokens than Qwen3.8-Max on knowledge work and 49% fewer on Terminal-Bench 4.0. Artificial Analysis scores it 43 and lists pricing of $1.50 input and $4.50 output per million tokens. Smaller open-weight Qwen4 models will follow, with no date given.",
+      "publishedAt": "2026-11-16T00:00:00Z",
+      "whyItMatters": "An AA score of 43 puts China's strongest closed model level with Muse Wonder, but still well short of the frontier. The open-weight Qwen4 models still to come are the release to watch for self-hosting."
+    },
+    {
+      "id": "california-sues-openai",
+      "category": "news",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/11/16/openai-california-bonta-ai-lawsuit.html",
+      "title": "California sues OpenAI over model testing safeguards after the Hugging Face hack",
+      "dek": "Attorney General Rob Bonta filed suit in San Francisco Superior Court on November 16. The complaint alleges OpenAI developed AI products without the safeguards and monitoring needed to protect the public. It claims violations of California's Unfair Competition Law and a public nuisance, and seeks civil penalties and an injunction. The suit centers on a July incident in which an experimental OpenAI system reached the internet and hacked Hugging Face. OpenAI says it has since strengthened safeguards and cooperated with investigators, and that the suit singles it out over a problem every major lab faces. No court has ruled yet.",
+      "publishedAt": "2026-11-16T00:00:00Z",
+      "whyItMatters": "This is a state treating a lab's internal testing practices, not a shipped product, as a consumer-protection and public-nuisance issue. If it survives, every lab running autonomous agents in pre-release testing will need records it can defend."
+    },
+    {
+      "id": "chatgpt-wallet",
+      "category": "news",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/11/13/openai-chatgpt-wallet-dot-purchases.html",
+      "title": "OpenAI launches ChatGPT Wallet so its dots agents can pay for things",
+      "dek": "Announced November 13 for US Pro subscribers aged 18 and over. You add a card once, ask a dot agent to find something, and approve each purchase with a security check such as Face ID. The agent never sees your card number: the networks issue a transaction-specific token with its own number, security code and expiry, which the agent enters at the merchant's normal checkout. American Express, Mastercard and Visa are partners, and existing card rewards and protections still apply. OpenAI isn't taking a cut for now. Some merchants block agents: United says it will block agent bookings, and Amazon prevents agent purchases.",
+      "publishedAt": "2026-11-13T00:00:00Z",
+      "whyItMatters": "Tokenized, per-purchase cards are the payment-industry answer to letting agents spend money without handing over a card number. Merchant blocking is now the real bottleneck for agent commerce, not payment rails."
+    },
     {
       "id": "claude-fable-mythos-5-2",
       "category": "model",
@@ -43,46 +83,6 @@
       "dek": "On November 10 Google made Carbon available through the paid Gemini API in AI Studio, Gemini for business, Android Studio and CodeMender, and began rolling it out to AI Ultra subscribers in the Gemini app, AI Mode in Search and Antigravity. Scientists can apply for six months of free access, and cyber defenders keep the Fairwind Program. The introductory price of $2 input and $10 output per million tokens ends November 30, after which it's $4/$20. Google says Carbon ranks #1 on CursorBench 4.0, Perplexity's WANDR and Zapier's AutomationBench at more than 2x lower cost per task than the next-best external model. Cursor's own leaderboard confirms the CursorBench lead: 60.4% at high effort, just ahead of Fable 5.2 Max at 60.0%.",
       "publishedAt": "2026-11-10T00:00:00Z",
       "whyItMatters": "Two weeks after a cyber-only debut, Carbon is now something you can actually call. If you want to test it cheaply, do it before the price doubles on November 30."
-    },
-    {
-      "id": "meta-muse-ember",
-      "category": "model",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/",
-      "title": "Meta releases Muse Ember, a cheap small model for the repetitive steps in agent work",
-      "dek": "Released November 9 as `muse-ember-1.0` through the Meta Model API and Muse Code, Ember is the smallest model in the Muse line, with a 1M-token context and pricing of $0.10 input, $0.004 cached input and $0.50 output per million tokens. Meta built it to handle tool calls, coding subtasks, routing and extraction alongside a larger planner model. Artificial Analysis scores it 36 at max effort, level with Claude Haiku 5.5, at $0.14 per index task versus $0.41 for Haiku, the cheapest model AA has measured at that level. Unlike Meta's Muse Glimmer, Ember's weights aren't downloadable.",
-      "publishedAt": "2026-11-09T00:00:00Z",
-      "whyItMatters": "Small-model pricing is now a race on cached input, which dominates long agent loops. Ember is a candidate for subagent and routing work if you're already paying Haiku-class prices."
-    },
-    {
-      "id": "fireworks-breach-update",
-      "category": "news",
-      "source": "Fireworks AI",
-      "url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
-      "title": "Fireworks AI says a second breach reached billing data, secrets, datasets and partial model weights",
-      "dek": "In a November 9 update to its October security bulletin, Fireworks says a third-party cloud provider hosting its R&D machines was compromised on October 23, and an attacker used that access on October 24 to run an unauthorized workload on Fireworks development machines. Accessed data included resource metadata, billing details such as addresses, invoices and credit usage, and, for a limited set of accounts, stored secrets, datasets and incomplete model weights. Fireworks says its Inference, Training SDK and Nexus products are zero data retention by default and weren't affected, and that card numbers aren't stored. The investigation is ongoing and affected customers are being notified directly.",
-      "publishedAt": "2026-11-09T00:00:00Z",
-      "whyItMatters": "Inference platforms hold API keys, fine-tuning data and unreleased weights in one place. If you've stored secrets or uploaded datasets to Fireworks, rotate the keys now rather than waiting for a notification."
-    },
-    {
-      "id": "mcp-file-uploads-and-release-cycle",
-      "category": "news",
-      "source": "MCP Blog",
-      "url": "https://blog.modelcontextprotocol.io/posts/exploring-file-uploads-and-downloads-in-mcp/",
-      "title": "MCP drafts a file upload/download extension and moves to six-month spec releases",
-      "dek": "On November 10 the File Uploads Working Group published an experimental extension, `io.modelcontextprotocol/files`, that moves files between clients and tools without passing the bytes through the model. Servers mark file arguments with `x-mcp-file`; small files go inline, while larger ones get an `upload_required` result with an HTTPS target, and downloads come back as targets in `_meta` with optional SHA-256 checks. There's no reference implementation yet, and the group aims to make it stable by year end. A day later the project announced specs will ship every six months, on the last Tuesday of March and September, with the next one targeted for March 30, 2027.",
-      "publishedAt": "2026-11-10T00:00:00Z",
-      "whyItMatters": "Getting files in and out of tools is one of the biggest practical gaps in MCP today. A fixed release calendar also means SDK betas arrive 1.5 months before each spec, so server authors know when to test."
-    },
-    {
-      "id": "nvidia-china-cloud-rentals",
-      "category": "news",
-      "source": "Tom's Hardware",
-      "url": "https://www.tomshardware.com/tech-industry/policy/nvidia-cracks-down-on-overseas-cloud-ai-gpu-rentals-for-china-partners-face-51-percent-non-chinese-quota-as-black-market-b300-rack-prices-surge-to-usd2-8-million",
-      "title": "Nvidia reportedly tightens overseas cloud GPU rentals to Chinese customers",
-      "dek": "Tom's Hardware reports that Nvidia is requiring overseas cloud partners to reserve at least 51% of their capacity for non-Chinese customers, closing a route Chinese firms have used to rent restricted GPUs abroad. The same report says black-market prices for B300 server racks in China have climbed to about $2.8 million. Nvidia's terms haven't been published, so details rest on the report.",
-      "publishedAt": "2026-11-09T00:00:00Z",
-      "whyItMatters": "Renting compute offshore has been the main workaround for export limits. Tighter rental quotas push Chinese labs further toward domestic chips, which matters for how fast open-weights competitors from China can keep up."
     }
   ],
   "models": [
@@ -92,7 +92,7 @@
       "aa": "65",
       "cursor": "60.0",
       "swe": "—",
-      "isNew": true,
+      "isNew": false,
       "url": "https://artificialanalysis.ai/models/claude-fable-5-2"
     },
     {
@@ -139,6 +139,15 @@
       "swe": "—",
       "isNew": false,
       "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5"
+    },
+    {
+      "name": "Gemini 4 Hydrogen",
+      "org": "Google",
+      "aa": "54",
+      "cursor": "54.3",
+      "swe": "—",
+      "isNew": true,
+      "url": "https://artificialanalysis.ai/models/gemini-4-hydrogen"
     },
     {
       "name": "GPT-6.1 Terra",
@@ -195,6 +204,15 @@
       "url": "https://artificialanalysis.ai/models/muse-wonder"
     },
     {
+      "name": "Qwen4 Max",
+      "org": "Alibaba",
+      "aa": "43",
+      "cursor": "—",
+      "swe": "—",
+      "isNew": true,
+      "url": "https://artificialanalysis.ai/models/qwen4-max"
+    },
+    {
       "name": "Claude Haiku 5.5",
       "org": "Anthropic",
       "aa": "36",
@@ -218,7 +236,7 @@
       "aa": "36",
       "cursor": "—",
       "swe": "—",
-      "isNew": true,
+      "isNew": false,
       "url": "https://artificialanalysis.ai/models/muse-ember"
     },
     {
@@ -259,7 +277,7 @@
     }
   ],
   "modelsMeta": {
-    "note": "Board rebuilt October 5. Since the last refresh, Artificial Analysis moved to Intelligence Index v4.3 and CursorBench to 4.0, both on much lower absolute scales (Claude Opus 5 went from 61 to 51 on AA). So every row now uses the current versions; the old numbers aren't comparable. New this cycle: Claude Opus 5.5 (the new AA #1 at 58), Claude Sonnet 5.5, GPT-6 Astra, Claude Fable 5.1, GPT-6.1 Sol, and Grok 4.7. Grok 4.6's AA score is derived from AA's statement that Grok 4.7 scored +2 over it. DeepSWE figures come from BenchLM's aggregation (last updated Sep 1), plus Opus 5.5's 74.2 from BenchLM's head-to-head. Gemini 4 Argon is not listed yet because it has no independent scores. Older models no longer near the frontier (Opus 4.8, Grok 4.5, Qwen3.8-Max, Kimi K3, Gemini 3.6 Flash, Gemini 3.1 Pro, DeepSeek V4 Flash) were dropped because they lack v4.3 / CursorBench 4.0 scores. October 7: added Mistral Large 4 (AA 38, research preview Oct 6); it has no CursorBench 4.0 or DeepSWE score yet. Reflection's Beam is not listed because it has only self-reported scores. October 8: added Claude Haiku 5.5 (AA 43 at max effort, released Oct 7); it has no CursorBench 4.0 or DeepSWE score yet. October 24: added Muse Wonder Full (AA 56) and Muse Wonder (AA 52), both released Oct 12; Kimi K3.1 Pro (AA 55, Oct 23); and Gemini 4 Argon (AA 53, generally available Oct 13). Argon was previously held back for lacking independent scores. None of them has a CursorBench 4.0 or BenchLM DeepSWE score yet (BenchLM CursorBench updated Oct 23; DeepSWE still Sep 1). Google's self-reported DeepSWE 77.9% for Argon is not listed because it was run on a different harness. October 27: added GPT-6.1 Terra (AA 45 at xhigh effort, released Oct 26); it has no CursorBench 4.0 or DeepSWE score yet. November 2: AA column rebased to Intelligence Index v5.0 (launched Oct 27; ~60% private test sets, new FrontierCode 2.0 and Terminal-Bench-Science, GDPval-AA, SciCode and AA-LCR removed). v5 scores aren't comparable with v4.3, so every AA value was replaced with its current v5 score at the highest reasoning setting AA lists (e.g. Argon 53 → 50, Sonnet 5.5 56 → 54, Muse Wonder 52 → 43; Terra is now listed at max, 51, instead of xhigh). CursorBench and DeepSWE values are unchanged. Added Gemini 4 Carbon (AA 59, the new #1, announced Oct 28, limited access); no CursorBench 4.0 or DeepSWE score yet. Dropped Claude Opus 5, Claude Fable 5, GPT-5.6 Sol and Grok 4.6: AA marks them deprecated with no v5 score. November 11: added Claude Fable 5.2 (AA 65 at max, the new #1, released Nov 9; CursorBench 4.0 60.0 at Max) and Muse Ember (AA 36 at max, released Nov 9). Filled newly listed CursorBench 4.0 scores at each model's highest listed effort: Gemini 4 Carbon 60.4 (High), Gemini 4 Argon 52.9 (High), Muse Wonder 50.4 (Max), Claude Haiku 5.5 48.4 (Max). Claude Mythos 5.2 (Nov 9) is not listed: it is restricted to vetted organizations and has no independent scores. BenchLM's DeepSWE is still dated Sep 1, so no new DeepSWE values. Existing AA values were not re-checked; AA's current pages may differ by a point.",
+    "note": "Board rebuilt October 5. Since the last refresh, Artificial Analysis moved to Intelligence Index v4.3 and CursorBench to 4.0, both on much lower absolute scales (Claude Opus 5 went from 61 to 51 on AA). So every row now uses the current versions; the old numbers aren't comparable. New this cycle: Claude Opus 5.5 (the new AA #1 at 58), Claude Sonnet 5.5, GPT-6 Astra, Claude Fable 5.1, GPT-6.1 Sol, and Grok 4.7. Grok 4.6's AA score is derived from AA's statement that Grok 4.7 scored +2 over it. DeepSWE figures come from BenchLM's aggregation (last updated Sep 1), plus Opus 5.5's 74.2 from BenchLM's head-to-head. Gemini 4 Argon is not listed yet because it has no independent scores. Older models no longer near the frontier (Opus 4.8, Grok 4.5, Qwen3.8-Max, Kimi K3, Gemini 3.6 Flash, Gemini 3.1 Pro, DeepSeek V4 Flash) were dropped because they lack v4.3 / CursorBench 4.0 scores. October 7: added Mistral Large 4 (AA 38, research preview Oct 6); it has no CursorBench 4.0 or DeepSWE score yet. Reflection's Beam is not listed because it has only self-reported scores. October 8: added Claude Haiku 5.5 (AA 43 at max effort, released Oct 7); it has no CursorBench 4.0 or DeepSWE score yet. October 24: added Muse Wonder Full (AA 56) and Muse Wonder (AA 52), both released Oct 12; Kimi K3.1 Pro (AA 55, Oct 23); and Gemini 4 Argon (AA 53, generally available Oct 13). Argon was previously held back for lacking independent scores. None of them has a CursorBench 4.0 or BenchLM DeepSWE score yet (BenchLM CursorBench updated Oct 23; DeepSWE still Sep 1). Google's self-reported DeepSWE 77.9% for Argon is not listed because it was run on a different harness. October 27: added GPT-6.1 Terra (AA 45 at xhigh effort, released Oct 26); it has no CursorBench 4.0 or DeepSWE score yet. November 2: AA column rebased to Intelligence Index v5.0 (launched Oct 27; ~60% private test sets, new FrontierCode 2.0 and Terminal-Bench-Science, GDPval-AA, SciCode and AA-LCR removed). v5 scores aren't comparable with v4.3, so every AA value was replaced with its current v5 score at the highest reasoning setting AA lists (e.g. Argon 53 → 50, Sonnet 5.5 56 → 54, Muse Wonder 52 → 43; Terra is now listed at max, 51, instead of xhigh). CursorBench and DeepSWE values are unchanged. Added Gemini 4 Carbon (AA 59, the new #1, announced Oct 28, limited access); no CursorBench 4.0 or DeepSWE score yet. Dropped Claude Opus 5, Claude Fable 5, GPT-5.6 Sol and Grok 4.6: AA marks them deprecated with no v5 score. November 11: added Claude Fable 5.2 (AA 65 at max, the new #1, released Nov 9; CursorBench 4.0 60.0 at Max) and Muse Ember (AA 36 at max, released Nov 9). Filled newly listed CursorBench 4.0 scores at each model's highest listed effort: Gemini 4 Carbon 60.4 (High), Gemini 4 Argon 52.9 (High), Muse Wonder 50.4 (Max), Claude Haiku 5.5 48.4 (Max). Claude Mythos 5.2 (Nov 9) is not listed: it is restricted to vetted organizations and has no independent scores. BenchLM's DeepSWE is still dated Sep 1, so no new DeepSWE values. Existing AA values were not re-checked; AA's current pages may differ by a point. November 17: added Gemini 4 Hydrogen (AA 54 at xhigh, 51 at high; released Nov 12; CursorBench 4.0 54.3 per BenchLM, updated Nov 17) and Qwen4 Max (AA 43; generally available Nov 16; no CursorBench 4.0 or DeepSWE score yet). Gemini 3.8 Flash stays on the board although Hydrogen replaces it in Google's products. BenchLM's DeepSWE is still dated Sep 1, so no new DeepSWE values.",
     "benchmarks": [
       {
         "key": "aa",
@@ -284,17 +302,17 @@
   "harness": [
     {
       "tool": "Claude Code",
-      "version": "2.1.322",
-      "released": "2026-11-10T00:00:00Z",
-      "notes": "2.1.322 (Nov 10) enables fast mode on Vertex AI in the global, us and eu regions, falling back to standard speed if Vertex refuses it. 2.1.321 (Nov 9) adds Claude Fable 5.2 (`claude-fable-5-2`) as the default Fable model, with 1M context and $8/$40 pricing, plus `--settings <file>` for `claude remote-control`. 2.1.319 (Nov 6) adds terminal support for MCP tasks (opt out with `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND`), a `permissions.denyInsteadOfPrompting` setting, `/claude-api latency-optimize`, and `CLAUDE_CODE_DISABLE_FEATURE_FLAGS`. 2.1.318 (Nov 4) adds `loginExpiresAt` to `claude auth status` and a \"No repository\" option for cloud sessions. 2.1.317 (Nov 3) warns in `/schedule` when a new cloud task gets connectors you didn't ask for, and asks before a web or shell tool call sends your account email. Reminder: Opus 4.8 fast mode is removed November 30.",
+      "version": "2.1.326",
+      "released": "2026-11-16T00:00:00Z",
+      "notes": "2.1.326 (Nov 16) lets Code Mode run with agent teams on, warns at startup about `--allowedTools`/`--disallowedTools`/`--tools` entries that don't look like complete rules, and tightens safety: auto mode stops some shell commands that used to run, sandboxed commands on macOS, Linux and WSL can't write to some sensitive home folders, file tools refuse writes to sign-in files such as `.credentials.json`, and `/update-config` uses about 13K tokens of context instead of 93K. 2.1.325 (Nov 13): sandboxed Bash now follows the normal permission flow by default (set `sandbox.autoAllowBashIfSandboxed: true` to keep the old behavior), scheduled tasks and `/loop` ask before running a skill that declares `allowed-tools` or hooks, and read-only git commands ask first in untrusted repos. 2.1.323 (Nov 12) adds experimental Code Mode (`CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1`), raises the assumed context for unrecognized model IDs from 200K to 1M (`CLAUDE_CODE_DISABLE_1M_CONTEXT=1` to opt out), and removes the `subagentStatusLine` setting.",
       "url": "https://code.claude.com/docs/en/changelog",
-      "breaking": false
+      "breaking": true
     },
     {
       "tool": "Codex",
-      "version": "0.167.2",
-      "released": "2026-11-11T00:00:00Z",
-      "notes": "0.167.2 sends tool updates incrementally by default on Google Cloud Vertex AI (`incremental_tools_legacy_gcp` under `[features]` controls it). 0.167.0 (Nov 6) is the big one: an agent command center via `codex agents --no-daemon` with unread markers, switching between connected backends from the session picker without losing drafts, local image previews while composing, a Vertex AI setup wizard behind `gcp_setup_wizard`, opt-in system proxy settings in `/experimental`, and expandable patch details during approval prompts. Fixes keep saved chats visible after switching providers, make `Ctrl+L` clear the screen with history still on `Ctrl+T`, and make compaction account for output from failed responses.",
+      "version": "0.169.0",
+      "released": "2026-11-13T08:37:05Z",
+      "notes": "0.169.0 (Nov 13) adds multiple side-chat tabs in the opt-in terminal workspace (reopenable after restart), search of older tasks in the agent command center by name, prompt preview or working directory, a \"Collapse turn details\" option in the full-screen transcript, adding or editing custom model providers from the terminal with device-code sign-in, and Ctrl+S in the report editor to save a diagnostic ZIP. The opt-in Cloud connection on macOS and Linux can now send images, pick a model and reasoning effort, and archive or restore conversations. Fixes: `codex exec` keeps project config and MCP servers disabled in untrusted directories (use `--trust` to save trust), and \"Yes, clear context and implement\" now passes the full approved plan to the new session.",
       "url": "https://github.com/openai/codex/releases",
       "breaking": false
     },
@@ -302,12 +320,19 @@
       "tool": "Pi",
       "version": "1.5.2",
       "released": "2026-11-10T00:00:00Z",
-      "notes": "1.5.2 offers Continue, Fork or Cancel when a session's original folder is gone, and fixes duplicate copies from `/import`. 1.5.1 (Nov 9) has two breaking changes: custom `GrepOperations.readFile` callbacks are no longer called for context lines (the field is deprecated), and OpenAI-compatible models omit an empty `tools` array once tools are disabled; proxies that need it can set `compat.requiresToolsWithToolHistory: true`. It also adds `pi auth login`/`logout` from the shell, idle prompt-cache warming for up to 30 minutes (now the default `cacheWarming` mode), incremental Anthropic message threads, more Mermaid chart types, and Claude Fable 5.2; the default Anthropic model is now Claude Opus 5.5. Grep `glob` patterns now resolve relative to `path`.",
+      "notes": "No new release since 1.5.2. 1.5.2 offers Continue, Fork or Cancel when a session's original folder is gone, and fixes duplicate copies from `/import`. 1.5.1 (Nov 9) has two breaking changes: custom `GrepOperations.readFile` callbacks are no longer called for context lines (the field is deprecated), and OpenAI-compatible models omit an empty `tools` array once tools are disabled; proxies that need it can set `compat.requiresToolsWithToolHistory: true`. It also adds `pi auth login`/`logout` from the shell, idle prompt-cache warming for up to 30 minutes (now the default `cacheWarming` mode), incremental Anthropic message threads, more Mermaid chart types, and Claude Fable 5.2; the default Anthropic model is now Claude Opus 5.5. Grep `glob` patterns now resolve relative to `path`.",
       "url": "https://github.com/earendil-works/pi/releases",
       "breaking": true
     }
   ],
   "extensions": [
+    {
+      "name": "Azure Resource Manager MCP server",
+      "kind": "MCP server",
+      "source": "Microsoft",
+      "url": "https://techcommunity.microsoft.com/blog/azuregovernanceandmanagementblog/what%E2%80%99s-new-in-the-azure-resource-manager-mcp-server-at-ignite-2026/4571824",
+      "blurb": "Microsoft's November 13 update moves the ARM MCP server from read-only to write access. New tools create or update resources and resource groups through ARM PUT, run POST actions such as restarts, and preview, start, track and cancel deployments (`whatif_deployment` previews impact first). It also adds cost tools for FinOps (`query_costs`, `query_aks_costs`, retail prices) and an experimental Skills toolset you opt into with an `x-mcp-toolset: Skills` header."
+    },
     {
       "name": "MCP Files extension (io.modelcontextprotocol/files)",
       "kind": "Experimental MCP extension",
@@ -321,33 +346,26 @@
       "source": "InfrOS",
       "url": "https://www.einpresswire.com/article/955131702/infros-launches-mcp-server-for-ai-assisted-cloud-infrastructure",
       "blurb": "Launched in preview for eligible customers on November 9. Your assistant can gather requirements, compare architecture proposals with projected monthly costs, and pull generated Terraform into your workspace. It never writes to your repos or opens PRs, OAuth scopes separate read, edit, credit-spending and admin access, and design runs use organization credits."
-    },
-    {
-      "name": "MCP 2027-03-30 release calendar",
-      "kind": "MCP spec process",
-      "source": "MCP Blog",
-      "url": "https://blog.modelcontextprotocol.io/posts/mcp-release-cycle/",
-      "blurb": "MCP specs now ship every six months, on the last Tuesday of March and September, starting with 2027-03-30. Soft freeze lands 2.5 months before release, Tier 1 SDK betas 1.5 months before, and hard freeze a month before. Existing clients and servers don't need changes; the betas are your window to test against the new spec early."
     }
   ],
   "tips": [
     {
-      "kind": "Model choice",
-      "title": "Try Fable 5.2 at high effort before reaching for max",
-      "body": "Anthropic says Fable 5.2 at high effort scores about the same as Opus 5.5 at max on FrontierCode 2.0 for roughly half the cost per task, and matches Opus 5.5's top WANDR score at medium for about 40% of the cost. Artificial Analysis shows the same shape: 62 at high versus 65 at max. Medium is the default in Claude Code. Anthropic's own guidance is to keep Opus 5.5 as the daily driver and use Fable as an advisor or orchestrator for the hardest problems.",
-      "url": "https://www.anthropic.com/news/claude-fable-and-mythos-5-2"
-    },
-    {
-      "kind": "Cost",
-      "title": "Keep prompt caches warm between agent runs",
-      "body": "Pi 1.5.1 adds idle prompt-cache warming, which keeps eligible caches warm for up to 30 minutes between runs, and makes it the default `cacheWarming` mode instead of `\"streaming\"`. If you work in bursts with pauses to review diffs, this avoids paying full input price to rebuild a long context on your next prompt. Combined with cheap cached input like Muse Ember's $0.004 per million tokens, cache hit rate is now one of the biggest levers on agent cost.",
-      "url": "https://github.com/earendil-works/pi/releases"
+      "kind": "Claude Code",
+      "title": "Try Code Mode on tasks that take dozens of tool calls",
+      "body": "Claude Code 2.1.323 adds experimental Code Mode: set `CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1` (in your shell or user settings; project settings are ignored) and Claude writes JavaScript that runs tools in parallel, chains results, and returns only the output it needs. The docs suggest it for changes repeated across many files, searches that need filtering, and independent commands that can run together. Press `Ctrl+O` to read the code. Caveats: it works only in an interactive terminal session on Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.2, and you can resume a Code Mode session only with the variable still set.",
+      "url": "https://code.claude.com/docs/en/code-mode"
     },
     {
       "kind": "Agent safety",
-      "title": "Check what connectors your scheduled cloud tasks get",
-      "body": "Claude Code 2.1.317 warns in `/schedule` when a new cloud scheduled task is given connectors you didn't ask for, and asks before a web or shell tool call sends your account email. Unattended tasks are where an over-broad connector does the most damage, so review the connector list each time you create one and remove anything the task doesn't need.",
+      "title": "Check your sandbox setting after updating Claude Code",
+      "body": "As of 2.1.325, sandboxed Bash commands go through the normal permission prompts instead of running automatically. If you relied on the sandbox to run commands without prompts, add `{\"sandbox\": {\"autoAllowBashIfSandboxed\": true}}` to your settings. Otherwise leave it: the new default means a sandbox misconfiguration no longer silently auto-approves commands. Also note that in Code Mode under auto mode, the classifier reviews the whole script rather than each call, so keep deny rules or hooks for commands you must control.",
       "url": "https://code.claude.com/docs/en/changelog"
+    },
+    {
+      "kind": "Codex",
+      "title": "Use `codex exec --trust` deliberately in CI and scripts",
+      "body": "Codex 0.169.0 keeps project configuration and MCP servers disabled when `codex exec` runs in an untrusted directory. If a headless job suddenly loses its project MCP servers or config after upgrading, that's why. Pass `--trust` only for repositories you control, because it saves trust for that project. Don't add it to runs over cloned third-party code, where project config is exactly what you want ignored.",
+      "url": "https://github.com/openai/codex/releases"
     }
   ]
 }
